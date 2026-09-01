@@ -18,9 +18,20 @@ body
 	font-weight: 500
 	line-height: 1.5
 
-	&.home 
-		background: #040303 url(../img/page-bg.webp) center top 9%/contain no-repeat
-	
+	&.home  
+		background: #040303 url('../img/bg.avif') center top / contain no-repeat
+
+		@supports not (background: image-set(url('../img/bg.avif') type('image/avif'))) 
+			background-image: url('../img/bg.webp')
+		
+		@media (max-width: 991px)
+			background-image: image-set(url('../img/bg-991.avif') type('image/avif'),url('../img/bg-991.webp') type('image/webp'))
+
+			@supports not (background-image: image-set(url('../img/bg-991.avif') type('image/avif'))) 
+				background-image: url('../img/bg-991.webp')
+ 
+		@media (max-width: 767px)
+			background-image: none 
 	
 .section
 	+adap('padding-block', math.div($section_gap, 2), 24)
