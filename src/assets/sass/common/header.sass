@@ -1,0 +1,231 @@
+.header 
+	position: fixed
+	left: 0
+	top: 0
+	z-index: 10
+ 
+	width: 100%
+	+adap('padding-block', 20, 8)
+
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 100%)
+
+	will-change: transform
+
+	@media (min-width: 768px)
+		animation: header-scroll linear both
+		animation-timeline: scroll(root block)
+		animation-range: 40px 100px
+
+		@keyframes header-scroll
+			0%
+				background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 100%)
+		
+			100%
+				background: $bg
+
+	@media (max-width: 767px)
+		animation-timeline: none
+		animation-range: none
+		animation: none
+
+		background: $bg
+	
+
+	&__wrapper
+		display: grid
+		grid-template-columns: auto 1fr 
+		+adap('column-gap', 60, 12 , $widthTo: 1401)
+
+	&__logo 
+		grid-row: span 2
+		align-self: center
+
+		img 
+			+adap('width', 121, 100 , $widthTo: 1200)
+			+adap('height', 121, 100 , $widthTo: 1200)
+
+	&__top
+		display: flex
+		align-items: center
+		+adap('gap', 40, 12 , $widthTo: 1401)
+		padding-bottom: 12px
+
+	&__address 
+		white-space: nowrap
+
+	&__time 
+		@media (max-width: 1750px)
+			max-width: 192px
+
+	&__search
+		flex-grow: 1
+
+	&__auth 
+		display: flex
+		align-items: center
+		+adap('gap', 16, 12)
+
+		white-space: nowrap
+
+		+t 
+
+		+hov
+			color: $active
+
+		svg 
+			width: 20px
+			height: 20px
+
+			fill: currentColor
+			transition: none
+
+
+	&__bottom 
+		display: flex
+		align-items: center
+		justify-content: space-between
+		+adap('gap', 40, 16 , $widthTo: 1200)
+		padding-top: 12px
+
+		border-top: 1px solid rgba(#fff, .2)
+
+	&__menu 
+		display: flex
+		align-items: center
+		justify-content: center
+		+adap('gap', 40, 16 , $widthTo: 1200)
+		flex: 1
+
+		&>li>a 
+			+adap('padding', 12, 8 , $widthTo: 1401)
+
+			text-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.2)
+			color: rgba(#fff, .6)
+			+adap('font-size', 16, 14 , $widthTo: 1401)
+
+	&__cart
+		display: inline-flex
+		align-items: center
+		+adap('gap', 16, 12)
+
+		padding: em(12) em(16)
+
+		background: #fff
+		border-radius: 12px
+
+		color: $bg
+
+		+hov
+			background: $active
+
+		svg 
+			width: 1.4em
+			height: 1.4em
+
+		&-count 
+			min-width: 20px
+			text-align: center
+
+	@media (max-width: #{$firstBreakpoint + px})
+		@media (min-width: 1200px)
+			.container 
+				+adap('padding-inline', 24, 12, $firstBreakpoint)
+
+	@media (max-width: #{$burgerMedia+px})
+		&__menu 
+			display: grid
+			grid-template-columns: 100%
+			justify-items: start
+			gap: 0.5rem
+
+			&>li>a 
+				display: block
+				padding: 0.5rem 1rem
+
+				font-size: 1rem
+				line-height: 1
+				color: #fff
+
+		&__bottom 
+			padding-top: 0
+			border: 0
+
+		&__top 
+			padding: 0
+			gap: 16px
+
+		&__logo 
+			grid-row: auto
+
+			img 
+				+adap('width', 80, 60, $firstBreakpoint)
+				+adap('height', 80, 60, $firstBreakpoint)
+		
+		&__cart 
+			position: relative
+			padding: 0
+
+			background: none
+			border-radius: 0
+
+			svg 
+				fill: #fff
+
+			&-title
+				display: none
+
+			&-count 
+				position: absolute
+				right: 0
+				top: 0
+
+				translate: 50% -50%
+
+				min-width: 20px
+				height: 20px
+				padding-inline: 2px
+
+				border-radius: 50%
+				background: #fff
+
+				font-size: 14px
+
+	@media (max-width: 991px)
+		&__call 
+			display: flex
+			flex-wrap: wrap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,267 @@
+
+.text-block   
+	text-wrap: pretty 
+
+	&>*:last-child
+		margin-bottom: 0
+
+	h1, h2, h3, b, strong
+		font-weight: 700
+
+	h1 
+		font-weight: 700
+		+adap('font-size', 64, 32)
+		line-height: 1.125
+		text-transform: uppercase
+
+	h2
+		+title-3
+
+	h3
+		+title-4
+		text-transform: uppercase
+ 
+	h4
+		+adap('margin-bottom', 20, 12)
+ 
+		+adap('font-size', 20, 18)
+		font-weight: 700
+		line-height: 1.4
+
+	h1, h2, h3, h5, h5, h6
+		margin-bottom: .8em
+		
+	p
+		&:not(:has(+ul,+ol))     
+			+adap('margin-bottom', 20, 12)
+
+		&:last-child
+			margin-bottom: 0 
+
+		&:has(img)
+			+adap('margin-block', 40, 16)
+			
+
+	// Списки
+	$list-gap: 16
+	$list-gap-mobile: 12
+
+	$list-padding: 16
+	$list-padding-mobile: 12
+
+	$dots-size: 8
+	$dots-size-mobile: 6
+
+	$dots-gap: 16
+	$dots-gap-mobile: 12
+
+	=adap-prop($property, $desktop, $mobile: $desktop)
+		@if ($desktop == $mobile)
+			#{$property}: #{$desktop}px
+		
+		@else
+			+adap($property, $desktop, $mobile)
+
+	ul, ol
+		display: grid
+		+adap-prop('gap', $list-gap, $list-gap-mobile)
+
+		&:not(:first-child)
+			+adap-prop('margin-top', $list-padding, $list-padding-mobile)
+
+		&:not(:last-child)
+			+adap-prop('margin-bottom', $list-padding, $list-padding-mobile)
+
+		li
+			position: relative
+
+			> :first-child
+				margin-top: 0
+
+			> :last-child
+				margin-bottom: 0
+
+		ul, ol
+			margin-top: 12px
+			margin-bottom: 0
+ 
+	ul
+		> li
+			+adap-prop('padding-left', $dots-size + $dots-gap, $dots-size-mobile + $dots-gap-mobile) 
+
+			&:before
+				content: ''
+
+				position: absolute
+				left: 0
+				top: calc(.5lh - #{math.div($dots-size, 2)}px)
+
+				+adap-prop('width', $dots-size, $dots-size-mobile)
+				+adap-prop('height', $dots-size, $dots-size-mobile)
+
+				background: $active
+				border-radius: 50%
+
+	ol
+		list-style: none
+		counter-reset: number
+
+		> li
+			&:before
+				counter-increment: number
+				content: counters(number, ".") ". "
+
+				font: inherit
+
+		ol
+			padding-left: 20px
+
+	blockquote
+		display: grid 
+		grid-template-columns: auto 1fr auto
+		align-items: center
+		+adap('min-height', 140, 100)
+		+adap('gap', 20, 12)
+		margin-inline: 0
+		+adap('margin-block', 40, 16)
+		+adap('padding', 20, 12)
+
+		background: rgba(255, 153, 0, 0.24)
+		border-radius: 8px
+
+		&:before,
+		&:after
+			content: ''
+
+			+adap('width', 68, 20)
+			height: 100%
+			flex-shrink: 0
+
+			background-size: min(100%, 40px)
+			background-repeat: no-repeat
+
+			opacity: .2
+		
+		&:before
+			background-position: center top 16px
+			background-image: url("data:image/svg+xml,%3Csvg width='40' height='34' viewBox='0 0 40 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M39.666 0.320629L38.7688 6.84601C36.7904 6.70568 35.2491 7.07989 34.1448 7.96865C33.0406 8.85741 32.3044 10.097 31.9363 11.6874C31.5683 13.2778 31.4993 15.0787 31.7293 17.0901L39.666 17.0901L39.666 34L24.4137 34L24.4137 15.6868C24.4137 10.1672 25.725 6.00402 28.3476 3.19741C30.9241 0.390796 34.6969 -0.568131 39.666 0.320629Z' fill='white' /%3E %3Cpath d='M15.2517 0.320627L14.3545 6.84601C12.376 6.70567 10.8347 7.07989 9.73047 7.96865C8.62623 8.85741 7.89007 10.097 7.52199 11.6874C7.15391 13.2778 7.0849 15.0787 7.31495 17.0901L15.2517 17.0901L15.2517 34L-0.000640869 34L-0.000639268 15.6868C-0.000638786 10.1672 1.31064 6.00402 3.93321 3.19741C6.50977 0.390794 10.2826 -0.568133 15.2517 0.320627Z' fill='white' /%3E %3C/svg%3E")
+		
+		&:after 
+			background-position: center bottom 16px
+			background-image: url("data:image/svg+xml,%3Csvg width='40' height='34' viewBox='0 0 40 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M0 33.6794L0.897194 27.154C2.87562 27.2943 4.41696 26.9201 5.52119 26.0313C6.62543 25.1426 7.36159 23.903 7.72967 22.3126C8.09775 20.7222 8.16677 18.9213 7.93672 16.9099H0V0H15.2523V18.3132C15.2523 23.8328 13.941 27.996 11.3184 30.8026C8.74189 33.6092 4.96908 34.5681 0 33.6794Z' fill='white' /%3E %3Cpath d='M24.4144 33.6794L25.3115 27.154C27.29 27.2943 28.8313 26.9201 29.9355 26.0313C31.0398 25.1426 31.7759 23.903 32.144 22.3126C32.5121 20.7222 32.5811 18.9213 32.3511 16.9099H24.4144V0H39.6667V18.3132C39.6667 23.8328 38.3554 27.996 35.7328 30.8026C33.1562 33.6092 29.3834 34.5681 24.4144 33.6794Z' fill='white' /%3E %3C/svg%3E")
+
+	.table
+		width: 100%
+		overflow-y: hidden
+		overflow-x: auto
+		-webkit-overflow-scrolling: touch
+
+		+scrollbar-x(100%, $scrollBarHeight: 4, $padding: 5) 
+		 
+	table 
+		width: 100%
+		border-collapse: collapse
+		
+		th
+			font-weight: 700
+			text-align: left
+
+		td, th
+			padding: 16px
+
+		tr
+			&>:first-child
+				border-top-left-radius: 12px
+				border-bottom-left-radius: 12px
+
+			&>:last-child
+				border-top-right-radius: 12px
+				border-bottom-right-radius: 12px
+
+		thead
+			background: #000
+			color: #fff
+	 
+		tbody 
+			tr
+				&:nth-child(even)
+					background: #ccc
+
+				&:nth-child(odd)
+					background: #fafafa
+
+		&:not(:has(thead))
+			tbody 
+				tr
+					position: relative
+
+					&>th:first-child
+						position: sticky
+						left: 0
+						top: 0
+
+						background: inherit
+
+	.video
+		position: relative 
+		+adap('max-height', 882, 280)
+		+adap('margin-bottom', 40, 20)
+		 
+		aspect-ratio: auto
+		+adap('border-radius', 20, 16)
+
+		overflow: hidden
+		cursor: pointer 
+
+		&:before
+			content: ""
+			position: absolute
+			inset: 0
+			z-index: 2
+
+			background: rgba($bg, .6)
+			transition: opacity .3s
+
+		&:after
+			content: ''
+
+			position: absolute
+			left: 50%
+			top: 50%
+			translate: -50% -50%
+			z-index: 2
+
+			+adap('width', 51, 32)
+			+adap('height', 56, 36)
+
+			background: url("data:image/svg+xml,%3Csvg width='52' height='57' viewBox='0 0 52 57' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.32 4.32128C1.41002 3.56441 1.67537 2.83898 2.09494 2.20266C2.51452 1.56634 3.07675 1.03667 3.73695 0.655761C4.39714 0.274854 5.13709 0.0532114 5.89798 0.00845545C6.65887 -0.0363005 7.4197 0.0970637 8.12 0.397946C11.66 1.91128 19.5933 5.50795 29.66 11.3179C39.73 17.1313 46.8133 22.2079 49.89 24.5113C52.5167 26.4813 52.5233 30.3879 49.8933 32.3646C46.8467 34.6546 39.85 39.6646 29.66 45.5513C19.46 51.4379 11.62 54.9913 8.11333 56.4846C5.09333 57.7746 1.71333 55.8179 1.32 52.5613C0.860001 48.7546 0 40.1113 0 28.4379C0 16.7713 0.856668 8.13128 1.32 4.32128Z' fill='%23FF9900' /%3E%3C/svg%3E") center / contain no-repeat
+
+		&.is-playing 
+			&:after,
+			&:before
+				display: none
+
+		&:not(.is-playing)
+			video::-webkit-media-controls 
+				display: none
+			
+	mark 
+		background: light($active, 8%)
+
+	img 
+		+adap('border-radius', 20, 16)
+		height: auto
+
+		@media (min-width: 992px)
+			&[style*="float"]
+				max-width: 50%
+
+			&[style*="float: right"]
+				+adap('margin-left', 40, 20, $min: true)
+
+			&[style*="float: left"]
+				+adap('margin-right', 40, 20, $min: true)
+
+		@media (max-width: 991px)
+			float: none !important
+

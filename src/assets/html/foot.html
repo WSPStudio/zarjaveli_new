@@ -1,0 +1,168 @@
+</main>
+
+@@include('footer.html')
+
+</div>
+
+@@include('modals.html')
+
+<!-- Библиотеки -->
+<script src="assets/js/vendor.js" defer></script>
+
+<!-- Общие скрипты -->
+<script src="assets/js/script.js" defer></script>
+
+<!-- Карта доставки -->
+<script>
+	function initMaps(id, address) {
+		const container = document.querySelector(`#${id}`);
+
+		if (!container) {
+			return;
+		}
+
+		const coords = address[0][0].split(',').map(Number);
+		const center = [coords[0], coords[1]];
+
+		const myMap = new ymaps.Map(container, {
+			center: center,
+			zoom: 14,
+			controls: ['largeMapDefaultSet'],
+		}, {
+			searchControlProvider: 'yandex#search'
+		});
+
+		address.forEach(item => {
+			const placemarkCoords = item[0].split(',').map(Number);
+
+			const placemark = new ymaps.Placemark(placemarkCoords, {
+				balloonContent: item[1],
+			}, {
+				iconLayout: 'default#imageWithContent',
+				iconImageHref: 'assets/img/icons/location.svg',
+				iconImageSize: [39, 50],
+				iconImageOffset: [-15, -44],
+			});
+
+			myMap.geoObjects.add(placemark);
+		});
+
+		if (id == 'payment-map') {
+			const deliveryRadiusMeters = 4000;
+			const circle = new ymaps.Circle([center, deliveryRadiusMeters], {
+				hintContent: 'Зона доставки',
+				balloonContent: `Зона доставки: ${deliveryRadiusMeters / 1000} км`,
+			}, {
+				fillColor: '#FF9900',
+				fillOpacity: 0.24,
+				strokeColor: '#FF9900',
+				strokeWidth: 3,
+			});
+
+			myMap.geoObjects.add(circle);
+
+			myMap.setBounds(myMap.geoObjects.getBounds(), {
+				checkZoomRange: true,
+				zoomMargin: 30,
+			});
+
+		}
+
+		myMap.behaviors.disable('scrollZoom');
+
+		const layer = myMap.layers.get(0).get(0);
+
+		waitForTilesLoad(layer).then(() => {
+			document.querySelectorAll('.is-active').forEach(el => {
+				if (el.parentElement?.querySelector(`#${id}`)) {
+					el.classList.remove('is-active');
+				}
+			});
+		});
+	}
+
+	function init() {
+		initMaps('payment-map', [
+			[
+				'55.654797, 37.624462',
+				'г. Москва, Каширский пр. 25, корп. 4',
+			],
+		])
+		initMaps('contact-map', [
+			[
+				'55.654797, 37.624462',
+				'г. Москва, Каширский пр. 25, корп. 4',
+			],
+		])
+	}
+</script>
+
+<script>
+	(function () {
+		const burger = document.getElementById('burgerBtn');
+		const menu = document.getElementById('sideMenu');
+		const overlay = document.getElementById('overlay');
+
+		// ----- Переключение меню -----
+		function toggleMenu(open) {
+			const isOpen = open !== undefined ? open : !menu.classList.contains('active');
+
+			menu.classList.toggle('active', isOpen);
+			overlay.classList.toggle('active', isOpen);
+			burger.classList.toggle('active', isOpen);
+			burger.setAttribute('aria-expanded', isOpen);
+			burger.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+			document.body.style.overflow = isOpen ? 'hidden' : '';
+		}
+
+		burger.addEventListener('click', (e) => {
+			e.stopPropagation();
+			toggleMenu();
+		});
+
+		overlay.addEventListener('click', () => {
+			toggleMenu(false);
+		});
+
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && menu.classList.contains('active')) {
+				toggleMenu(false);
+				burger.focus();
+			}
+		});
+
+		// Закрытие при клике по ссылке
+		menu.querySelectorAll('.menu__link').forEach(link => {
+			link.addEventListener('click', () => {
+				toggleMenu(false);
+			});
+		});
+
+		// ----- Подсветка активного пункта по поддомену -----
+		function setActiveLink() {
+			const currentHost = window.location.hostname; // например, "rest.zarjaveli.ru"
+			const links = document.querySelectorAll('.menu__link');
+
+			links.forEach(link => {
+				link.classList.remove('menu__link--active');
+
+				// Получаем hostname из href ссылки
+				try {
+					const linkUrl = new URL(link.href);
+					if (linkUrl.hostname === currentHost) {
+						link.classList.add('menu__link--active');
+					}
+				} catch (e) {
+					// Если ссылка некорректна — пропускаем
+				}
+			});
+		}
+
+		// Вызываем при загрузке страницы
+		setActiveLink();
+	})();
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<header class="header">
+	<div class="container">
+		<div class="header__wrapper">
+			<a href="/zarjaveli_new/" class="logo header__logo">
+				<img src="assets/img/logo.svg" width="121" height="121" alt="" decoding="async">
+			</a>
+			<div class="header__top">
+				<div class="address header__address" data-da=".menu2,1199,3">
+					<div class="address__icon">
+						<svg class="location-icon" aria-hidden="true">
+							<use xlink:href="assets/img/sprite.svg#location"></use>
+						</svg>
+					</div>
+					<span>г. Москва</span>
+				</div>
+				<div class="time header__time" data-da=".menu2,1199,3">
+					<div class="time__icon">
+						<svg class="time-icon" aria-hidden="true">
+							<use xlink:href="assets/img/sprite.svg#time"></use>
+						</svg>
+					</div>
+					<span class="time__text">
+						<small>Вс-Чт</small> 11:00 - 23:00
+						&nbsp;
+						<small>Пт-Сб</small> 11:00 - 24:00
+					</span>
+				</div>
+				<form role="search" method="get" action="/" class="search header__search">
+					<div class="search__input">
+						<input type="search" name="s" placeholder="Поиск блюд" value="" required>
+						<button type="submit" class="search__button">
+							<svg class="search-icon">
+								<use xlink:href="assets/img/sprite.svg#search"></use>
+							</svg>
+						</button>
+					</div>
+				</form>
+				<div class="call header__call" data-da=".menu2,991,3">
+					<svg class="phone-icon" aria-hidden="true">
+						<use xlink:href="assets/img/sprite.svg#phone"></use>
+					</svg>
+					<a href="tel:+74951779757" class="hover-active">+7 (495) 177-97-57</a>
+					<div class="social footer__social">
+						<a href="https://wa.me/+70000000000" class="social__item" target="_blank" style="--color: 14, 189, 34">
+							<svg class="whatsapp-icon" aria-hidden="true">
+								<use xlink:href="assets/img/sprite.svg#whatsapp"></use>
+							</svg>
+						</a>
+						<a href="https://t.me/+70000000000" class="social__item" target="_blank" style="--color: 14, 84, 189">
+							<svg class="telegram-icon" aria-hidden="true">
+								<use xlink:href="assets/img/sprite.svg#telegram"></use>
+							</svg>
+						</a>
+						<a href="#" class="social__item" target="_blank" style="--color: 144, 0, 255">
+							<svg class="max-icon" aria-hidden="true">
+								<use xlink:href="assets/img/sprite.svg#max"></use>
+							</svg>
+						</a>
+
+					</div>
+				</div>
+				<button class="header__auth" type="button" data-modal="modal-auth" data-da=".menu2,575,0">
+					<svg class="auth-icon" aria-hidden="true">
+						<use xlink:href="assets/img/sprite.svg#auth"></use>
+					</svg>
+					<span>Вход в аккаунт</span>
+				</button>
+				<button class="burger" id="burgerBtn" aria-expanded="false" aria-controls="sideMenu" aria-label="Открыть меню">
+					<span class="burger__lines"></span>
+				</button>
+			</div>
+			<div class="header__bottom">
+				<div class="header__catalog" data-da=".menu2,1199,1">
+					<a href="category.html" class="button">
+						<svg class="menu-icon" aria-hidden="true">
+							<use xlink:href="assets/img/sprite.svg#menu"></use>
+						</svg>
+						<span>Меню ресторана </span>
+					</a>
+				</div>
+				<div class="header__mobile" data-da=".menu2,1199,2">
+					<nav class="nav header__nav">
+						<ul class="menu header__menu">
+							<li><a href="about.html">О ресторане</a></li>
+							<li><a href="action.html">Акции</a></li>
+							<li><a href="#">Банкетные залы</a></li>
+							<li><a href="payment.html">Доставка и оплата</a></li>
+							<li><a href="contact.html">Контакты</a></li>
+						</ul>
+					</nav>
+				</div>
+				<a href="javascript:void(0)" class="header__cart" data-da=".header__top,1199,2">
+					<svg class="cart-icon" aria-hidden="true">
+						<use xlink:href="assets/img/sprite.svg#cart"></use>
+					</svg>
+					<span class="header__cart-title">Корзина</span>
+					<span class="header__cart-count">1</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+<div class="overlay" id="overlay"></div>
+<!-- Боковое меню (выезжает справа) -->
+<nav class="menu2" id="sideMenu" aria-label="Основное меню">
+	<ul class="menu__list">
+		<li><a class="menu__link" href="https://zarjaveli.ru/">Главная</a></li>
+		<li><a class="menu__link" href="https://rest.zarjaveli.ru/">Ресторан</a></li>
+		<li><a class="menu__link" href="https://hall.zarjaveli.ru/">Холл</a></li>
+		<li><a class="menu__link" href="https://club.zarjaveli.ru/">Клуб</a></li>
+	</ul>
+	<div class="menu__footer">© Zarjaveli 2026</div>
+</nav>

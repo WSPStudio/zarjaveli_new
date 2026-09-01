@@ -1,0 +1,77 @@
+$burgerType: button // lines | button
+
+// Кнопка
+$burgerButtonWidth: 40px
+$burgerButtonHeight: 40px
+$burgerButtonBackground: $active
+$burgerButtonRadius: 8px
+
+// Линии
+$burgerWidth: 32px
+$burgerHeight: 24px
+
+$burgerLineWidth: 20px
+$burgerLineHeight: 2px
+$burgerLineOffset: 5px
+
+$burgerLineColor: $text
+
+.burger
+	position: relative
+	order: 10
+	flex-shrink: 0
+
+	@if $burgerType == button
+		width: $burgerButtonWidth
+		height: $burgerButtonHeight
+		background: $burgerButtonBackground
+		border-radius: $burgerButtonRadius
+
+	@else
+		width: $burgerWidth
+		height: $burgerHeight
+
+	@media (min-width: #{$burgerMedia + 1 + px})
+		display: none
+
+	&.active
+		.burger__lines
+			background: transparent
+
+			&:before
+				top: 0
+				rotate: 135deg
+
+			&:after
+				top: 0
+				rotate: -135deg
+
+
+	&__lines,
+	&__lines:before,
+	&__lines:after
+		position: absolute
+		right: 50%
+
+		width: if($burgerType == button, $burgerLineWidth, $burgerWidth)
+		height: $burgerLineHeight
+
+		background-color: $burgerLineColor
+
+		transition: 0.4s
+		pointer-events: none
+
+	&__lines
+		top: 50%
+		translate: 50% -50%
+
+		&:before,
+		&:after
+			content: ''
+			translate: 50% 0
+
+		&:before
+			top: -$burgerLineOffset
+
+		&:after
+			top: $burgerLineOffset

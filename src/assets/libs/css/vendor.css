@@ -1,0 +1,15 @@
+@import "animate.css";
+@import "viewer.css";
+
+@import "swiper/swiper.css";
+@import "swiper/modules/scrollbar.css";
+@import "swiper/modules/thumbs.css"; 
+
+/* 
+@import "swiper/modules/navigation.css";
+@import "swiper/modules/free-mode.css";
+@import "swiper/modules/grid.css";
+@import "swiper/modules/parallax.css";
+@import "swiper/modules/zoom.css";  
+*/
+@import "viewer.css";

@@ -1,0 +1,21 @@
+<!-- @@title -->
+<div class=@@class>
+	<div class="container">
+		<div class="section__top">
+			<div class="title-3 title-uppercase">@@title</div>
+		</div>
+		<div class="slider card-slider">
+			<div class="swiper card-container">
+				<div class="swiper-wrapper">
+					@@for(var i = 0; i < 6; i++){ <div class="swiper-slide">
+						@@include("card.html", {
+						"label1" : ""
+						})
+				</div>
+				}
+			</div>
+		</div>
+		<div class="swiper-pagination slider__pagination card-pagination"></div>
+	</div>
+</div>
+</div>

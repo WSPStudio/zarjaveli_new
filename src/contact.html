@@ -1,0 +1,110 @@
+@@include('assets/html/head.html', {
+"class" : ''
+})
+@@include("assets/html/crumbs.html", {
+"list": [
+{
+"title":"Контакты",
+"link":"'#'"
+},
+]
+})
+
+<!-- Контакты -->
+<div class="section contact">
+	<div class="container">
+		<div class="section__top">
+			<h1 class="title">Контакты</h1>
+		</div>
+		<div class="contact__items">
+			<div class="contact__item">
+				<div class="contact__item-label">Наш адрес</div>
+				<div class="contact__item-text">
+					<div class="address footer__item">
+						<div class="address__icon">
+							<svg class="location-icon" aria-hidden="true">
+								<use xlink:href="assets/img/sprite.svg#location"></use>
+							</svg>
+						</div>
+						<span class="address__text">г. Москва, Каширский пр. 25, корп. 4</span>
+					</div>
+				</div>
+			</div>
+			<div class="contact__item">
+				<div class="contact__item-label">Время работы</div>
+				<div class="time contact__item-text">
+					<div class="time__icon">
+						<svg class="time-icon" aria-hidden="true">
+							<use xlink:href="assets/img/sprite.svg#time"></use>
+						</svg>
+					</div>
+					<span class="time__text">
+						<small>Вс-Чт</small> 11:00 - 23:00
+						<small>Пт-Сб</small> 11:00 - 24:00
+					</span>
+				</div>
+			</div>
+			<div class="contact__item">
+				<div class="contact__item-label">Телефон для связи</div>
+				<div class="call contact__item-text">
+					<svg class="phone-icon" aria-hidden="true">
+						<use xlink:href="assets/img/sprite.svg#phone"></use>
+					</svg>
+					<a href="tel:+74951779757" class="hover-active">+7 (495) 177-97-57</a>
+					<div class="social footer__social">
+						<a href="https://wa.me/+70000000000" class="social__item" target="_blank" style="--color: 14, 189, 34">
+							<svg class="whatsapp-icon" aria-hidden="true">
+								<use xlink:href="assets/img/sprite.svg#whatsapp"></use>
+							</svg>
+						</a>
+						<a href="https://t.me/+70000000000" class="social__item" target="_blank" style="--color: 14, 84, 189">
+							<svg class="telegram-icon" aria-hidden="true">
+								<use xlink:href="assets/img/sprite.svg#telegram"></use>
+							</svg>
+						</a>
+						<a href="#" class="social__item" target="_blank" style="--color: 144, 0, 255">
+							<svg class="max-icon" aria-hidden="true">
+								<use xlink:href="assets/img/sprite.svg#max"></use>
+							</svg>
+						</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Карта -->
+<div class="section-bottom contact">
+	<div class="container">
+		<div class="contact__map-wrapper">
+			<div class="contact__block">
+				<div class="form contact__form">
+					<div class="title-3 title-uppercase form__title contact__form-title">Обратная связь</div>
+					<form>
+						<div class="form__fields">
+							<input class="input" type="text" name="name" placeholder="Введите ваше имя" required>
+							<input class="input" type="tel" name="phone" placeholder="Номер телефона" required data-required-choice>
+							<input class="input" type="email" name="email" placeholder="Email" required data-required-choice>
+							<textarea name="message" cols="30" rows="5" class="textarea" placeholder="Сообщение" required></textarea>
+							<div class="form__row">
+								<label class="checkbox">
+									<input class="checkbox__input" type="checkbox" required>
+									<span class="checkbox__text">Я соглашаюсь с <a href="text.html">пользовательским соглашением</a> <br> и <a href="text.html">политикой конфиденциальности</a></span>
+								</label>
+								<button class="button submit">Отправить</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="map-wrapper contact__map">
+				<div class="loader loader-default"></div>
+				<div id="contact-map" class="map"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@@include('assets/html/foot.html')

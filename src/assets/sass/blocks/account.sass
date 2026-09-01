@@ -1,0 +1,398 @@
+.account
+	&__wrapper
+		display: grid
+		grid-template-columns: 268px 1fr 
+		+adap('gap', 40, 20)
+		align-items: start
+
+	&__left 
+		+adap('padding', 20, 12)
+
+		@media (min-width: 992px)
+			position: sticky
+			top: calc(var(--headerFixedHeight) + 12px)
+
+		background: #101010
+		+adap('border-radius', 16, 12)
+
+	&__header
+		display: grid
+		+adap('gap', 12, 8)	
+
+		&-button 
+			display: flex
+			align-items: center
+			+adap('gap', 16, 12)
+			+adap('padding-block', 12, 8)
+
+			color: rgba($text, .6)
+			+t
+
+			+hov
+				color: $active
+
+			&.active 
+				color: $active
+
+			svg 
+				max-width: 17px
+				max-height: 17px
+
+				fill: currentColor
+				transition: none
+				+t
+
+				&.account-icon
+					fill: none
+					stroke: $active
+
+	&__right 
+		max-width: 1144px
+		+adap('padding', 40, 16)
+
+		border: 1px solid rgba(255, 255, 255, 0.12)
+		+adap('border-radius', 20, 16)
+		background: #101010
+
+		&-title 
+			grid-column: 1/-1
+
+	&__item 
+		display: grid
+		+adap('gap', 20, 16)
+
+	&__form 
+		.form__fields 
+			grid-template-columns: repeat(3, 1fr)
+
+		.checkbox
+			display: flex
+			align-items: center
+
+			&__input
+				margin-top: 0
+
+				&:checked+.checkbox__text
+					color: $active
+
+			&__text 
+
+				font-size: 16px
+
+	&__address 
+		display: grid
+		grid-template-columns: 1fr auto auto
+		gap: 20px
+		+adap('padding', 20, 16)
+
+		border: 1px solid rgba(255, 255, 255, 0.12)
+		+adap('border-radius', 16, 12)
+		
+		&-title 
+			display: block
+			+adap('margin-bottom', 24, 16)
+
+			+sb
+
+		&-edit, 
+		&-remove 
+			width: 24px
+			height: 24px
+			+t
+
+			svg 
+				width: 16px
+				height: 16px
+
+				fill: #fff
+
+			+hov
+				scale: 1.1
+
+		&-remove
+			svg
+				fill: #FF073D
+
+		&-text 
+			display: flex
+			align-items: center
+			+adap('gap', 16, 12)
+
+			+adap('padding-left', 40, 32)
+
+			background: url(../img/icons/location.svg) left center / 22px no-repeat
+
+	[contenteditable]
+		word-break: break-word
+
+	&__row 
+		display: grid
+		grid-template-columns: 1fr auto
+		align-items: end
+		width: 100%
+		grid-column: 1/-1
+		+adap('gap', 40, 12)
+
+	&__submit 
+		justify-self: start
+
+
+
+	&-history
+		display: grid
+		+adap('gap', 20, 16)
+
+		&__item  
+			+adap('padding', 20, 16)
+			
+			+adap('border-radius', 16, 12)
+			border: 1px solid rgba(255, 255, 255, 0.12)
+
+			&-top
+				display: grid
+				grid-template-columns: auto 1fr
+				gap: 12px
+				width: 100%
+				+adap('margin-bottom', 24, 16)
+			
+				&>*
+					&:nth-child(2n)
+						text-align: right
+
+			&-title 
+				font-weight: 700
+				+adap('font-size', 20, 14)
+				line-height: 1.4
+				color: $active
+
+			&-date  
+				color: rgba($text, .6)
+				grid-column: 1/-1
+
+			&-summa 
+				font-weight: 600
+				+adap('font-size', 20, 14)
+				line-height: 1.2
+
+			&.active 
+				.account-history__products
+					+adap('margin-bottom', 24, 20)
+					opacity: 1
+					pointer-events: auto
+
+					@supports (height: calc-size(fit-content, size))
+						height: calc-size(fit-content, size)
+					
+					@supports not (height: calc-size(fit-content, size))
+						height: auto
+
+		&__products
+			height: 0
+			opacity: 0
+			transition: height .3s, opacity .1s, margin-bottom .3s
+			pointer-events: none
+
+		&__product
+			display: grid
+			grid-template: repeat(2, auto) / auto 1fr auto
+			+adap('column-gap', 40, 16)
+			row-gap: 12px
+			align-items: center
+			+adap('padding-block', 24, 12)
+
+			border-bottom: 1px solid rgba($text, .2)
+
+			&:first-child
+				border-top: 1px solid rgba($text, .2)
+
+			&-img 
+				grid-row: span 2
+				+adap('width', 120, minusPercent(20, 120))
+				+adap('height', 76, minusPercent(20, 76))
+
+				img 
+					width: 100%
+					height: 100%
+
+					object-fit: cover
+					+adap('border-radius', 16, 12)
+
+			&-title 
+				font-weight: 600
+				+adap('font-size', 20, 14)
+				line-height: 1.2
+
+			&-price 
+				+adap('font-size', 20, 14)
+
+			&-count 
+				display: flex
+				align-items: center
+				+adap('gap', 12, 8)	
+
+				font-weight: 600
+				+adap('font-size', 20, 14)
+				line-height: 1.2
+				color: rgba($text, .4)
+
+				span 
+					color: #fff
+
+		&__button 
+			+adap('font-size', 16, 14)
+
+		&__row 
+			display: flex
+			align-items: center
+			justify-content: space-between
+
+		&__more
+			color: rgba($text, .4)
+			+adap('font-size', 16, 14)
+
+	@media (max-width: 1199px)
+		&__form 
+			.form__fields 
+				grid-template-columns: repeat(2, 1fr)
+
+		&__row 
+			grid-template-columns: 100%
+
+	@media (max-width: 991px)
+		&__wrapper
+			grid-template-columns: 100%
+
+		&__header 
+			display: flex
+			justify-content: flex-start
+			+adap('gap', 60, 12 , $min: true)
+
+			+adap('font-size', 16, 15 , $min: true)
+
+			&-button 
+				+adap('gap', 12, 8 , $min: true)
+
+
+	@media (max-width: 575px)
+		&__form 
+			.form__fields 
+				grid-template-columns: 100%
+
+		&__submit 
+			width: 100%
+
+		&__address
+			display: flex
+			flex-wrap: wrap
+
+			&-text 
+				width: 100%
+
+		&-history
+			&__product 
+				grid-template-columns: auto 1fr auto 
+				gap: 8px
+
+				&-img 
+					grid-row: span 2
+					width: 60px
+					height: auto
+					align-self: start
+
+				&-title 
+					grid-column: span 3
+ 
+				&-price 
+					grid-area: 2/4/2/4
+
+			&__row 
+				flex-direction: column-reverse
+				gap: 16px
+				align-items: flex-start
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

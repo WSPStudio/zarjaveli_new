@@ -1,0 +1,421 @@
+.checkout
+	&__top 
+		display: flex
+		align-items: center
+		justify-content: space-between
+		gap: 16px
+		flex-wrap: wrap
+
+	&__remove 
+		display: flex
+		align-items: center
+		gap: 12px
+
+		text-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.2)
+		opacity: 0.6
+		+t 
+
+		+hov
+			color: $active
+
+		svg 
+			width: 16px
+			height: 17px
+
+			fill: currentColor
+			transition: none
+
+	&__wrapper
+		display: grid
+		grid-template-columns: 1fr auto
+		+adap('gap', 40, 20)
+		align-items: start
+
+	&__left 
+		display: grid
+		grid-template-columns: 100%
+		+adap('gap', 40, 20)
+		max-width: 1165px
+		min-width: 0
+
+	&__item
+		display: grid
+		grid-template-columns: 248px 1fr
+		+adap('gap', 40, 16)
+		align-items: center
+
+		&:not(:first-child)
+			padding-top: 12px
+
+		&:not(:last-child)
+			padding-bottom: 12px
+			border-bottom: 1px solid rgba($text, 0.2)		
+
+		&-img 
+			display: flex
+			+adap('min-height', 192, 140)
+
+			overflow: hidden
+
+			img 
+				width: auto
+				height: 100%
+
+				+adap('border-radius', 16, 12)
+				object-fit: cover
+
+
+		&-right 
+			display: grid
+			+adap('gap', 20, 12)
+
+		&-title 
+			font-weight: 600
+			+adap('font-size', 20, 14)
+			line-height: 1.2
+
+		&-row 
+			display: flex
+			align-items: center
+			justify-content: space-between
+			gap: 16px
+
+		&-price 
+			gap: 4px
+
+			font-size: 20px
+
+		&-count 
+			width: max-content
+			+adap('min-width', 136, 100)
+
+	&__right
+		@media (min-width: 992px)
+			position: sticky
+			margin-top: -60px
+			top: calc(var(--headerFixedHeight) + 12px)
+
+			+adap('min-width', 368, 300 , $min: true)
+
+
+
+	
+	&-result
+		+adap('padding', 20, 12)
+		
+		background: $bg2
+		+adap('border-radius', 16, 12)
+
+		&__top 
+			display: flex
+			align-items: center
+			justify-content: space-between
+			margin-bottom: 12px
+			padding-bottom: 12px
+
+			border-bottom: 1px solid rgba($text, 0.2)
+
+			text-transform: uppercase
+			+adap('font-size', 18, 16)
+			font-weight: 600
+			line-height: 1.33333
+
+		&__rows 
+			display: grid
+			grid-template-columns: 100%
+			gap: 12px
+			+adap('margin-bottom', 20, 16)
+
+		&__row 
+			display: flex
+			align-items: center
+			justify-content: space-between
+			gap: 10px
+
+			+medium
+			+adap('font-size', 16, 15)
+
+		&__button 
+			width: 100%
+
+		&__text 
+			margin-top: 10px
+			+medium
+			line-height: 1.35
+			color: #f00
+
+	&-tabs 
+		justify-self: start
+
+		&__header 
+			display: flex
+			align-items: center
+			+adap('gap', 30, 10)
+			+adap('margin-bottom', 30, 20)
+
+			&>*
+				@media (max-width: 575px)
+					width: 100%
+					min-width: auto
+
+				&.active 
+					background: $active
+					border-color: $active
+					color: $bg
+
+		&__item 
+			position: relative
+
+			display: grid
+			grid-template-columns: 100%
+			justify-items: start
+			+adap('gap', 20, 12)
+			+adap('padding-block', 40, 16)
+			+adap('padding-inline', 28, 16)
+
+			border: 2px solid transparent
+
+			background: linear-gradient(rgba(#000, .7), rgba(#000, .7)) padding-box, linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)),  radial-gradient(33.11% 33.11% at -12.8% -14.76%,#FFFFFF 0%, rgba(255, 255, 255, 0) 100%) border-box
+
+			+adap('border-radius', 16, 12)
+
+			&:before
+				content: ''
+				
+				+abs 
+				z-index: 1
+
+				background: radial-gradient(81.55% 81.55% at 50% 100%, rgba(255, 153, 0, 0.1) 0%, rgba(255, 153, 0, 0) 100%)
+				pointer-events: none
+
+			&:after
+				content: ''
+				position: absolute
+				left: 0
+				bottom: -1px
+
+				width: 100%
+				height: 1px
+
+				background: linear-gradient(90deg, transparent 0%, $active 50%, transparent 100%)
+				+adap('font-size', 20, 16)
+				font-weight: 600
+				line-height: 1.2
+
+			.address 
+				font-weight: 600
+				+adap('font-size', 20, 16)
+				line-height: 1.3
+				color: $active
+
+	&__form 
+		+adap('min-width', 804, 600)
+		margin-top: 8px
+
+		.form__fields 
+			grid-template-columns: 1fr 10% 10% 10% minmax(130px,17%)
+
+			@media (max-width: 1199px)
+				grid-template-columns: repeat(3, 1fr)
+
+				.input-item:has([name="street"])
+					grid-column: span 2
+
+			@media (max-width: 767px)
+				grid-template-columns: repeat(2, 1fr)
+
+
+	&__content 
+		max-width: 900px
+
+	&__form-2 
+		width: 100%
+
+		.form__fields 
+			grid-template-columns: repeat(2, 1fr)
+
+			@media (max-width: 575px)
+				grid-template-columns: 100%
+
+		.callback-time
+			display: flex
+			align-items: center
+			flex-wrap: wrap
+			row-gap: 12px
+			+adap('column-gap', 40, 16)
+			grid-column: 1/-1
+
+
+			&:focus-within
+				>span 
+					color: rgba($text, .4)
+
+			&__title 
+				width: 100%
+
+			&__field
+				position: relative
+
+				+adap('min-width', 282, 200)
+
+				overflow: hidden
+				cursor: pointer
+				border-radius: 12px
+
+				&:has([disabled])
+					&:after
+						opacity: .2
+
+					&:before
+						opacity: .4
+					
+
+				&:after
+					content: ''
+
+					position: absolute
+					right: 0
+					top: 0 
+
+					width: 32px
+					height: 100%
+					background: #1F1F1F
+
+					transition: opacity .3s
+					pointer-events: none
+
+				&:before
+					content: ''
+
+					position: absolute
+					right: 12px
+					top: 50% 
+					z-index: 2
+
+					translate: 0 -50%
+					width: 24px
+					height: 24px
+
+					+mask(arrow(16px), rgba($text, .6)) 
+
+					transition: opacity .3s
+					pointer-events: none
+
+				.input
+					width: 100%
+
+					background: #1F1F1F
+					transition: opacity .3s
+
+					&[disabled]
+						cursor: not-allowed
+						opacity: .7
+
+				@media (max-width: 575px)
+					width: 100%
+
+	@media (max-width: 1199px)
+		&__form 
+			min-width: 100%
+
+	@media (max-width: 991px)
+		&__wrapper
+			grid-template-columns: 100%
+
+		&__item
+			grid-template-columns: 32% 1fr
+
+			&-img 
+				min-height: auto
+
+		&-tabs 
+			width: 100%
+
+			&__item 
+				width: 100%
+
+	@media (max-width: 767px)
+	
+	@media (max-width: 360px)
+		&__item 
+			align-items: start
+
+			&-row 
+				display: grid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

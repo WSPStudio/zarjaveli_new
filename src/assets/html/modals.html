@@ -1,0 +1,359 @@
+<!-- Модалки -->
+<div class="modals">
+	<!-- Авторизация -->
+	<div class="modal modal-auth" id="modal-auth">
+		<div class="modal__dialog">
+			<div class="modal__content">
+				<button class="modal__close" type="button" data-modal-close>
+					<svg class="close">
+						<use xlink:href="assets/img/sprite.svg#close"></use>
+					</svg>
+				</button>
+				<img src="assets/img/modal/1.webp" class="modal__bg" alt="" loading="lazy" decoding="async" pic="991,575">
+				<div class="modal__wrapper">
+					<div class="modal__left">
+						<img src="assets/img/modal/logo.svg" class="modal__logo" width="176" height="176" alt="" loading="lazy" decoding="async">
+					</div>
+					<div class="modal__right">
+						<div class="title-3 title-uppercase modal__title">Вход в аккаунт</div>
+						<hr>
+						<div class="form modal__form">
+							<form>
+								<input type="hidden" name="info" class="modal-info">
+								<div class="form__fields">
+									<label class="input-item">
+										<span>Номер телефона</span>
+										<input type="tel" name="phone" class="input" placeholder="Введите ваш телефон" required>
+									</label>
+									<label class="input-item">
+										<span>Ваш пароль</span>
+										<input type="password" name="password" minlength="6" class="input" placeholder="Введите ваш пароль" required>
+									</label>
+									<button class="button submit">Вход в аккаунт</button>
+									<hr>
+									<div class="form__links">
+										<button type="button" data-modal="modal-reg">У меня нет аккаунта</button>
+										<button class="active-text" type="button" data-modal="modal-forgot" data-modal-stack>Забыли пароль?</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Регистрация -->
+	<div class="modal modal-reg" id="modal-reg">
+		<div class="modal__dialog">
+			<div class="modal__content">
+				<button class="modal__close" type="button" data-modal-close>
+					<svg class="close">
+						<use xlink:href="assets/img/sprite.svg#close"></use>
+					</svg>
+				</button>
+				<img src="assets/img/modal/1.webp" class="modal__bg" alt="" loading="lazy" decoding="async" pic="991,575">
+				<div class="modal__wrapper">
+					<div class="modal__left">
+						<img src="assets/img/modal/logo.svg" class="modal__logo" width="176" height="176" alt="" loading="lazy" decoding="async">
+					</div>
+					<div class="modal__right">
+						<div class="title-3 title-uppercase modal__title">Регистрация</div>
+						<hr>
+						<div class="form modal__form">
+							<form>
+								<input type="hidden" name="info" class="modal-info">
+								<div class="form__fields">
+									<label class="input-item">
+										<span>Номер телефона</span>
+										<input type="tel" name="phone" class="input" placeholder="Введите ваш телефон" required>
+									</label>
+									<label class="input-item">
+										<span>Придумайте пароль</span>
+										<input type="password" name="password" minlength="6" class="input" placeholder="Введите ваш пароль" required>
+									</label>
+									<label class="input-item">
+										<span>Повторите ваш пароль</span>
+										<input type="password" name="password_repeat" class="input" placeholder="Введите ваш пароль еще раз" required>
+									</label>
+									<label class="checkbox">
+										<input class="checkbox__input" type="checkbox" required>
+										<span class="checkbox__text">
+											Нажимая на кнопку “Регистрация аккаунта”, Вы соглашаетесь с
+											<a href="text.html">Пользовательским соглашением</a> <br>
+											и
+											<a href="text.html">Политикой конфиденциальности</a>
+										</span>
+									</label>
+									<button class="button submit">Зарегистрироваться</button>
+									<hr>
+									<div class="form__links">
+										<button type="button" data-modal="modal-auth">У меня есть аккаунт</button>
+										<button class="active-text" type="button" data-modal="modal-forgot" data-modal-stack>Забыли пароль?</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Восстановление пароля -->
+	<div class="modal modal-forgot" id="modal-forgot">
+		<div class="modal__dialog">
+			<div class="modal__content">
+				<button class="modal__close" type="button" data-modal-close>
+					<svg class="close">
+						<use xlink:href="assets/img/sprite.svg#close"></use>
+					</svg>
+				</button>
+				<img src="assets/img/modal/1.webp" class="modal__bg" alt="" loading="lazy" decoding="async" pic="991">
+				<div class="modal__wrapper">
+					<div class="modal__left">
+						<img src="assets/img/modal/logo.svg" class="modal__logo" width="176" height="176" alt="" loading="lazy" decoding="async">
+					</div>
+					<div class="modal__right">
+						<div class="title-3 title-uppercase modal__title">Восстановление</div>
+						<hr>
+						<div class="form modal__form">
+							<form>
+								<input type="hidden" name="info" class="modal-info">
+								<div class="form__fields">
+									<label class="input-item">
+										<span>Номер телефона</span>
+										<input type="tel" name="phone_forgot" class="input" placeholder="Введите ваш телефон" required>
+									</label>
+									<button class="button submit">Отправить код</button>
+									<hr>
+									<div class="form__links">
+										<button class="active-text" type="button" onclick="window.history.back()">Вернуться назад</button>
+									</div>
+								</div>
+							</form>
+
+							<script>
+								const forgotPhones = document.querySelectorAll('[name="phone_forgot"]');
+
+								if (forgotPhones) {
+									forgotPhones.forEach(phoneInput => {
+										const form = phoneInput.closest('form');
+
+										if (!form) return
+
+										const submitButton = form.querySelector('.submit')
+										const inputItem = phoneInput?.closest('.input-item')
+
+										if (!phoneInput || !submitButton || !inputItem) return
+
+										const title = inputItem.querySelector('span')
+
+										let timer
+
+										form.addEventListener('submit', async (event) => {
+											event.preventDefault()
+
+											if (phoneInput.name === 'sms_code') {
+												await confirmCode()
+												return
+											}
+
+											const success = await sendPhone()
+
+											if (success) {
+												showSmsStep()
+											}
+										})
+
+										async function sendPhone() {
+											// 
+											// 
+											// 
+											// 
+											// 
+											// Аякс запрос отправки телефона
+											// 
+											// 
+											// 
+											// 
+
+											return true
+										}
+
+										async function confirmCode() {
+											const code = phoneInput.value
+
+											if (code.length !== 6) {
+												phoneInput.setCustomValidity('Введите код из 6 цифр')
+												phoneInput.reportValidity()
+												return
+											}
+
+											phoneInput.setCustomValidity('')
+
+											openModal('#modal-new-password', false, null, false, false)
+
+											// 
+											// 
+											// 
+											// 
+											// 
+											// Аякс запрос проверки кода
+											// 
+											// 
+											// 
+											// 
+											// 
+										}
+
+										function showSmsStep() {
+											title.textContent = 'Код из СМС'
+
+											phoneInput.type = 'text'
+											phoneInput.name = 'sms_code'
+											phoneInput.value = ''
+											phoneInput.placeholder = '_ _ _ _ _ _'
+											phoneInput.inputMode = 'numeric'
+											phoneInput.autocomplete = 'one-time-code'
+											phoneInput.maxLength = 6
+
+											phoneInput.removeEventListener('input', handleCodeInput)
+											phoneInput.addEventListener('input', handleCodeInput)
+
+											submitButton.textContent = 'Подтвердить'
+
+											const resend = document.createElement('div')
+											resend.className = 'form__resend'
+											resend.innerHTML = `
+												<span class="form__resend-text">Повторная отправка смс</span>
+												<span class="active-text form__timer">1:00</span>
+											`
+
+											submitButton.before(resend)
+
+											startTimer(resend)
+										}
+
+										function handleCodeInput() {
+											this.value = this.value.replace(/\D/g, '').slice(0, 6)
+											this.setCustomValidity('')
+										}
+
+										function startTimer(resend) {
+											clearInterval(timer)
+
+											let seconds = 60
+
+											const timerElement = resend.querySelector('.form__timer')
+
+											const updateTimer = () => {
+												const minutes = Math.floor(seconds / 60)
+												const remainingSeconds = seconds % 60
+
+												timerElement.textContent = `${minutes}:${String(remainingSeconds).padStart(2, '0')}`
+											}
+
+											updateTimer()
+
+											timer = setInterval(() => {
+												seconds--
+
+												updateTimer()
+
+												if (seconds <= 0) {
+													clearInterval(timer)
+													enableResend(resend)
+												}
+											}, 1000)
+										}
+
+										function enableResend(resend) {
+											const text = resend.querySelector('.form__resend-text')
+											const timerElement = resend.querySelector('.form__timer')
+
+											timerElement.remove()
+
+											text.innerHTML = `
+												<span>Повторная отправка смс</span>
+												<button type="button" class="active-text form__resend-button">
+													Отправить еще раз
+												</button>
+											`
+
+											const resendButton = text.querySelector('.form__resend-button')
+
+											resendButton.addEventListener('click', async () => {
+												resendButton.disabled = true
+
+												const success = await sendPhone()
+
+												if (success) {
+													resendButton.remove()
+													text.textContent = 'Повторная отправка смс'
+
+													const newTimer = document.createElement('span')
+													newTimer.className = 'form__timer'
+													newTimer.textContent = '1:00'
+
+													text.after(newTimer)
+													phoneInput.value = ''
+
+													startTimer(resend)
+												} else {
+													resendButton.disabled = false
+												}
+											})
+										}
+									});
+								}
+								document.querySelectorAll('form').forEach((form) => {
+								})
+							</script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Новый пароль -->
+	<div class="modal modal-new-password" id="modal-new-password">
+		<div class="modal__dialog">
+			<div class="modal__content">
+				<button class="modal__close" type="button" data-modal-close>
+					<svg class="close">
+						<use xlink:href="assets/img/sprite.svg#close"></use>
+					</svg>
+				</button>
+				<img src="assets/img/modal/1.webp" class="modal__bg" alt="" loading="lazy" decoding="async" pic="991,575">
+				<div class="modal__wrapper">
+					<div class="modal__left">
+						<img src="assets/img/modal/logo.svg" class="modal__logo" width="176" height="176" alt="" loading="lazy" decoding="async">
+					</div>
+					<div class="modal__right">
+						<div class="title-3 title-uppercase modal__title">Восстановление</div>
+						<hr>
+						<div class="form modal__form">
+							<form>
+								<input type="hidden" name="info" class="modal-info">
+								<div class="form__fields">
+									<label class="input-item">
+										<span>Придумайте пароль</span>
+										<input type="password" name="password" minlength="6" class="input" placeholder="Введите ваш пароль" required>
+									</label>
+									<label class="input-item">
+										<span>Повторите ваш пароль</span>
+										<input type="password" name="password_repeat" class="input" placeholder="Введите ваш пароль еще раз" required>
+									</label>
+									<button class="button submit">Изменить пароль</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

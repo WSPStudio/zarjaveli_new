@@ -1,0 +1,240 @@
+.footer 
+	background: $bg2
+	
+	&__top 
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+		+adap('gap', 80, 12 , $widthTo: 1200)
+		+adap('padding-block', 40, 20)
+
+		&-wrapper
+			background: #000
+
+	&__logo 
+		img 
+			+adap('width', 312, minusPercent(40, 312) , $widthTo: 1200)
+			+adap('height', 61, minusPercent(40, 61) , $widthTo: 1200)
+
+	&__middle 
+		display: contents
+
+		@media (max-width: 1660px)
+			display: grid
+			gap: 12px
+
+	&__menu 
+		display: grid
+		gap: 12px
+
+		a 
+			+hov
+				color: $active
+
+	&__contacts 
+		display: grid
+		+adap('gap', 20, 12)
+		align-content: start
+		+adap('flex-basis', 400, 300 , $widthTo: 1200)
+		flex-shrink: 1
+
+	&__text 
+		display: grid
+		grid-template-columns: 100%
+		gap: 12px
+		color: rgba(#fff, .6)
+		+adap('flex-basis', 400, 120 , $widthTo: 1200)
+		flex-shrink: 1
+
+		+adap('font-size', 16, 15)
+		font-weight: 500
+
+		white-space: nowrap
+
+
+		a 
+			display: contents
+
+		span 
+			color: #fff
+
+	&__bottom 
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding-block: 12px
+		flex-wrap: wrap
+		+adap('gap', 16, 12)
+
+		+adap('font-size', 16, 14  , $widthTo: 992)
+
+	@media (max-width: 991px)
+		@media (min-width: 768px)
+			&__top 
+				display: grid
+				grid-template-columns: repeat(2, 1fr)
+				gap: 40px 20px
+
+			&__middle 
+				display: grid
+				grid-template-columns: repeat(2, 1fr)
+
+			&__menu 
+				display: contents
+
+		&__bottom
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+
+			font-size: 14px
+					
+			&>* 
+				&:nth-child(2n)
+					@media (min-width: 576px)
+						text-align: right
+
+	@media (max-width: 767px)
+		&__top 
+			display: grid
+			grid-template-columns: 100%
+			gap: 20px
+			justify-items: start
+
+	@media (max-width: 575px)
+		&__bottom
+			grid-template-columns: 100%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

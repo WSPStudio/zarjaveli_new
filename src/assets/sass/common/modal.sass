@@ -1,0 +1,188 @@
+$max-width: 960px
+$padding-y: 40
+$padding-x: 40
+$brs: 8px
+
+$close-size: 20
+$close-offset: 20
+$close-color: $gray 
+
+.modal 
+	position: fixed
+	inset: 0
+	z-index: 11
+
+	display: none	 
+	width: 100%
+	height: 100%
+					 
+	overflow: hidden
+	background: rgba(16, 16, 16, 0.8)
+	backdrop-filter: blur(8px)
+
+	&_open 
+		.modal__content
+			animation: modal-open 0.4s ease forwards
+
+	&_close
+		.modal__content
+			animation: modal-close 0.3s ease forwards
+
+	&__dialog 
+		width: 100%
+		height: 100%
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+
+		cursor: pointer
+
+	&__content
+		position: relative
+		
+		width: min(100%, $max-width)
+									
+		// +scrollbar(90vh, $scrollBarWidth: 4, $padding: 5) 
+		
+		background: $bg
+		+adap('border-radius', 20, 16)
+
+		cursor: default
+		+t
+
+		@keyframes modal-open 
+			from 
+				opacity: 0
+				translate: 0 -24px
+
+			to 
+				opacity: 1
+				translate: 0 0
+
+		@keyframes modal-close 
+			from 
+				opacity: 1
+				translate: 0 0
+
+			to 
+				opacity: 0
+				translate: 0 -24px
+
+
+	&__bg 
+		position: absolute
+		left: 0
+		top: 0
+		z-index: 0
+
+		width: 100%
+		height: 100%
+
+		object-fit: cover
+		pointer-events: none
+
+	&__wrapper
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+
+	&__left 
+		position: relative
+
+	&__logo 
+		position: absolute
+		left: 50%
+		top: 50%
+		translate: -50% -50%
+		z-index: 1
+
+	&__right 
+		position: relative
+		z-index: 1
+
+		display: grid
+		+adap('gap', 20, 16)
+		align-content: start
+		+adap('padding', 40, 16)
+
+		background: $bg
+
+	&__title
+		max-width: 90%
+		line-height: 1	
+
+	hr
+		display: block
+		height: 1px
+		margin: 0
+
+		border: 0
+		border-top: 1px solid rgba(#fff, .2)
+		border-radius: 1px
+
+	&__form 
+		.submit 
+			margin-top: 20px
+
+	&__close
+		position: absolute
+		right: 12px
+		top: 12px
+		z-index: 4
+
+		display: flex
+		align-items: center
+		justify-content: center
+		+adap('width', 44, 32)
+		+adap('height', 44, 32)
+
+		cursor: pointer
+		+t
+
+		svg 
+			width: 25%
+			height: 25%
+			
+			fill: rgba($text, .4) 
+
+			+hov
+				fill: $active
+
+	&-thank 
+		.modal
+			&__content 
+				display: grid
+				+adap('gap', 20, 12)
+				min-width: 280px
+				justify-items: center
+
+				background: #fff
+				color: $text
+
+			&__title, &__subtitle
+				margin: 0
+ 
+		img 
+			+adap('width', 100, 60)
+			+adap('height', 100, 60)
+
+
+	@media (max-width: 767px)
+		&__wrapper
+			grid-template-columns: 100%
+
+		&__bg,
+		&__left
+			display: none 
+
+	@media (max-width: 575px)
+		&__dialog
+			max-width: 100%
+			padding: 0 12px
+			margin-inline: auto
+
+  
+
+
+
+ 

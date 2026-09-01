@@ -1,0 +1,84 @@
+@@include('assets/html/head.html', {
+"class" : ''
+})
+@@include("assets/html/crumbs.html", {
+"list": [
+{
+"title":"Статьи",
+"link":"'news.html'"
+},
+{
+"title":"Название новости в несколько строк для общего понимания концепции",
+"link":"'#'"
+},
+]
+})
+
+<!-- Статья -->
+<div id="single-news" class="section news single-news">
+	<div class="container">
+		<div class="single-news__wrapper">
+			<div class="single-news__left">
+				<h1 class="title title-page title_left single-news__title">Название новости в несколько строк для общего понимания концепции</h1>
+
+				<time datetime="2026-06-29" class="single-news__date">
+					<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M11.2 0C17.3858 0 22.4 5.01424 22.4 11.2C22.4 17.3858 17.3858 22.4 11.2 22.4C5.01424 22.4 0 17.3858 0 11.2C0 5.01424 5.01424 0 11.2 0ZM10.1584 6.25072C9.95106 6.25072 9.75222 6.33308 9.60561 6.47969C9.459 6.6263 9.37664 6.82514 9.37664 7.03248V13.2832C9.37664 13.7155 9.72608 14.065 10.1584 14.065H16.4091C16.5142 14.0689 16.619 14.0517 16.7172 14.0142C16.8155 13.9767 16.9052 13.9198 16.9809 13.8469C17.0567 13.774 17.1169 13.6865 17.1581 13.5897C17.1993 13.493 17.2205 13.3889 17.2205 13.2838C17.2205 13.1786 17.1993 13.0745 17.1581 12.9778C17.1169 12.881 17.0567 12.7935 16.9809 12.7206C16.9052 12.6477 16.8155 12.5908 16.7172 12.5533C16.619 12.5158 16.5142 12.4986 16.4091 12.5026H10.939V7.03248C10.939 6.82534 10.8568 6.62666 10.7105 6.48009C10.5641 6.33351 10.3655 6.25102 10.1584 6.25072Z" fill="#FF9900" />
+					</svg>
+					<span>Дата написания статьи: 29.06.2026</span>
+				</time>
+
+				<div class="text-block">
+					<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
+
+					<blockquote>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</blockquote>
+
+					<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
+
+					<p>
+						<img src="assets/img/news/single/1.webp" alt="">
+					</p>
+
+					<h4>Подзаголовок</h4>
+
+					<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
+				</div>
+
+				<div class="single-news__pagination">
+					<a href="single-news.html" class="button button_border button_white single-news__pagination-button">
+						<svg class="prev-arrow-icon">
+							<use xlink:href="assets/img/sprite.svg#prev-arrow"></use>
+						</svg>
+						<span>Предыдущая <span class="hide-xs">статья</span></span>
+					</a>
+					<a href="single-news.html" class="button button_border button_white single-news__pagination-button">
+						<span>Следующая <span class="hide-xs">статья</span></span>
+						<svg class="next-arrow-icon">
+							<use xlink:href="assets/img/sprite.svg#next-arrow"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div class="singe-news__right">
+				<div class="other">
+					<div class="title-3 title-uppercase other__title">Другие статьи </div>
+					<div class="other__items">
+						@@for(var i = 0; i < 3; i++){ <a href="single-news.html" class="other__item">
+							<div class="other__item-img">
+								<img src="assets/img/news/1.webp" alt="img">
+							</div>
+							<div class="other__item-right">
+								<div class="other__item-title">Название новости</div>
+								<div class="other__item-text">Lorem Ipsum - это текст-"рыба", часто используемый</div>
+								<time datetime="2023-06-29" class="other__item-date">29.06.2023</time>
+							</div>
+							</a>
+							}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@@include('assets/html/foot.html')

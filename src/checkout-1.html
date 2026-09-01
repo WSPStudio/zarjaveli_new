@@ -1,0 +1,154 @@
+@@include('assets/html/head.html', {
+"class" : ''
+})
+@@include("assets/html/crumbs.html", {
+"list": [
+{
+"title":"Корзина",
+"link":"'#'"
+},
+]
+})
+
+<!-- Корзина -->
+<div class="section checkout">
+	<div class="container">
+		<div class="checkout__wrapper">
+			<div class="checkout__left">
+				<div class="checkout__top">
+					<h1 class="title checkout__title">Моя корзина</h1>
+					<button class="checkout__remove">
+						<svg class="basket-icon">
+							<use xlink:href="assets/img/sprite.svg#basket"></use>
+						</svg>
+						<span>Очистить корзину</span>
+					</button>
+				</div>
+
+				<div class="checkout__items">
+					<!-- not format -->
+					@@for(var i = 0; i < 5; i++){ 
+						<div class="checkout__item" data-card>
+							<a href="single-product.html" class="checkout__item-img">
+								<img src="assets/img/product/1.webp" alt="img" class="">
+							</a>
+							<div class="checkout__item-right">
+								<div class="checkout__item-title">Хинкали с сыром - 100 г</div>
+								<div class="checkout__item-row">
+									<div class="price checkout__item-price">
+										<del class="price-old"><span data-price="2000">2 000</span> ₽</del>
+										<div class="price-new"><span data-price="1500">1 500</span> ₽</div>
+									</div>
+									<div class="count checkout__item-count">
+										<button class="count__button count__minus" type="button">
+											<svg class="count__basket-icon" aria-hidden="true">
+												<use xlink:href="assets/img/sprite.svg#basket"></use>
+											</svg>
+											<svg class="count__minus-icon" aria-hidden="true">
+												<use xlink:href="assets/img/sprite.svg#minus"></use>
+											</svg>
+										</button>
+										<input type="number" class="count__value" value="1" disabled>
+										<button class="count__button count__plus">
+											<svg class="plus-icon" aria-hidden="true">
+												<use xlink:href="assets/img/sprite.svg#plus"></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					}
+				</div>
+
+				<div class="title">Доставка</div>
+
+				<div class="checkout-tabs" data-tabs>
+					<div class="checkout-tabs__header" data-tabs-header>
+						<button class="button button_border button_white button_big active" type="button">Самовывоз</button>
+						<button class="button button_border button_white button_big" type="button">Доставка</button>
+					</div>
+
+					<div class="checkout-tabs__content" data-tabs-body>
+						<div class="checkout-tabs__item">
+								<div class="active-text address">
+									<img src="assets/img/icons/location.svg" width="17" height="22" alt="icon">
+									<span>Адрес получения заказа</span>
+								</div>
+								<span>г. Москва, Каширский пр. 25, корп. 4, Москва</span>
+						</div>
+						<div class="checkout-tabs__item">
+							<div class="active-text address">
+								<img src="assets/img/icons/location.svg" width="17" height="22" alt="icon">
+								<span>Доставку осуществляем только в пределах района Каширский проезд</span>
+							</div>
+							<div class="form checkout__form">
+								<form>
+									<div class="form__fields">
+										<label class="input-item">
+											<span>Улица*</span>
+											<input type="text" name="street" class="input" placeholder="Московская ул." required>
+										</label>
+										<label class="input-item">
+											<span>Дом*</span>
+											<input type="text" name="house" class="input" placeholder="2а" size="5" required>
+										</label>
+										<label class="input-item">
+											<span>Подъезд</span>
+											<input type="text" name="entrance" class="input" placeholder="2" size="2">
+										</label>
+										<label class="input-item">
+											<span>Этаж</span>
+											<input type="text" name="floor" class="input" placeholder="11" size="2">
+										</label>
+										<label class="input-item">
+											<span>Квартира/Офис</span>
+											<input type="text" name="Квартира/Офис" class="input" placeholder="11" size="3">
+										</label>
+										<label class="input-item input-item_full">
+											<span>Комментарий к адресу доставки</span>
+											<textarea name="comment" cols="30" rows="5" class="textarea" placeholder="Не работает домофон"></textarea>
+										</label>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="checkout__right">
+				<div class="checkout-result">
+					<div class="checkout-result__top">
+						<div class="checkout-result__title">Итого</div>
+						<div class="checkout-result__price">8 499 ₽</div>
+					</div>
+					<div class="checkout-result__rows">
+						<div class="checkout-result__row">
+							<span>Всего товаров</span>
+							<span>3 шт</span>
+						</div>
+						<div class="checkout-result__row">
+							<span>Общая стоимость</span>
+							<span>9 999 ₽</span>
+						</div>
+						<div class="checkout-result__row">
+							<span class="active-text">Размер скидки</span>
+							<span class="active-text">1 401 ₽</span>
+						</div>
+					</div>
+					<button class="button checkout-result__button" type="button">Оформить заказ</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+@@include('assets/html/card-section.html', {
+"title" : "Так же рекомендуем",
+"label" : "",
+"bg" : false,
+"class" : '"section"',
+})
+@@include('assets/html/foot.html')

@@ -1,0 +1,97 @@
+.info
+	&__wrapper
+		+adap('padding', 40, 16)
+
+		border: 2px solid transparent
+
+		background: linear-gradient(#000, #000) padding-box, linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)),  radial-gradient(33.11% 33.11% at -12.8% -14.76%,#FFFFFF 0%, rgba(255, 255, 255, 0) 100%) border-box
+		 
+		+adap('border-radius', 16, 12)
+
+	&__text 
+		columns: 2 530px
+		+adap('column-gap', 40, 16)
+		
+		>* 
+			break-inside: avoid
+
+		blockquote
+			display: block
+			+adap('padding', 20, 12)
+
+			border: 1px solid rgba(255, 153, 0, 0.12)
+			border-radius: 12px
+			background: transparent
+
+			@media (max-width: #{$firstBreakpoint + px}) or (min-width: #{$firstBreakpoint + 1 + px})
+				margin-top: 0
+
+			&:after,
+			&:before
+				display: none
+
+		
+		ul
+			display: block
+			columns: 2 280px 
+			gap: 12px
+
+			li
+				display: flex
+				align-items: center
+				gap: 8px 
+				padding-left: 0
+				margin-bottom: 12px 
+
+
+				break-inside: avoid
+
+				@media (max-width: #{$firstBreakpoint + px})
+					padding-left: 0
+					
+				&:before
+					content: ''
+					position: static
+
+					+adap('width', 24, 16)
+					+adap('height', 24, 16)
+					flex-shrink: 0
+
+					background: url(../img/icons/list-decor.webp) center / 20px no-repeat
+		
+		
+
+		
+		
+		
+
+		
+		
+		
+		
+
+		
+		
+		
+
+		
+		
+		
+
+		
+		
+		
+		
+
+		
+		
+		
+
+		
+		
+		
+
+		
+		
+		
+

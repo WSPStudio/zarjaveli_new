@@ -1,0 +1,60 @@
+@@include('assets/html/head.html', {
+"class": ""
+})
+@@include("assets/html/crumbs.html", {
+"list": [{
+"title":"Доставка и оплата",
+"link":"#"
+}]
+})
+
+<!-- Доставка и оплата -->
+<div class="section payment">
+	<div class="container">
+		<div class="section__top">
+			<h1 class="title">Доставка и оплата</h1>
+		</div>
+		<div class="payment__wrapper">
+			<div class="map-wrapper payment__map">
+				<div class="loader loader-default"></div>
+				<div id="payment-map" class="map"></div>
+			</div>
+			<div class="payment__right">
+				<div class="title-3 title-uppercase payment__title">Зона доставки и обслуживания</div>
+				<p class="payment__text">Мы привезем ваш заказ по адресу в пределах зоны доставки, обозначенной на карте. Доставка в другие районы пока не осуществляется.</p>
+				<div class="payment__items">
+					<div class="payment__item">
+						<div class="payment__item-icon">
+							<img src="assets/img/payment/1.svg" alt="" loading="lazy" decoding="async">
+						</div>
+						<div class="payment__item-text">
+							<strong>Принимаем заказы ежедневно</strong> <br>
+							вс-чт с <span>11:00</span> до <span>22:00</span> <br>
+							пт-сб с <span>11.00</span> до <span>23.00</span>
+						</div>
+					</div>
+					<div class="payment__item">
+						<div class="payment__item-icon">
+							<img src="assets/img/payment/2.svg" alt="" loading="lazy" decoding="async">
+						</div>
+						<div class="payment__item-text">
+							<strong>Время приезда курьера </strong> <br>
+							<span>от 60 минут</span>
+						</div>
+					</div>
+					<div class="payment__item">
+						<div class="payment__item-icon">
+							<img src="assets/img/payment/3.svg" alt="" loading="lazy" decoding="async">
+						</div>
+						<div class="payment__item-text">
+							<strong>Бесплатная доставка <br> заказов</strong> <span>от 2500 рублей</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+@@include('assets/html/foot.html')

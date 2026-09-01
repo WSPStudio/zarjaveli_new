@@ -1,0 +1,225 @@
+.about
+	&__wrapper
+		display: flex
+		align-items: center
+		+adap('gap', 80, 20)
+		+adap('min-height', 540, 320)
+
+	&__left 
+		display: grid
+		+adap('gap', 40, 16)
+		+adap('max-width', 820, 540 , $widthTo: 1200)
+		align-content: start
+		justify-items: start
+
+	&__title 
+		+adap('font-size', 64, 32)
+		font-weight: 700
+		+pt
+
+	&__content 
+		display: grid
+		+adap('gap', 20, 12)
+		
+	&__subtitle 
+		font-weight: 700
+		+adap('font-size', 28, 20 , $widthTo: 992)
+		line-height: 1.42857
+		text-transform: uppercase
+
+		span 
+			color: $active
+
+	&__text 
+		+adap('font-size', 20, 16)
+
+	&__img 
+		position: absolute
+		right: 0
+		top: 50%
+		translate: 0 -50%
+		+adap('max-width', 940, 400 , $widthTo: 992)
+		+adap('height', 540, 320)
+
+		+adap('border-top-left-radius', 1000, 100)
+		+adap('border-bottom-left-radius', 1000, 100)
+		+t 
+		object-fit: cover
+
+		+hov
+			+adap('border-radius', 1000, 100)
+
+	&__items 
+		display: grid
+		+adap('gap', 40, 20)
+
+	&__item 
+		display: flex
+		align-items: center
+		+adap('gap', 60, 20)
+		+adap('padding-right', 80, 20)
+
+		border: 1px solid rgba(255, 153, 0, 0.2)
+		+adap('border-radius', 20, 16)
+		overflow: hidden
+
+		@media (min-width: 992px)
+			&:nth-child(2n)
+				flex-direction: row-reverse
+				padding-right: 0
+				+adap('padding-left', 80, 20 , $min: true)
+
+				.about__item
+					&-img-wrapper
+						border-radius: 0
+						+adap('border-top-left-radius', 200, 80 , $min: true)
+						+adap('border-bottom-left-radius', 200, 80 , $min: true)
+
+		&-img-wrapper
+			position: relative
+
+			display: flex
+			flex-shrink: 0
+			+adap('flex-basis', 774, 200, 1 , $min: true)
+			height: 100%
+			+adap('border-top-right-radius', 400, 80)
+			+adap('border-bottom-right-radius', 400, 80)
+
+			overflow: hidden
+
+			+hov
+				.about__item-img 
+					scale: 1.01
+
+		&-img 
+			height: 100%
+			object-fit: cover
+
+			+t
+
+		&-label 
+			position: absolute
+			+adap('left', 20, 12)
+			+adap('bottom', 20, 12)
+			z-index: 2 
+
+			+adap('max-width', 320, 140, 1 , $min: true)
+
+		&-content 
+			+adap('padding-block', 40, 20)
+
+		&-subtitle 
+			margin-bottom: 4px
+
+			text-transform: uppercase
+			font-weight: 600
+			line-height: 1.33333
+			color: $active
+			+adap('font-size', 24, 18)
+
+		&-title 
+			+adap('margin-bottom', 20, 12)
+
+			@media (max-width: 767px)
+				+adap('font-size', 36, 26 , $min: true)
+
+		&-text 
+			+adap('font-size', 20, 16)
+			line-height: 1.4
+
+		&-button 
+			+adap('margin-top', 40, 20)
+
+	@media (max-width: 991px)
+		&__wrapper
+			display: grid
+			grid-template-columns: 100%
+
+		&__img
+			position: static
+			translate: 0 0
+			max-width: 100%
+			height: auto
+
+			border-radius: 40px
+		
+		&__subtitle
+			+adap('font-size', 20, 16, 991)
+
+		&__item 
+			display: grid
+			grid-template-columns: 100%
+			+adap('padding', 32, 16, 991)
+
+			&-img-wrapper 
+				order: 1
+				+adap('border-radius', 40, 20, 991)
+
+			&-img 
+				width: 100%
+
+			&-content 
+				padding: 0
+
+
+.about-home 
+	.about
+		&__item 
+			position: relative
+			z-index: 1
+
+			border: 2px solid transparent
+
+			background: linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)),  radial-gradient(33.11% 33.11% at -12.8% -14.76%,#FFFFFF 0%, rgba(255, 255, 255, 0) 100%) border-box
+
+			&:after
+				content: ''
+
+				+abs 
+				z-index: -1		
+
+				background: rgba(0, 0, 0, 0.75)	
+
+			&:before
+				content: ''
+				position: absolute
+				left: 0
+				bottom: 0
+
+				width: 100%
+				height: 1px
+
+				background: linear-gradient(90deg, transparent 0%, $active 50%, transparent 100%)
+
+			&-img-wrapper
+				+adap('flex-basis', 734, 200, 1 , $min: true)
+
+			&-content 
+				z-index: 4
+
+			&-text 
+				+adap('font-size', 24, 18)
+				line-height: 1.3
+
+		&__decor 
+			position: absolute
+			right: 0
+			bottom: 0
+			z-index: -1
+
+			@media (max-width: 1199px)
+				display: none
+
+
+
+
+
+
+
+
+
+
+
+
+
+

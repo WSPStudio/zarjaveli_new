@@ -1,0 +1,98 @@
+
+.slider 
+	position: relative
+
+	&:has(.hover-translate)
+		.swiper 
+			padding-block: 12px
+			margin-block: -12px
+	
+	
+.swiper
+	+t
+
+	&-pagination
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		gap: 4px 12px
+
+		+adap('margin-top', 40, 20)
+
+		&-bullet
+			width: 12px
+			height: 12px
+			scale: .6
+
+			border-radius: 50%
+			background: #fff
+			cursor: pointer
+			+t
+
+			&-active
+				scale: 1
+				background: $active
+
+				&:only-child
+					display: none
+
+		&-lock 
+			display: none
+
+	&-button-lock 
+		display: none
+
+	&-wrapper 
+		display: grid
+		grid-auto-flow: column
+		justify-content: start
+
+	&-slide 
+		display: grid
+		grid-template-columns: 100%
+
+	&-scrollbar 
+		width: 100%
+		+adap('height', 12, 8)
+		+adap('margin-top', 20, 12)
+		padding: 2px
+
+		background: rgba(255, 255, 255, 0.08)
+		+adap('border-radius', 20, 12)
+
+		cursor: pointer
+		overflow: hidden
+
+		&-drag
+			background: $active
+
+html
+	&:not(.loaded)
+		.swiper
+			opacity: 0 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

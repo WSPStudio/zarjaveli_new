@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon  -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.webp">
+  <link rel="icon" type="image/webp" sizes="32x32" href="assets/img/favicon/favicon.svg">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Шрифты -->
+  <link rel="preload" href="assets/css/fonts.css" as="style" onload="this.rel='stylesheet'">
+
+  <!-- Библиотеки -->
+  <link rel="preload" href="assets/css/vendor.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="assets/css/vendor.css">
+  </noscript>
+  <!-- Общие стили -->
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Индексация -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ресторан Заржавели</title>
+
+  <style>
+    /* ----- Кнопка‑бургер (справа) ----- */
+    .burger {
+      order: 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: min(calc(32px + 16px), calc(32px + 16 * ((100vw - 375px) / 1545)));
+      height: min(calc(32px + 16px), calc(32px + 16 * ((100vw - 375px) / 1545)));
+      background-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5317 0.0497816C1.67406 -0.0276517 1.94856 0.00397134 2.09956 0.0213387C2.10233 0.0216236 2.10509 0.0219084 2.10786 0.0221933C2.1437 0.0263072 2.1776 0.0273758 2.21732 0.028541C2.31202 0.0313194 2.43998 0.0350926 2.70703 0.0844502C2.78473 0.0826314 2.86245 0.0816426 2.94015 0.0816426C3.77928 0.0816433 4.6184 0.146025 5.45753 0.223125C5.46813 0.222727 5.47891 0.222318 5.4898 0.221904C5.70026 0.213913 5.96124 0.204026 6.12522 0.23228C6.3337 0.268203 6.4753 0.301536 6.59159 0.330305C7.25809 0.392342 7.9246 0.447776 8.5911 0.470688C8.79999 0.477869 9.00891 0.481796 9.2178 0.481797C9.41016 0.481797 9.60257 0.479338 9.79493 0.474716C9.90696 0.457864 10.0135 0.437844 10.1122 0.419295C10.251 0.393232 10.3746 0.370085 10.4766 0.362532C10.7225 0.344335 11.0015 0.373055 11.2086 0.394393C11.2424 0.39788 11.2744 0.401181 11.304 0.404036C11.4685 0.393468 11.633 0.382153 11.7975 0.370588C11.8085 0.377023 11.8196 0.383731 11.8308 0.390608C11.9712 0.476435 12.1438 0.475334 12.4155 0.47374C12.5338 0.473045 12.6709 0.472293 12.8324 0.478501C12.9364 0.482501 12.9898 0.516531 13.0335 0.544298C13.0463 0.552466 13.0584 0.5601 13.0706 0.566271C13.1124 0.587407 13.1564 0.564563 13.2085 0.537584C13.276 0.502582 13.357 0.46054 13.464 0.498521C13.8049 0.619539 13.9551 0.537437 14.0687 0.475327C14.1021 0.457108 14.1323 0.440647 14.1632 0.431503C14.2635 0.401863 14.4064 0.43123 14.5145 0.471542C14.6001 0.503508 14.7714 0.471818 14.9014 0.431503C14.9505 0.416259 15.017 0.415875 15.0952 0.415511C15.1762 0.415134 15.2699 0.414792 15.3701 0.397689C15.6235 0.354468 15.7581 0.33352 15.8663 0.316754C15.8972 0.311974 15.9259 0.307622 15.9546 0.303082C16.0453 0.288738 16.1579 0.276919 16.2719 0.264996C16.4083 0.250726 16.5468 0.236238 16.6521 0.216899C16.9252 0.237365 17.1982 0.262684 17.4712 0.287945C17.6114 0.30106 17.746 0.374923 17.8452 0.496689C17.9443 0.618554 18 0.777454 18 0.942132C18 1.10681 17.9443 1.26571 17.8452 1.38758C17.746 1.50934 17.6114 1.58333 17.4712 1.59644C17.1887 1.62258 16.9062 1.64874 16.6236 1.66956C16.2795 1.69493 15.9353 1.71241 15.5911 1.71241C15.3504 1.71241 15.1096 1.70848 14.8688 1.70142C14.844 1.7007 14.8193 1.6999 14.7945 1.6991C14.5922 1.73965 14.3903 1.77654 14.2481 1.78968C14.1307 1.80053 14.045 1.77889 13.9717 1.76038C13.9213 1.74765 13.8766 1.73637 13.8314 1.73817C13.8072 1.73913 13.774 1.74163 13.7341 1.74464C13.5709 1.75691 13.2937 1.77773 13.0409 1.73817C12.9287 1.72061 12.7984 1.686 12.674 1.65296C12.4961 1.60571 12.3301 1.56168 12.2464 1.5752C12.0993 1.59897 11.9306 1.57885 11.7816 1.56104C11.6394 1.54405 11.5151 1.52921 11.4444 1.55665C11.3599 1.58944 11.2878 1.57607 11.1807 1.55628C11.1064 1.54255 11.0152 1.52579 10.8913 1.51905C10.7482 1.51126 10.647 1.48829 10.561 1.46875C10.4399 1.44126 10.3488 1.42059 10.213 1.45862C10.0621 1.50087 9.90446 1.52775 9.7803 1.51441C9.72375 1.50833 9.65906 1.50981 9.59175 1.51136C9.50264 1.51341 9.40892 1.51553 9.32334 1.50037C9.25282 1.48787 9.19454 1.45591 9.14296 1.42762C9.12687 1.41879 9.11143 1.41036 9.09647 1.40296C9.04031 1.40336 8.98414 1.40396 8.92797 1.40491C8.91888 1.41006 8.90932 1.41575 8.89934 1.42163C8.84926 1.45114 8.78769 1.48734 8.71147 1.50538C8.59083 1.53392 8.48497 1.51604 8.3733 1.49707C8.28635 1.4823 8.19589 1.46689 8.09219 1.47242C8.02147 1.47619 7.94095 1.48926 7.86113 1.5022C7.74258 1.52143 7.62551 1.54035 7.54417 1.52832C7.5137 1.52382 7.4875 1.50374 7.46157 1.48377C7.46146 1.48365 7.46134 1.48352 7.46123 1.4834C7.45947 1.48205 7.4577 1.48072 7.45594 1.47937C7.25785 1.49467 7.05974 1.51154 6.86165 1.5293C6.84448 1.53446 6.82713 1.53955 6.80994 1.54456C6.72594 1.56904 6.64433 1.59283 6.59111 1.62659C6.53344 1.6632 6.38844 1.68448 6.23563 1.70692C6.13557 1.72161 6.03211 1.73679 5.94765 1.75709C5.89828 1.76895 5.85144 1.74827 5.80325 1.72694C5.75829 1.70704 5.71213 1.68661 5.66167 1.69166C5.63639 1.69419 5.60909 1.70276 5.57996 1.71192C5.55431 1.71999 5.52719 1.72854 5.49879 1.73377C5.47241 1.73862 5.41366 1.72736 5.33833 1.71302C5.29177 1.70416 5.23887 1.69416 5.18335 1.68592C5.0366 1.69881 4.88982 1.71117 4.74307 1.72266C4.71246 1.7408 4.68589 1.76434 4.66486 1.79457C4.64978 1.81625 4.63693 1.84217 4.62373 1.86866C4.60578 1.90472 4.5872 1.94198 4.56159 1.97169C4.54158 1.99491 4.51797 2.00416 4.50213 1.99452C4.49475 1.99002 4.48908 1.98155 4.48393 1.97389C4.47804 1.96511 4.47278 1.95731 4.46635 1.95753C4.46172 1.95771 4.4569 1.96392 4.45097 1.97145C4.44151 1.98346 4.42919 1.99897 4.41046 1.99953C4.34074 2.00158 4.2615 1.99661 4.18387 1.99171C4.09754 1.98626 4.01317 1.98098 3.94595 1.98561C3.87064 1.9908 3.76333 1.96772 3.65584 1.94471C3.58085 1.92866 3.50575 1.91269 3.44133 1.90614C3.3782 1.89972 3.31246 1.91248 3.24879 1.92494C3.17238 1.93989 3.09888 1.95433 3.03642 1.93409C3.02378 1.92998 3.0081 1.90497 2.98842 1.87367C2.97447 1.85149 2.95842 1.82612 2.94015 1.80274C2.86064 1.80274 2.78112 1.80172 2.70161 1.79981C2.69881 1.80321 2.69592 1.80666 2.69302 1.81019C2.69298 1.81027 2.69293 1.81035 2.69289 1.81043C2.62758 1.89004 2.53822 1.99893 2.41267 1.93397C2.38075 1.91746 2.36066 1.88696 2.34256 1.85951C2.32478 1.83255 2.30889 1.80843 2.28564 1.80335C2.25922 1.79761 2.22804 1.81416 2.19404 1.83216C2.1463 1.85744 2.09298 1.88568 2.03947 1.85939C2.03582 1.85759 2.03189 1.85562 2.0278 1.85365C1.98902 1.83494 1.9316 1.80728 1.87447 1.7516C1.70497 1.73673 1.53545 1.71933 1.36594 1.70033C1.0834 1.66865 0.800797 1.63254 0.51828 1.59644C0.380832 1.57867 0.249011 1.50285 0.151817 1.38147C0.0546174 1.25992 0 1.10371 0 0.942132C8.10437e-06 0.780569 0.0546246 0.624455 0.151817 0.502915C0.249012 0.381528 0.380826 0.305713 0.51828 0.287945C0.742414 0.259309 0.966619 0.230632 1.19078 0.204203C1.20253 0.200848 1.21433 0.197602 1.22607 0.19456C1.31346 0.171919 1.39454 0.126445 1.47567 0.0809101C1.49431 0.070451 1.51298 0.0599689 1.5317 0.0497816ZM1.5317 6.04978C1.67406 5.97235 1.94856 6.00397 2.09956 6.02134C2.10233 6.02162 2.10509 6.02191 2.10786 6.02219C2.1437 6.02631 2.1776 6.02738 2.21732 6.02854C2.31202 6.03132 2.43998 6.03509 2.70703 6.08445C2.78473 6.08263 2.86245 6.08164 2.94015 6.08164C3.77928 6.08164 4.6184 6.14602 5.45753 6.22312C5.46813 6.22273 5.47891 6.22232 5.4898 6.2219C5.70026 6.21391 5.96124 6.20403 6.12522 6.23228C6.3337 6.2682 6.4753 6.30154 6.59159 6.3303C7.25809 6.39234 7.9246 6.44778 8.5911 6.47069C8.79999 6.47787 9.00891 6.4818 9.2178 6.4818C9.41016 6.4818 9.60257 6.47934 9.79493 6.47472C9.90696 6.45786 10.0135 6.43784 10.1122 6.4193C10.251 6.39323 10.3746 6.37008 10.4766 6.36253C10.7225 6.34434 11.0015 6.37305 11.2086 6.39439C11.2424 6.39788 11.2744 6.40118 11.304 6.40404C11.4685 6.39347 11.633 6.38215 11.7975 6.37059C11.8085 6.37702 11.8196 6.38373 11.8308 6.39061C11.9712 6.47643 12.1438 6.47533 12.4155 6.47374C12.5338 6.47305 12.6709 6.47229 12.8324 6.4785C12.9364 6.4825 12.9898 6.51653 13.0335 6.5443C13.0463 6.55247 13.0584 6.5601 13.0706 6.56627C13.1124 6.58741 13.1564 6.56456 13.2085 6.53758C13.276 6.50258 13.357 6.46054 13.464 6.49852C13.8049 6.61954 13.9551 6.53744 14.0687 6.47533C14.1021 6.45711 14.1323 6.44065 14.1632 6.4315C14.2635 6.40186 14.4064 6.43123 14.5145 6.47154C14.6001 6.50351 14.7714 6.47182 14.9014 6.4315C14.9505 6.41626 15.017 6.41588 15.0952 6.41551C15.1762 6.41513 15.2699 6.41479 15.3701 6.39769C15.6235 6.35447 15.7581 6.33352 15.8663 6.31675C15.8972 6.31197 15.9259 6.30762 15.9546 6.30308C16.0453 6.28874 16.1579 6.27692 16.2719 6.265C16.4083 6.25073 16.5468 6.23624 16.6521 6.2169C16.9252 6.23736 17.1982 6.26268 17.4712 6.28795C17.6114 6.30106 17.746 6.37492 17.8452 6.49669C17.9443 6.61855 18 6.77745 18 6.94213C18 7.10681 17.9443 7.26571 17.8452 7.38758C17.746 7.50934 17.6114 7.58333 17.4712 7.59644C17.1887 7.62258 16.9062 7.64874 16.6236 7.66956C16.2795 7.69493 15.9353 7.71241 15.5911 7.71241C15.3504 7.71241 15.1096 7.70848 14.8688 7.70142C14.844 7.7007 14.8193 7.6999 14.7945 7.6991C14.5922 7.73965 14.3903 7.77654 14.2481 7.78968C14.1307 7.80053 14.045 7.77889 13.9717 7.76039C13.9213 7.74765 13.8766 7.73637 13.8314 7.73817C13.8072 7.73913 13.774 7.74163 13.7341 7.74464C13.5709 7.75691 13.2937 7.77773 13.0409 7.73817C12.9287 7.72061 12.7984 7.686 12.674 7.65296C12.4961 7.60571 12.3301 7.56168 12.2464 7.5752C12.0993 7.59897 11.9306 7.57885 11.7816 7.56104C11.6394 7.54405 11.5151 7.52921 11.4444 7.55665C11.3599 7.58944 11.2878 7.57607 11.1807 7.55628C11.1064 7.54255 11.0152 7.52579 10.8913 7.51905C10.7482 7.51126 10.647 7.48829 10.561 7.46875C10.4399 7.44126 10.3488 7.42059 10.213 7.45862C10.0621 7.50087 9.90446 7.52775 9.7803 7.51441C9.72375 7.50833 9.65906 7.50981 9.59175 7.51136C9.50264 7.51341 9.40892 7.51553 9.32334 7.50037C9.25282 7.48787 9.19454 7.45591 9.14296 7.42762C9.12687 7.41879 9.11143 7.41036 9.09647 7.40296C9.04031 7.40336 8.98414 7.40396 8.92797 7.40491C8.91888 7.41006 8.90932 7.41575 8.89934 7.42163C8.84926 7.45114 8.78769 7.48734 8.71147 7.50538C8.59083 7.53392 8.48497 7.51605 8.3733 7.49707C8.28635 7.4823 8.19589 7.46689 8.09219 7.47242C8.02147 7.47619 7.94095 7.48926 7.86113 7.5022C7.74258 7.52143 7.62551 7.54035 7.54417 7.52833C7.5137 7.52382 7.4875 7.50374 7.46157 7.48377C7.46146 7.48365 7.46134 7.48352 7.46123 7.4834C7.45947 7.48205 7.4577 7.48072 7.45594 7.47937C7.25785 7.49467 7.05974 7.51154 6.86165 7.5293C6.84448 7.53446 6.82713 7.53955 6.80994 7.54456C6.72594 7.56904 6.64433 7.59282 6.59111 7.62659C6.53344 7.6632 6.38844 7.68448 6.23563 7.70692C6.13557 7.72161 6.03211 7.73679 5.94765 7.75709C5.89828 7.76895 5.85144 7.74827 5.80325 7.72694C5.75829 7.70704 5.71213 7.68661 5.66167 7.69166C5.63639 7.69419 5.60909 7.70276 5.57996 7.71192C5.55431 7.71999 5.52719 7.72854 5.49879 7.73377C5.47241 7.73862 5.41366 7.72736 5.33833 7.71302C5.29177 7.70416 5.23887 7.69416 5.18335 7.68592C5.0366 7.69881 4.88982 7.71117 4.74307 7.72266C4.71246 7.7408 4.68589 7.76434 4.66486 7.79457C4.64978 7.81625 4.63693 7.84217 4.62373 7.86866C4.60578 7.90472 4.5872 7.94198 4.56159 7.97169C4.54158 7.99491 4.51797 8.00416 4.50213 7.99452C4.49475 7.99002 4.48908 7.98155 4.48393 7.97389C4.47804 7.96511 4.47278 7.95731 4.46635 7.95753C4.46172 7.95771 4.4569 7.96392 4.45097 7.97145C4.44151 7.98346 4.42919 7.99897 4.41046 7.99953C4.34074 8.00158 4.2615 7.99661 4.18387 7.99171C4.09754 7.98626 4.01317 7.98098 3.94595 7.98561C3.87064 7.9908 3.76333 7.96772 3.65584 7.94471C3.58085 7.92866 3.50575 7.91269 3.44133 7.90614C3.3782 7.89972 3.31246 7.91248 3.24879 7.92494C3.17238 7.93989 3.09888 7.95433 3.03642 7.93409C3.02378 7.92998 3.0081 7.90497 2.98842 7.87367C2.97447 7.85149 2.95842 7.82612 2.94015 7.80274C2.86064 7.80274 2.78112 7.80172 2.70161 7.79981C2.69881 7.80321 2.69592 7.80666 2.69302 7.81019C2.69298 7.81027 2.69293 7.81035 2.69289 7.81043C2.62758 7.89004 2.53822 7.99893 2.41267 7.93397C2.38075 7.91746 2.36066 7.88696 2.34256 7.85951C2.32478 7.83255 2.30889 7.80843 2.28564 7.80335C2.25922 7.79761 2.22804 7.81416 2.19404 7.83216C2.1463 7.85744 2.09298 7.88568 2.03947 7.85939C2.03582 7.85759 2.03189 7.85562 2.0278 7.85365C1.98902 7.83494 1.9316 7.80728 1.87447 7.7516C1.70497 7.73673 1.53545 7.71933 1.36594 7.70033C1.0834 7.66865 0.800797 7.63254 0.51828 7.59644C0.380832 7.57867 0.249011 7.50285 0.151817 7.38147C0.0546174 7.25992 0 7.10371 0 6.94213C8.10437e-06 6.78057 0.0546246 6.62446 0.151817 6.50292C0.249012 6.38153 0.380826 6.30571 0.51828 6.28795C0.742414 6.25931 0.966619 6.23063 1.19078 6.2042C1.20253 6.20085 1.21433 6.1976 1.22607 6.19456C1.31346 6.17192 1.39454 6.12644 1.47567 6.08091C1.49431 6.07045 1.51298 6.05997 1.5317 6.04978ZM1.5317 12.0498C1.67406 11.9723 1.94856 12.004 2.09956 12.0213C2.10233 12.0216 2.10509 12.0219 2.10786 12.0222C2.1437 12.0263 2.1776 12.0274 2.21732 12.0285C2.31202 12.0313 2.43998 12.0351 2.70703 12.0845C2.78473 12.0826 2.86245 12.0816 2.94015 12.0816C3.77928 12.0816 4.6184 12.146 5.45753 12.2231C5.46813 12.2227 5.47891 12.2223 5.4898 12.2219C5.70026 12.2139 5.96124 12.204 6.12522 12.2323C6.3337 12.2682 6.4753 12.3015 6.59159 12.3303C7.25809 12.3923 7.9246 12.4478 8.5911 12.4707C8.79999 12.4779 9.00891 12.4818 9.2178 12.4818C9.41016 12.4818 9.60257 12.4793 9.79493 12.4747C9.90696 12.4579 10.0135 12.4378 10.1122 12.4193C10.251 12.3932 10.3746 12.3701 10.4766 12.3625C10.7225 12.3443 11.0015 12.3731 11.2086 12.3944C11.2424 12.3979 11.2744 12.4012 11.304 12.404C11.4685 12.3935 11.633 12.3822 11.7975 12.3706C11.8085 12.377 11.8196 12.3837 11.8308 12.3906C11.9712 12.4764 12.1438 12.4753 12.4155 12.4737C12.5338 12.473 12.6709 12.4723 12.8324 12.4785C12.9364 12.4825 12.9898 12.5165 13.0335 12.5443C13.0463 12.5525 13.0584 12.5601 13.0706 12.5663C13.1124 12.5874 13.1564 12.5646 13.2085 12.5376C13.276 12.5026 13.357 12.4605 13.464 12.4985C13.8049 12.6195 13.9551 12.5374 14.0687 12.4753C14.1021 12.4571 14.1323 12.4406 14.1632 12.4315C14.2635 12.4019 14.4064 12.4312 14.5145 12.4715C14.6001 12.5035 14.7714 12.4718 14.9014 12.4315C14.9505 12.4163 15.017 12.4159 15.0952 12.4155C15.1762 12.4151 15.2699 12.4148 15.3701 12.3977C15.6235 12.3545 15.7581 12.3335 15.8663 12.3168C15.8972 12.312 15.9259 12.3076 15.9546 12.3031C16.0453 12.2887 16.1579 12.2769 16.2719 12.265C16.4083 12.2507 16.5468 12.2362 16.6521 12.2169C16.9252 12.2374 17.1982 12.2627 17.4712 12.2879C17.6114 12.3011 17.746 12.3749 17.8452 12.4967C17.9443 12.6186 18 12.7775 18 12.9421C18 13.1068 17.9443 13.2657 17.8452 13.3876C17.746 13.5093 17.6114 13.5833 17.4712 13.5964C17.1887 13.6226 16.9062 13.6487 16.6236 13.6696C16.2795 13.6949 15.9353 13.7124 15.5911 13.7124C15.3504 13.7124 15.1096 13.7085 14.8688 13.7014C14.844 13.7007 14.8193 13.6999 14.7945 13.6991C14.5922 13.7397 14.3903 13.7765 14.2481 13.7897C14.1307 13.8005 14.045 13.7789 13.9717 13.7604C13.9213 13.7476 13.8766 13.7364 13.8314 13.7382C13.8072 13.7391 13.774 13.7416 13.7341 13.7446C13.5709 13.7569 13.2937 13.7777 13.0409 13.7382C12.9287 13.7206 12.7984 13.686 12.674 13.653C12.4961 13.6057 12.3301 13.5617 12.2464 13.5752C12.0993 13.599 11.9306 13.5789 11.7816 13.561C11.6394 13.5441 11.5151 13.5292 11.4444 13.5566C11.3599 13.5894 11.2878 13.5761 11.1807 13.5563C11.1064 13.5426 11.0152 13.5258 10.8913 13.519C10.7482 13.5113 10.647 13.4883 10.561 13.4688C10.4399 13.4413 10.3488 13.4206 10.213 13.4586C10.0621 13.5009 9.90446 13.5278 9.7803 13.5144C9.72375 13.5083 9.65906 13.5098 9.59175 13.5114C9.50264 13.5134 9.40892 13.5155 9.32334 13.5004C9.25282 13.4879 9.19454 13.4559 9.14296 13.4276C9.12687 13.4188 9.11143 13.4104 9.09647 13.403C9.04031 13.4034 8.98414 13.404 8.92797 13.4049C8.91888 13.4101 8.90932 13.4158 8.89934 13.4216C8.84926 13.4511 8.78769 13.4873 8.71147 13.5054C8.59083 13.5339 8.48497 13.516 8.3733 13.4971C8.28635 13.4823 8.19589 13.4669 8.09219 13.4724C8.02147 13.4762 7.94095 13.4893 7.86113 13.5022C7.74258 13.5214 7.62551 13.5404 7.54417 13.5283C7.5137 13.5238 7.4875 13.5037 7.46157 13.4838C7.46146 13.4836 7.46134 13.4835 7.46123 13.4834C7.45947 13.482 7.4577 13.4807 7.45594 13.4794C7.25785 13.4947 7.05974 13.5115 6.86165 13.5293C6.84448 13.5345 6.82713 13.5395 6.80994 13.5446C6.72594 13.569 6.64433 13.5928 6.59111 13.6266C6.53344 13.6632 6.38844 13.6845 6.23563 13.7069C6.13557 13.7216 6.03211 13.7368 5.94765 13.7571C5.89828 13.769 5.85144 13.7483 5.80325 13.7269C5.75829 13.707 5.71213 13.6866 5.66167 13.6917C5.63639 13.6942 5.60909 13.7028 5.57996 13.7119C5.55431 13.72 5.52719 13.7285 5.49879 13.7338C5.47241 13.7386 5.41366 13.7274 5.33833 13.713C5.29177 13.7042 5.23887 13.6942 5.18335 13.6859C5.0366 13.6988 4.88982 13.7112 4.74307 13.7227C4.71246 13.7408 4.68589 13.7643 4.66486 13.7946C4.64978 13.8162 4.63693 13.8422 4.62373 13.8687C4.60578 13.9047 4.5872 13.942 4.56159 13.9717C4.54158 13.9949 4.51797 14.0042 4.50213 13.9945C4.49475 13.99 4.48908 13.9816 4.48393 13.9739C4.47804 13.9651 4.47278 13.9573 4.46635 13.9575C4.46172 13.9577 4.4569 13.9639 4.45097 13.9714C4.44151 13.9835 4.42919 13.999 4.41046 13.9995C4.34074 14.0016 4.2615 13.9966 4.18387 13.9917C4.09754 13.9863 4.01317 13.981 3.94595 13.9856C3.87064 13.9908 3.76333 13.9677 3.65584 13.9447C3.58085 13.9287 3.50575 13.9127 3.44133 13.9061C3.3782 13.8997 3.31246 13.9125 3.24879 13.9249C3.17238 13.9399 3.09888 13.9543 3.03642 13.9341C3.02378 13.93 3.0081 13.905 2.98842 13.8737C2.97447 13.8515 2.95842 13.8261 2.94015 13.8027C2.86064 13.8027 2.78112 13.8017 2.70161 13.7998C2.69881 13.8032 2.69592 13.8067 2.69302 13.8102C2.69298 13.8103 2.69293 13.8104 2.69289 13.8104C2.62758 13.89 2.53822 13.9989 2.41267 13.934C2.38075 13.9175 2.36066 13.887 2.34256 13.8595C2.32478 13.8326 2.30889 13.8084 2.28564 13.8034C2.25922 13.7976 2.22804 13.8142 2.19404 13.8322C2.1463 13.8574 2.09298 13.8857 2.03947 13.8594C2.03582 13.8576 2.03189 13.8556 2.0278 13.8536C1.98902 13.8349 1.9316 13.8073 1.87447 13.7516C1.70497 13.7367 1.53545 13.7193 1.36594 13.7003C1.0834 13.6687 0.800797 13.6325 0.51828 13.5964C0.380832 13.5787 0.249011 13.5028 0.151817 13.3815C0.0546174 13.2599 0 13.1037 0 12.9421C8.10437e-06 12.7806 0.0546246 12.6245 0.151817 12.5029C0.249012 12.3815 0.380826 12.3057 0.51828 12.2879C0.742414 12.2593 0.966619 12.2306 1.19078 12.2042C1.20253 12.2008 1.21433 12.1976 1.22607 12.1946C1.31346 12.1719 1.39454 12.1264 1.47567 12.0809C1.49431 12.0705 1.51298 12.06 1.5317 12.0498Z' fill='white' /%3E%3C/svg%3E");
+      background-size: 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 200;
+      transition: transform 0.2s ease;
+    }
+
+    .burger svg {
+      width: 48px;
+      height: 48px;
+    }
+
+    .burger svg path {
+      fill: #fff;
+    }
+
+    .burger:hover svg path {
+      fill: #f90;
+    }
+
+    .burger:focus-visible {
+      outline: 2px solid #4a90d9;
+      outline-offset: 4px;
+    }
+
+    .burger__line {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: #2d3748;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    /* Анимация в крестик */
+    .burger.active .burger__line:nth-child(1) {
+      transform: translateY(9.5px) rotate(45deg);
+    }
+
+    .burger.active .burger__line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .burger.active .burger__line:nth-child(3) {
+      transform: translateY(-9.5px) rotate(-45deg);
+    }
+
+    /* ----- Оверлей (затемнение) ----- */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(2px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 150;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* ----- Боковое меню (выезжает СПРАВА) ----- */
+    .menu2 {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: auto;
+      width: 280px;
+      height: 100%;
+      background: rgba(15, 15, 15, 0.5);
+      box-shadow: -4px 0 20px rgba(0, 0, 0, 0.08);
+      padding: 3rem 2rem 2rem;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 999;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .menu2.active {
+      transform: translateX(0);
+    }
+
+    .menu__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .menu__link {
+      display: block;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      line-height: 1;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s ease, color 0.2s ease;
+      font-weight: 500;
+    }
+
+    .menu__link:hover,
+    .menu__link:focus {
+      color: #e08700;
+    }
+
+    /* ----- Активный пункт (текущий поддомен) ----- */
+    .menu__link--active {
+      color: #e08700 !important;
+      font-weight: 600;
+    }
+
+    .menu__link:focus-visible {
+      outline: 2px solid #4a90d9;
+      outline-offset: -2px;
+    }
+
+    .menu__footer {
+      order: 5;
+      margin-top: auto;
+      font-size: 0.85rem;
+      color: #a0aec0;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1.5rem;
+    }
+  </style>
+
+</head>
+
+<body class="home">
+  <div class="wrapper">
+    <main class="main">
+
+      <header class="header">
+        <div class="container">
+          <div class="header__wrapper">
+            <a href="/zarjaveli_new/" class="logo header__logo">
+              <img src="assets/img/logo.svg" width="121" height="121" alt="" decoding="async">
+            </a>
+            <div class="header__top">
+              <div class="address header__address" data-da=".menu2,1199,3">
+                <div class="address__icon">
+                  <svg class="location-icon" aria-hidden="true">
+                    <use xlink:href="assets/img/sprite-037ac44c93.svg#location"></use>
+                  </svg>
+                </div>
+                <span>г. Москва</span>
+              </div>
+              <div class="time header__time" data-da=".menu2,1199,3">
+                <div class="time__icon">
+                  <svg class="time-icon" aria-hidden="true">
+                    <use xlink:href="assets/img/sprite-037ac44c93.svg#time"></use>
+                  </svg>
+                </div>
+                <span class="time__text">
+                  <small>Вс-Чт</small> 11:00 - 23:00
+                  &nbsp;
+                  <small>Пт-Сб</small> 11:00 - 24:00
+                </span>
+              </div>
+              <form role="search" method="get" action="/" class="search header__search">
+                <div class="search__input">
+                  <input type="search" name="s" placeholder="Поиск блюд" value="" required>
+                  <button type="submit" class="search__button">
+                    <svg class="search-icon">
+                      <use xlink:href="assets/img/sprite-037ac44c93.svg#search"></use>
+                    </svg>
+                  </button>
+                </div>
+              </form>
+              <div class="call header__call" data-da=".menu2,991,3">
+                <svg class="phone-icon" aria-hidden="true">
+                  <use xlink:href="assets/img/sprite-037ac44c93.svg#phone"></use>
+                </svg>
+                <a href="tel:+74951779757" class="hover-active">+7 (495) 177-97-57</a>
+                <div class="social footer__social">
+                  <a href="https://wa.me/+70000000000" class="social__item" target="_blank" style="--color: 14, 189, 34">
+                    <svg class="whatsapp-icon" aria-hidden="true">
+                      <use xlink:href="assets/img/sprite-037ac44c93.svg#whatsapp"></use>
+                    </svg>
+                  </a>
+                  <a href="https://t.me/+70000000000" class="social__item" target="_blank" style="--color: 14, 84, 189">
+                    <svg class="telegram-icon" aria-hidden="true">
+                      <use xlink:href="assets/img/sprite-037ac44c93.svg#telegram"></use>
+                    </svg>
+                  </a>
+                  <a href="#" class="social__item" target="_blank" style="--color: 144, 0, 255">
+                    <svg class="max-icon" aria-hidden="true">
+                      <use xlink:href="assets/img/sprite-037ac44c93.svg#max"></use>
+                    </svg>
+                  </a>
+
+                </div>
+              </div>
+              <button class="header__auth" type="button" data-modal="modal-auth" data-da=".menu2,575,0">
+                <svg class="auth-icon" aria-hidden="true">
+                  <use xlink:href="assets/img/sprite-037ac44c93.svg#auth"></use>
+                </svg>
+                <span>Вход в аккаунт</span>
+              </button>
+              <button class="burger" id="burgerBtn" aria-expanded="false" aria-controls="sideMenu" aria-label="Открыть меню">
+                <span class="burger__lines"></span>
+              </button>
+            </div>
+            <div class="header__bottom">
+              <div class="header__catalog" data-da=".menu2,1199,1">
+                <a href="category.html" class="button">
+                  <svg class="menu-icon" aria-hidden="true">
+                    <use xlink:href="assets/img/sprite-037ac44c93.svg#menu"></use>
+                  </svg>
+                  <span>Меню ресторана </span>
+                </a>
+              </div>
+              <div class="header__mobile" data-da=".menu2,1199,2">
+                <nav class="nav header__nav">
+                  <ul class="menu header__menu">
+                    <li><a href="about.html">О ресторане</a></li>
+                    <li><a href="action.html">Акции</a></li>
+                    <li><a href="#">Банкетные залы</a></li>
+                    <li><a href="payment.html">Доставка и оплата</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <a href="javascript:void(0)" class="header__cart" data-da=".header__top,1199,2">
+                <svg class="cart-icon" aria-hidden="true">
+                  <use xlink:href="assets/img/sprite-037ac44c93.svg#cart"></use>
+                </svg>
+                <span class="header__cart-title">Корзина</span>
+                <span class="header__cart-count">1</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="overlay" id="overlay"></div>
+      <!-- Боковое меню (выезжает справа) -->
+      <nav class="menu2" id="sideMenu" aria-label="Основное меню">
+        <ul class="menu__list">
+          <li><a class="menu__link" href="https://zarjaveli.ru/">Главная</a></li>
+          <li><a class="menu__link" href="https://rest.zarjaveli.ru/">Ресторан</a></li>
+          <li><a class="menu__link" href="https://hall.zarjaveli.ru/">Холл</a></li>
+          <li><a class="menu__link" href="https://club.zarjaveli.ru/">Клуб</a></li>
+        </ul>
+        <div class="menu__footer">© Zarjaveli 2026</div>
+      </nav>
+
+      <section class="section-offset-bottom hero">
+        <div class="hero__after"></div>
+        <picture>
+          <source srcset="assets/img/hero/bg-575.avif" type="image/avif" media="(max-width: 575px)">
+          <source srcset="assets/img/hero/bg-575.webp" type="image/webp" media="(max-width: 575px)">
+          <source srcset="assets/img/hero/bg-991.avif" type="image/avif" media="(max-width: 991px)">
+          <source srcset="assets/img/hero/bg-991.webp" type="image/webp" media="(max-width: 991px)">
+          <source srcset="assets/img/hero/bg.avif" type="image/avif">
+          <img src="assets/img/hero/bg.webp" class="hero__bg" alt="" decoding="async" fetchpriority="high">
+        </picture>
+        <div class="container">
+          <div class="hero__wrapper">
+            <h1 class="hero__title"><span>Ресторан</span> грузинской кухни и морепродуктов</h1>
+            <ul class="hero__list">
+              <li>Объединяем лучшие традиции и вкусы</li>
+              <li>Доставка готовых блюд к вашему столу</li>
+            </ul>
+            <div class="hero__buttons">
+              <button class="button button_big hero__button" type="button">Забронировать стол</button>
+              <a href="category.html" class="button button_border button_white button_big hero__button">Меню</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section advantages">
+        <div class="container">
+          <div class="section__top-big">
+            <h2 class="title-2 title-center title-uppercase title-decor">Философия и атмосфера</h2>
+          </div>
+          <div class="advantages__wrapper">
+            <div class="wow fadeInUp advantages__item" data-wow-delay='.2s'>
+              <div class="advantages__item-icon-wrapper">
+                <img src="assets/img/advantages/1.svg" class="advantages__item-icon" alt="" loading="lazy" decoding="async">
+              </div>
+              <div class="advantages__item-title">Доставка <br> <span>фирменных блюд</span></div>
+              <div class="advantages__item-text">Накроем стол с национальными угощениями прямо у вас дома</div>
+            </div>
+            <div class="wow fadeInUp advantages__item" data-wow-delay='.3s'>
+              <div class="advantages__item-icon-wrapper">
+                <img src="assets/img/advantages/2.svg" class="advantages__item-icon" alt="" loading="lazy" decoding="async">
+              </div>
+              <div class="advantages__item-title">Атмосферный <br> <span>ресторан</span></div>
+              <div class="advantages__item-text">Дизайнерский интерьер, уютная обстановка и живая музыка</div>
+            </div>
+            <div class="wow fadeInUp advantages__item" data-wow-delay='.4s'>
+              <div class="advantages__item-icon-wrapper">
+                <img src="assets/img/advantages/3.svg" class="advantages__item-icon" alt="" loading="lazy" decoding="async">
+              </div>
+              <div class="advantages__item-title">Аутентичная <br> <span>кухня</span></div>
+              <div class="advantages__item-text">Широкий ассортимент грузинских горячих блюд и закусок</div>
+            </div>
+            <div class="wow fadeInUp advantages__item" data-wow-delay='.5s'>
+              <div class="advantages__item-icon-wrapper">
+                <img src="assets/img/advantages/4.svg" class="advantages__item-icon" alt="" loading="lazy" decoding="async">
+              </div>
+              <div class="advantages__item-title">По-настоящему <br> <span>вкусно</span></div>
+              <div class="advantages__item-text">Только свежие продукты и высочайшее качество блюд</div>
+            </div>
+            <div class="wow fadeInUp advantages__item" data-wow-delay='.6s'>
+              <div class="advantages__item-icon-wrapper">
+                <img src="assets/img/advantages/5.svg" class="advantages__item-icon" alt="" loading="lazy" decoding="async">
+              </div>
+              <div class="advantages__item-title">Традиционное <br> <span>приготовление</span></div>
+              <div class="advantages__item-text">Для вас готовят опытные кулинарные мастера родом из Закавказья</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section category">
+        <div class="container">
+          <div class="section__top-big">
+            <h2 class="title-2 title-center title-uppercase title-decor">Наше меню</h2>
+          </div>
+          <div class="category__wrapper">
+            <a href="category.html" class="wow fadeIn category__item" data-wow-delay='.2s'>
+              <picture>
+                <source srcset="assets/img/menu/1.avif" type="image/avif">
+                <img src="assets/img/menu/1.webp" class="category__item-img" width="425" height="336" alt="" loading="lazy" decoding="async">
+              </picture>
+              <div class="category__item-content">
+                <div class="title-4 title-uppercase category__item-title">Хинкали</div>
+                <div class="category__item-text">Блюдо которое приготовлено по лучшим домашним рецептам Грузии</div>
+              </div>
+            </a>
+            <a href="category.html" class="wow fadeIn category__item" data-wow-delay='.3s'>
+              <picture>
+                <source srcset="assets/img/menu/2.avif" type="image/avif">
+                <img src="assets/img/menu/2.webp" class="category__item-img" width="425" height="336" alt="" loading="lazy" decoding="async">
+              </picture>
+              <div class="category__item-content">
+                <div class="title-4 title-uppercase category__item-title">Закуски в стол</div>
+                <div class="category__item-text">Блюдо которое приготовлено по лучшим домашним рецептам Грузии</div>
+              </div>
+            </a>
+            <a href="category.html" class="wow fadeIn category__item" data-wow-delay='.4s'>
+              <picture>
+                <source srcset="assets/img/menu/3.avif" type="image/avif">
+                <img src="assets/img/menu/3.webp" class="category__item-img" width="425" height="336" alt="" loading="lazy" decoding="async">
+              </picture>
+              <div class="category__item-content">
+                <div class="title-4 title-uppercase category__item-title">Супы</div>
+                <div class="category__item-text">Блюдо которое приготовлено по лучшим домашним рецептам Грузии</div>
+              </div>
+            </a>
+            <a href="category.html" class="wow fadeIn category__item" data-wow-delay='.5s'>
+              <picture>
+                <source srcset="assets/img/menu/4.avif" type="image/avif">
+                <img src="assets/img/menu/4.webp" class="category__item-img" width="425" height="336" alt="" loading="lazy" decoding="async">
+              </picture>
+              <div class="category__item-content">
+                <div class="title-4 title-uppercase category__item-title">Салаты</div>
+                <div class="category__item-text">Блюдо которое приготовлено по лучшим домашним рецептам Грузии</div>
+              </div>
+            </a>
+            <a href="category.html" class="wow fadeIn category__item" data-wow-delay='.2s'>
+              <picture>
+                <source srcset="assets/img/menu/5.avif" type="image/avif">
+                <img src="assets/img/menu/5.webp" class="category__item-img" width="425" height="336" alt="" loading="lazy" decoding="async">
+              </picture>
+              <div class="category__item-content">
+                <div class="title-4 title-uppercase category__item-title">Горячие закуски</div>
+                <div class="category__item-text">Блюдо которое приготовлено по лучшим домашним рецептам Грузии</div>
+              </div>
+            </a>
+            <a href="category.html" class="wow fadeIn category__item" data-wow-delay='.3s'>
+              <picture>
+                <source srcset="assets/img/menu/6.avif" type="image/avif">
+                <img src="assets/img/menu/6.webp" class="category__item-img" width="425" height="336" alt="" loading="lazy" decoding="async">
+              </picture>
+              <div class="category__item-content">
+                <div class="title-4 title-uppercase category__item-title">Холодные закуски</div>
+                <div class="category__item-text">Блюдо которое приготовлено по лучшим домашним рецептам Грузии</div>
+              </div>
+            </a>
+            <a href="category.html" class="wow fadeIn category__item" data-wow-delay='.4s'>
+              <picture>
+                <source srcset="assets/img/menu/7.avif" type="image/avif">
+                <img src="assets/img/menu/7.webp" class="category__item-img" width="425" height="336" alt="" loading="lazy" decoding="async">
+              </picture>
+              <div class="category__item-content">
+                <div class="title-4 title-uppercase category__item-title">Горячие блюда</div>
+                <div class="category__item-text">Блюдо которое приготовлено по лучшим домашним рецептам Грузии</div>
+              </div>
+            </a>
+            <a href="category.html" class="wow fadeIn category__item" data-wow-delay='.5s'>
+              <picture>
+                <source srcset="assets/img/menu/8.avif" type="image/avif">
+                <img src="assets/img/menu/8.webp" class="category__item-img" width="425" height="336" alt="" loading="lazy" decoding="async">
+              </picture>
+              <div class="category__item-content">
+                <div class="title-4 title-uppercase category__item-title">Выпечка</div>
+                <div class="category__item-text">Блюдо которое приготовлено по лучшим домашним рецептам Грузии</div>
+              </div>
+            </a>
+          </div>
+          <div class="section-top flex justify-center">
+            <a href="category.html" class="button button_border button_white button_big">Смотреть все меню</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section action">
+        <div class="container">
+          <div class="section__top-big">
+            <h2 class="title-2 title-center title-uppercase title-decor">Акции</h2>
+          </div>
+          <div class="slider action__slider">
+            <div class="swiper action-container">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="action__item">
+                    <div class="action__item-title">наименование акции <br> для заржавели</div>
+                    <div class="action__item-subtitle">Только по понедельникам
+                      с 10:00 до 14:00</div>
+                    <picture>
+                      <source srcset="assets/img/action/1.avif" type="image/avif">
+                      <img src="assets/img/action/1.webp" class="action__item-img" alt="" decoding="async">
+                    </picture>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="action__item">
+                    <div class="action__item-title">наименование акции <br> для заржавели</div>
+                    <div class="action__item-subtitle">Только по понедельникам
+                      с 10:00 до 14:00</div>
+                    <picture>
+                      <source srcset="assets/img/action/1.avif" type="image/avif">
+                      <img src="assets/img/action/1.webp" class="action__item-img" alt="" decoding="async">
+                    </picture>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="action__item">
+                    <div class="action__item-title">наименование акции <br> для заржавели</div>
+                    <div class="action__item-subtitle">Только по понедельникам
+                      с 10:00 до 14:00</div>
+                    <picture>
+                      <source srcset="assets/img/action/1.avif" type="image/avif">
+                      <img src="assets/img/action/1.webp" class="action__item-img" alt="" decoding="async">
+                    </picture>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="action__item">
+                    <div class="action__item-title">наименование акции <br> для заржавели</div>
+                    <div class="action__item-subtitle">Только по понедельникам
+                      с 10:00 до 14:00</div>
+                    <picture>
+                      <source srcset="assets/img/action/1.avif" type="image/avif">
+                      <img src="assets/img/action/1.webp" class="action__item-img" alt="" decoding="async">
+                    </picture>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="action__item">
+                    <div class="action__item-title">наименование акции <br> для заржавели</div>
+                    <div class="action__item-subtitle">Только по понедельникам
+                      с 10:00 до 14:00</div>
+                    <picture>
+                      <source srcset="assets/img/action/1.avif" type="image/avif">
+                      <img src="assets/img/action/1.webp" class="action__item-img" alt="" decoding="async">
+                    </picture>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="action__item">
+                    <div class="action__item-title">наименование акции <br> для заржавели</div>
+                    <div class="action__item-subtitle">Только по понедельникам
+                      с 10:00 до 14:00</div>
+                    <picture>
+                      <source srcset="assets/img/action/1.avif" type="image/avif">
+                      <img src="assets/img/action/1.webp" class="action__item-img" alt="" decoding="async">
+                    </picture>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="swiper-pagination slider__pagination action__pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__top-big">
+            <h2 class="title-2 title-center title-uppercase title-decor">Акции</h2>
+          </div>
+          <div class="slider card-slider">
+            <div class="swiper card-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="card" data-card>
+                    <div class="card__top">
+                      <a href="single-product.html" class="card__img">
+                        <picture>
+                          <source srcset="assets/img/category/1.avif" type="image/avif">
+                          <img src="assets/img/category/1.webp" alt="img" decoding="async">
+                        </picture>
+                      </a>
+
+                      <div class="labels card__labels">
+
+                        <div class="label label-action">Акция</div>
+
+                      </div>
+
+                      <a href="single-product.html" class="card__title">Паста с креветками <br>
+                        в сливочном соусе</a>
+                    </div>
+                    <div class="card__content">
+                      <div class="price card__price">
+                        <del class="price-old">
+                          <span data-price="2000">2 000</span>
+                          ₽
+                        </del>
+                        <span class="price-new">
+                          <span data-price="1500">1 500</span>
+                          ₽
+                        </span>
+                      </div>
+                      <div class="checkbox card__button">
+                        <input class="checkbox__input" type="radio">
+                        <span class="checkbox__text">
+                          <svg class="cart-icon" aria-hidden="true">
+                            <use xlink:href="assets/img/sprite-037ac44c93.svg#cart"></use>
+                          </svg>
+                          <span>В корзину</span>
+                        </span>
+                        <span class="count card__count">
+                          <button class="count__button count__minus" type="button">
+                            <svg class="count__basket-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#basket"></use>
+                            </svg>
+                            <svg class="count__minus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#minus"></use>
+                            </svg>
+                          </button>
+                          <input type="number" class="count__value" value="1" disabled>
+                          <button class="count__button count__plus">
+                            <svg class="plus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#plus"></use>
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="card" data-card>
+                    <div class="card__top">
+                      <a href="single-product.html" class="card__img">
+                        <picture>
+                          <source srcset="assets/img/category/1.avif" type="image/avif">
+                          <img src="assets/img/category/1.webp" alt="img" decoding="async">
+                        </picture>
+                      </a>
+
+                      <div class="labels card__labels">
+
+                        <div class="label label-action">Акция</div>
+
+                      </div>
+
+                      <a href="single-product.html" class="card__title">Паста с креветками <br>
+                        в сливочном соусе</a>
+                    </div>
+                    <div class="card__content">
+                      <div class="price card__price">
+                        <del class="price-old">
+                          <span data-price="2000">2 000</span>
+                          ₽
+                        </del>
+                        <span class="price-new">
+                          <span data-price="1500">1 500</span>
+                          ₽
+                        </span>
+                      </div>
+                      <div class="checkbox card__button">
+                        <input class="checkbox__input" type="radio">
+                        <span class="checkbox__text">
+                          <svg class="cart-icon" aria-hidden="true">
+                            <use xlink:href="assets/img/sprite-037ac44c93.svg#cart"></use>
+                          </svg>
+                          <span>В корзину</span>
+                        </span>
+                        <span class="count card__count">
+                          <button class="count__button count__minus" type="button">
+                            <svg class="count__basket-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#basket"></use>
+                            </svg>
+                            <svg class="count__minus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#minus"></use>
+                            </svg>
+                          </button>
+                          <input type="number" class="count__value" value="1" disabled>
+                          <button class="count__button count__plus">
+                            <svg class="plus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#plus"></use>
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="card" data-card>
+                    <div class="card__top">
+                      <a href="single-product.html" class="card__img">
+                        <picture>
+                          <source srcset="assets/img/category/1.avif" type="image/avif">
+                          <img src="assets/img/category/1.webp" alt="img" decoding="async">
+                        </picture>
+                      </a>
+
+                      <div class="labels card__labels">
+
+                        <div class="label label-action">Акция</div>
+
+                      </div>
+
+                      <a href="single-product.html" class="card__title">Паста с креветками <br>
+                        в сливочном соусе</a>
+                    </div>
+                    <div class="card__content">
+                      <div class="price card__price">
+                        <del class="price-old">
+                          <span data-price="2000">2 000</span>
+                          ₽
+                        </del>
+                        <span class="price-new">
+                          <span data-price="1500">1 500</span>
+                          ₽
+                        </span>
+                      </div>
+                      <div class="checkbox card__button">
+                        <input class="checkbox__input" type="radio">
+                        <span class="checkbox__text">
+                          <svg class="cart-icon" aria-hidden="true">
+                            <use xlink:href="assets/img/sprite-037ac44c93.svg#cart"></use>
+                          </svg>
+                          <span>В корзину</span>
+                        </span>
+                        <span class="count card__count">
+                          <button class="count__button count__minus" type="button">
+                            <svg class="count__basket-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#basket"></use>
+                            </svg>
+                            <svg class="count__minus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#minus"></use>
+                            </svg>
+                          </button>
+                          <input type="number" class="count__value" value="1" disabled>
+                          <button class="count__button count__plus">
+                            <svg class="plus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#plus"></use>
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="card" data-card>
+                    <div class="card__top">
+                      <a href="single-product.html" class="card__img">
+                        <picture>
+                          <source srcset="assets/img/category/1.avif" type="image/avif">
+                          <img src="assets/img/category/1.webp" alt="img" decoding="async">
+                        </picture>
+                      </a>
+
+                      <div class="labels card__labels">
+
+                        <div class="label label-action">Акция</div>
+
+                      </div>
+
+                      <a href="single-product.html" class="card__title">Паста с креветками <br>
+                        в сливочном соусе</a>
+                    </div>
+                    <div class="card__content">
+                      <div class="price card__price">
+                        <del class="price-old">
+                          <span data-price="2000">2 000</span>
+                          ₽
+                        </del>
+                        <span class="price-new">
+                          <span data-price="1500">1 500</span>
+                          ₽
+                        </span>
+                      </div>
+                      <div class="checkbox card__button">
+                        <input class="checkbox__input" type="radio">
+                        <span class="checkbox__text">
+                          <svg class="cart-icon" aria-hidden="true">
+                            <use xlink:href="assets/img/sprite-037ac44c93.svg#cart"></use>
+                          </svg>
+                          <span>В корзину</span>
+                        </span>
+                        <span class="count card__count">
+                          <button class="count__button count__minus" type="button">
+                            <svg class="count__basket-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#basket"></use>
+                            </svg>
+                            <svg class="count__minus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#minus"></use>
+                            </svg>
+                          </button>
+                          <input type="number" class="count__value" value="1" disabled>
+                          <button class="count__button count__plus">
+                            <svg class="plus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#plus"></use>
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+            <div class="swiper-pagination slider__pagination card-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__top-big">
+            <h2 class="title-2 title-center title-uppercase title-decor">Хиты</h2>
+          </div>
+          <div class="slider card-slider">
+            <div class="swiper card-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="card" data-card>
+                    <div class="card__top">
+                      <a href="single-product.html" class="card__img">
+                        <picture>
+                          <source srcset="assets/img/category/1.avif" type="image/avif">
+                          <img src="assets/img/category/1.webp" alt="img" decoding="async">
+                        </picture>
+                      </a>
+
+                      <div class="labels card__labels">
+
+                        <div class="label label-hit">Хит продаж</div>
+
+                      </div>
+
+                      <a href="single-product.html" class="card__title">Паста с креветками <br>
+                        в сливочном соусе</a>
+                    </div>
+                    <div class="card__content">
+                      <div class="price card__price">
+                        <del class="price-old">
+                          <span data-price="2000">2 000</span>
+                          ₽
+                        </del>
+                        <span class="price-new">
+                          <span data-price="1500">1 500</span>
+                          ₽
+                        </span>
+                      </div>
+                      <div class="checkbox card__button">
+                        <input class="checkbox__input" type="radio">
+                        <span class="checkbox__text">
+                          <svg class="cart-icon" aria-hidden="true">
+                            <use xlink:href="assets/img/sprite-037ac44c93.svg#cart"></use>
+                          </svg>
+                          <span>В корзину</span>
+                        </span>
+                        <span class="count card__count">
+                          <button class="count__button count__minus" type="button">
+                            <svg class="count__basket-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#basket"></use>
+                            </svg>
+                            <svg class="count__minus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#minus"></use>
+                            </svg>
+                          </button>
+                          <input type="number" class="count__value" value="1" disabled>
+                          <button class="count__button count__plus">
+                            <svg class="plus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#plus"></use>
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="card" data-card>
+                    <div class="card__top">
+                      <a href="single-product.html" class="card__img">
+                        <picture>
+                          <source srcset="assets/img/category/1.avif" type="image/avif">
+                          <img src="assets/img/category/1.webp" alt="img" decoding="async">
+                        </picture>
+                      </a>
+
+                      <div class="labels card__labels">
+
+                        <div class="label label-hit">Хит продаж</div>
+
+                      </div>
+
+                      <a href="single-product.html" class="card__title">Паста с креветками <br>
+                        в сливочном соусе</a>
+                    </div>
+                    <div class="card__content">
+                      <div class="price card__price">
+                        <del class="price-old">
+                          <span data-price="2000">2 000</span>
+                          ₽
+                        </del>
+                        <span class="price-new">
+                          <span data-price="1500">1 500</span>
+                          ₽
+                        </span>
+                      </div>
+                      <div class="checkbox card__button">
+                        <input class="checkbox__input" type="radio">
+                        <span class="checkbox__text">
+                          <svg class="cart-icon" aria-hidden="true">
+                            <use xlink:href="assets/img/sprite-037ac44c93.svg#cart"></use>
+                          </svg>
+                          <span>В корзину</span>
+                        </span>
+                        <span class="count card__count">
+                          <button class="count__button count__minus" type="button">
+                            <svg class="count__basket-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#basket"></use>
+                            </svg>
+                            <svg class="count__minus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#minus"></use>
+                            </svg>
+                          </button>
+                          <input type="number" class="count__value" value="1" disabled>
+                          <button class="count__button count__plus">
+                            <svg class="plus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#plus"></use>
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="card" data-card>
+                    <div class="card__top">
+                      <a href="single-product.html" class="card__img">
+                        <picture>
+                          <source srcset="assets/img/category/1.avif" type="image/avif">
+                          <img src="assets/img/category/1.webp" alt="img" decoding="async">
+                        </picture>
+                      </a>
+
+                      <div class="labels card__labels">
+
+                        <div class="label label-hit">Хит продаж</div>
+
+                      </div>
+
+                      <a href="single-product.html" class="card__title">Паста с креветками <br>
+                        в сливочном соусе</a>
+                    </div>
+                    <div class="card__content">
+                      <div class="price card__price">
+                        <del class="price-old">
+                          <span data-price="2000">2 000</span>
+                          ₽
+                        </del>
+                        <span class="price-new">
+                          <span data-price="1500">1 500</span>
+                          ₽
+                        </span>
+                      </div>
+                      <div class="checkbox card__button">
+                        <input class="checkbox__input" type="radio">
+                        <span class="checkbox__text">
+                          <svg class="cart-icon" aria-hidden="true">
+                            <use xlink:href="assets/img/sprite-037ac44c93.svg#cart"></use>
+                          </svg>
+                          <span>В корзину</span>
+                        </span>
+                        <span class="count card__count">
+                          <button class="count__button count__minus" type="button">
+                            <svg class="count__basket-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#basket"></use>
+                            </svg>
+                            <svg class="count__minus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#minus"></use>
+                            </svg>
+                          </button>
+                          <input type="number" class="count__value" value="1" disabled>
+                          <button class="count__button count__plus">
+                            <svg class="plus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#plus"></use>
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="card" data-card>
+                    <div class="card__top">
+                      <a href="single-product.html" class="card__img">
+                        <picture>
+                          <source srcset="assets/img/category/1.avif" type="image/avif">
+                          <img src="assets/img/category/1.webp" alt="img" decoding="async">
+                        </picture>
+                      </a>
+
+                      <div class="labels card__labels">
+
+                        <div class="label label-hit">Хит продаж</div>
+
+                      </div>
+
+                      <a href="single-product.html" class="card__title">Паста с креветками <br>
+                        в сливочном соусе</a>
+                    </div>
+                    <div class="card__content">
+                      <div class="price card__price">
+                        <del class="price-old">
+                          <span data-price="2000">2 000</span>
+                          ₽
+                        </del>
+                        <span class="price-new">
+                          <span data-price="1500">1 500</span>
+                          ₽
+                        </span>
+                      </div>
+                      <div class="checkbox card__button">
+                        <input class="checkbox__input" type="radio">
+                        <span class="checkbox__text">
+                          <svg class="cart-icon" aria-hidden="true">
+                            <use xlink:href="assets/img/sprite-037ac44c93.svg#cart"></use>
+                          </svg>
+                          <span>В корзину</span>
+                        </span>
+                        <span class="count card__count">
+                          <button class="count__button count__minus" type="button">
+                            <svg class="count__basket-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#basket"></use>
+                            </svg>
+                            <svg class="count__minus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#minus"></use>
+                            </svg>
+                          </button>
+                          <input type="number" class="count__value" value="1" disabled>
+                          <button class="count__button count__plus">
+                            <svg class="plus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#plus"></use>
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+            <div class="swiper-pagination slider__pagination card-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__top-big">
+            <h2 class="title-2 title-center title-uppercase title-decor">Новинки</h2>
+          </div>
+          <div class="slider card-slider">
+            <div class="swiper card-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="card" data-card>
+                    <div class="card__top">
+                      <a href="single-product.html" class="card__img">
+                        <picture>
+                          <source srcset="assets/img/category/1.avif" type="image/avif">
+                          <img src="assets/img/category/1.webp" alt="img" decoding="async">
+                        </picture>
+                      </a>
+
+                      <div class="labels card__labels">
+
+                        <div class="label label-new">Новинка</div>
+
+                      </div>
+
+                      <a href="single-product.html" class="card__title">Паста с креветками <br>
+                        в сливочном соусе</a>
+                    </div>
+                    <div class="card__content">
+                      <div class="price card__price">
+                        <del class="price-old">
+                          <span data-price="2000">2 000</span>
+                          ₽
+                        </del>
+                        <span class="price-new">
+                          <span data-price="1500">1 500</span>
+                          ₽
+                        </span>
+                      </div>
+                      <div class="checkbox card__button">
+                        <input class="checkbox__input" type="radio">
+                        <span class="checkbox__text">
+                          <svg class="cart-icon" aria-hidden="true">
+                            <use xlink:href="assets/img/sprite-037ac44c93.svg#cart"></use>
+                          </svg>
+                          <span>В корзину</span>
+                        </span>
+                        <span class="count card__count">
+                          <button class="count__button count__minus" type="button">
+                            <svg class="count__basket-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#basket"></use>
+                            </svg>
+                            <svg class="count__minus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#minus"></use>
+                            </svg>
+                          </button>
+                          <input type="number" class="count__value" value="1" disabled>
+                          <button class="count__button count__plus">
+                            <svg class="plus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#plus"></use>
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="card" data-card>
+                    <div class="card__top">
+                      <a href="single-product.html" class="card__img">
+                        <picture>
+                          <source srcset="assets/img/category/1.avif" type="image/avif">
+                          <img src="assets/img/category/1.webp" alt="img" decoding="async">
+                        </picture>
+                      </a>
+
+                      <div class="labels card__labels">
+
+                        <div class="label label-new">Новинка</div>
+
+                      </div>
+
+                      <a href="single-product.html" class="card__title">Паста с креветками <br>
+                        в сливочном соусе</a>
+                    </div>
+                    <div class="card__content">
+                      <div class="price card__price">
+                        <del class="price-old">
+                          <span data-price="2000">2 000</span>
+                          ₽
+                        </del>
+                        <span class="price-new">
+                          <span data-price="1500">1 500</span>
+                          ₽
+                        </span>
+                      </div>
+                      <div class="checkbox card__button">
+                        <input class="checkbox__input" type="radio">
+                        <span class="checkbox__text">
+                          <svg class="cart-icon" aria-hidden="true">
+                            <use xlink:href="assets/img/sprite-037ac44c93.svg#cart"></use>
+                          </svg>
+                          <span>В корзину</span>
+                        </span>
+                        <span class="count card__count">
+                          <button class="count__button count__minus" type="button">
+                            <svg class="count__basket-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#basket"></use>
+                            </svg>
+                            <svg class="count__minus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#minus"></use>
+                            </svg>
+                          </button>
+                          <input type="number" class="count__value" value="1" disabled>
+                          <button class="count__button count__plus">
+                            <svg class="plus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#plus"></use>
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="card" data-card>
+                    <div class="card__top">
+                      <a href="single-product.html" class="card__img">
+                        <picture>
+                          <source srcset="assets/img/category/1.avif" type="image/avif">
+                          <img src="assets/img/category/1.webp" alt="img" decoding="async">
+                        </picture>
+                      </a>
+
+                      <div class="labels card__labels">
+
+                        <div class="label label-new">Новинка</div>
+
+                      </div>
+
+                      <a href="single-product.html" class="card__title">Паста с креветками <br>
+                        в сливочном соусе</a>
+                    </div>
+                    <div class="card__content">
+                      <div class="price card__price">
+                        <del class="price-old">
+                          <span data-price="2000">2 000</span>
+                          ₽
+                        </del>
+                        <span class="price-new">
+                          <span data-price="1500">1 500</span>
+                          ₽
+                        </span>
+                      </div>
+                      <div class="checkbox card__button">
+                        <input class="checkbox__input" type="radio">
+                        <span class="checkbox__text">
+                          <svg class="cart-icon" aria-hidden="true">
+                            <use xlink:href="assets/img/sprite-037ac44c93.svg#cart"></use>
+                          </svg>
+                          <span>В корзину</span>
+                        </span>
+                        <span class="count card__count">
+                          <button class="count__button count__minus" type="button">
+                            <svg class="count__basket-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#basket"></use>
+                            </svg>
+                            <svg class="count__minus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#minus"></use>
+                            </svg>
+                          </button>
+                          <input type="number" class="count__value" value="1" disabled>
+                          <button class="count__button count__plus">
+                            <svg class="plus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#plus"></use>
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="card" data-card>
+                    <div class="card__top">
+                      <a href="single-product.html" class="card__img">
+                        <picture>
+                          <source srcset="assets/img/category/1.avif" type="image/avif">
+                          <img src="assets/img/category/1.webp" alt="img" decoding="async">
+                        </picture>
+                      </a>
+
+                      <div class="labels card__labels">
+
+                        <div class="label label-new">Новинка</div>
+
+                      </div>
+
+                      <a href="single-product.html" class="card__title">Паста с креветками <br>
+                        в сливочном соусе</a>
+                    </div>
+                    <div class="card__content">
+                      <div class="price card__price">
+                        <del class="price-old">
+                          <span data-price="2000">2 000</span>
+                          ₽
+                        </del>
+                        <span class="price-new">
+                          <span data-price="1500">1 500</span>
+                          ₽
+                        </span>
+                      </div>
+                      <div class="checkbox card__button">
+                        <input class="checkbox__input" type="radio">
+                        <span class="checkbox__text">
+                          <svg class="cart-icon" aria-hidden="true">
+                            <use xlink:href="assets/img/sprite-037ac44c93.svg#cart"></use>
+                          </svg>
+                          <span>В корзину</span>
+                        </span>
+                        <span class="count card__count">
+                          <button class="count__button count__minus" type="button">
+                            <svg class="count__basket-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#basket"></use>
+                            </svg>
+                            <svg class="count__minus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#minus"></use>
+                            </svg>
+                          </button>
+                          <input type="number" class="count__value" value="1" disabled>
+                          <button class="count__button count__plus">
+                            <svg class="plus-icon" aria-hidden="true">
+                              <use xlink:href="assets/img/sprite-037ac44c93.svg#plus"></use>
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+            <div class="swiper-pagination slider__pagination card-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section about about-home">
+        <div class="container">
+          <div class="about__items">
+            <div class="about__item">
+              <div class="about__item-img-wrapper">
+                <picture>
+                  <source srcset="assets/img/about/6.avif" type="image/avif">
+                  <img src="assets/img/about/6.webp" class="about__item-img" width="734" height="496" alt="" loading="lazy" decoding="async">
+                </picture>
+                <img src="assets/img/about/label.svg" class="about__item-label" alt="" loading="lazy" decoding="async">
+              </div>
+              <div class="about__item-content">
+                <div class="about__item-subtitle">Банкетные залы</div>
+                <div class="title about__item-title">Заржавели</div>
+                <div class="text-block about__item-text">
+                  <p>Для семейных праздников, дней рождения, деловых встреч, корпоративов и других важных мероприятий</p>
+                </div>
+                <a href="#" class="button button_border about__item-button">Посмотреть залы</a>
+              </div>
+            </div>
+            <picture>
+              <source srcset="assets/img/about/7.avif" type="image/avif">
+              <img src="assets/img/about/7.webp" class="about__decor" alt="" loading="lazy" decoding="async">
+            </picture>
+          </div>
+        </div>
+      </div>
+
+      <section class="section feedback">
+        <div class="container">
+          <div class="section__top">
+            <h2 class="title-2">Отзывы</h2>
+          </div>
+          <div class="feedback__wrapper">
+            <iframe id="yandex-reviews-widget" data-src="https://yandex.ru/maps-reviews-widget/72865885889?comments" style="width: 100%; height: 500px; border: none;"></iframe>
+
+            <div class="slider feedback__slider">
+              <div class="swiper feedback-container">
+                <div class="swiper-wrapper" data-viewer>
+                  <div class="swiper-slide">
+                    <div class="feedback__items">
+                      <a href="assets/img/feedback/1.webp" class="feedback__item">
+                        <picture>
+                          <source srcset="assets/img/feedback/1.avif" type="image/avif">
+                          <img src="assets/img/feedback/1.webp" class="feedback__item-img" alt="" loading="lazy" decoding="async">
+                        </picture>
+                      </a>
+                      <a href="assets/img/feedback/2.webp" class="feedback__item">
+                        <picture>
+                          <source srcset="assets/img/feedback/2.avif" type="image/avif">
+                          <img src="assets/img/feedback/2.webp" class="feedback__item-img" alt="" loading="lazy" decoding="async">
+                        </picture>
+                      </a>
+                      <a href="assets/img/feedback/3.webp" class="feedback__item">
+                        <picture>
+                          <source srcset="assets/img/feedback/3.avif" type="image/avif">
+                          <img src="assets/img/feedback/3.webp" class="feedback__item-img" alt="" loading="lazy" decoding="async">
+                        </picture>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="feedback__items">
+                      <a href="assets/img/feedback/1.webp" class="feedback__item">
+                        <picture>
+                          <source srcset="assets/img/feedback/1.avif" type="image/avif">
+                          <img src="assets/img/feedback/1.webp" class="feedback__item-img" alt="" loading="lazy" decoding="async">
+                        </picture>
+                      </a>
+                      <a href="assets/img/feedback/2.webp" class="feedback__item">
+                        <picture>
+                          <source srcset="assets/img/feedback/2.avif" type="image/avif">
+                          <img src="assets/img/feedback/2.webp" class="feedback__item-img" alt="" loading="lazy" decoding="async">
+                        </picture>
+                      </a>
+                      <a href="assets/img/feedback/3.webp" class="feedback__item">
+                        <picture>
+                          <source srcset="assets/img/feedback/3.avif" type="image/avif">
+                          <img src="assets/img/feedback/3.webp" class="feedback__item-img" alt="" loading="lazy" decoding="async">
+                        </picture>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="feedback__items">
+                      <a href="assets/img/feedback/1.webp" class="feedback__item">
+                        <picture>
+                          <source srcset="assets/img/feedback/1.avif" type="image/avif">
+                          <img src="assets/img/feedback/1.webp" class="feedback__item-img" alt="" loading="lazy" decoding="async">
+                        </picture>
+                      </a>
+                      <a href="assets/img/feedback/2.webp" class="feedback__item">
+                        <picture>
+                          <source srcset="assets/img/feedback/2.avif" type="image/avif">
+                          <img src="assets/img/feedback/2.webp" class="feedback__item-img" alt="" loading="lazy" decoding="async">
+                        </picture>
+                      </a>
+                      <a href="assets/img/feedback/3.webp" class="feedback__item">
+                        <picture>
+                          <source srcset="assets/img/feedback/3.avif" type="image/avif">
+                          <img src="assets/img/feedback/3.webp" class="feedback__item-img" alt="" loading="lazy" decoding="async">
+                        </picture>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination slider__pagination feedback__pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section info">
+        <div class="container">
+          <div class="info__wrapper">
+            <div class="section__top">
+              <h2 class="title-2 title-uppercase">Ресторан грузинской кухни и морепродуктов <br> <span>в Москве</span>
+              </h2>
+            </div>
+            <div class="text-block info__text">
+              <h3> Хотите попробовать настоящие грузинские блюда, и свежие морепродукты <strong>не покидая Москву?</strong></h3>
+              <p>Сделать это довольно просто — посетите наш ресторан Заржавели. Мы предлагаем большой выбор блюд традиционной грузинской кухни и свежие морепродукты, высококлассное обслуживание, и атмосферу уюта и доброжелательности.</p>
+              <blockquote>
+                <h3><strong>В меню нашего ресторана</strong> вы найдете:</h3>
+                <ul>
+                  <li>Всегда свежий хлеб и десерты собственной выпечки.</li>
+                  <li>Блюда, приготовленные на настоящем мангале</li>
+                  <li>Исключительно свежие морепродукты,- ежи, устрицы, камчатский краб и другие блюда.</li>
+                  <li>Горячие и холодные закуски, салаты из отборных свежих овощей</li>
+                  <li>Супы, гарниры и соусы</li>
+                  <li> Напитки, в том числе вкуснейшие домашние лимонады</li>
+                </ul>
+              </blockquote>
+              <p>Наш ресторан расположен в непосредственной близости от метро Варшавская. 1-2 минуты пешком. Открыто ежедневно с 11 до 23 часов, а по пятницам и субботам до полуночи. Вы можете не только посетить наш ресторан, но и заказать любые блюда и напитки домой, в офис или на праздничное мероприятие.</p>
+              <p>Благодаря широкому ассортименту вы сможете подобрать меню для вашего события, удовлетворив вкусы даже самых взыскательных гостей.</p>
+              <p>Для приготовления настоящих вкусных и ароматных блюд мы используем только свежие и качественные продукты. Каждый рецепт наши повара отбирали с любовью и добавили в них авторские секреты, которые сделали каждое блюдо уникальным. Мы позаботились и об эстетичной подаче: наши блюда — это не только очень вкусно, но и красиво.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section news">
+        <div class="container">
+          <div class="section__top-big">
+            <h2 class="title-2 title-center title-uppercase title-decor">Cтатьи</h2>
+          </div>
+          <div class="news__wrapper">
+            <a href="single-news.html" class="news__item">
+              <picture>
+                <source srcset="assets/img/news/1.avif" type="image/avif">
+                <img src="assets/img/news/1.webp" class="news__item-img" alt="img" decoding="async">
+              </picture>
+              <div class="news__item-content">
+                <time datetime="2026-01-01" class="news__item-date">
+                  <svg class="calendar-icon" aria-hidden="true">
+                    <use xlink:href="assets/img/sprite-037ac44c93.svg#calendar"></use>
+                  </svg>
+                  <span>01.01.2026</span>
+                </time>
+                <div class="news__item-title">Хачапури: история и виды грузинской лепешки</div>
+                <div class="news__item-text">Грузины известны своим гостеприимством, щедростью, шумными застольями, а также</div>
+                <div class="news__item-link">
+                  <span>Читать подробнее</span>
+                  <svg class="arrow-icon" aria-hidden="true">
+                    <use xlink:href="assets/img/sprite-037ac44c93.svg#arrow"></use>
+                  </svg>
+                </div>
+              </div>
+            </a>
+            <a href="single-news.html" class="news__item">
+              <picture>
+                <source srcset="assets/img/news/2.avif" type="image/avif">
+                <img src="assets/img/news/2.webp" class="news__item-img" alt="img" decoding="async">
+              </picture>
+              <div class="news__item-content">
+                <time datetime="2026-01-01" class="news__item-date">
+                  <svg class="calendar-icon" aria-hidden="true">
+                    <use xlink:href="assets/img/sprite-037ac44c93.svg#calendar"></use>
+                  </svg>
+                  <span>01.01.2026</span>
+                </time>
+                <div class="news__item-title">Хинкали: знаменитые
+                  грузинские пельмени</div>
+                <div class="news__item-text">Грузины известны своим гостеприимством, щедростью, шумными застольями, а также</div>
+                <div class="news__item-link">
+                  <span>Читать подробнее</span>
+                  <svg class="arrow-icon" aria-hidden="true">
+                    <use xlink:href="assets/img/sprite-037ac44c93.svg#arrow"></use>
+                  </svg>
+                </div>
+              </div>
+            </a>
+            <a href="single-news.html" class="news__item">
+              <picture>
+                <source srcset="assets/img/news/3.avif" type="image/avif">
+                <img src="assets/img/news/3.webp" class="news__item-img" alt="img" decoding="async">
+              </picture>
+              <div class="news__item-content">
+                <time datetime="2026-01-01" class="news__item-date">
+                  <svg class="calendar-icon" aria-hidden="true">
+                    <use xlink:href="assets/img/sprite-037ac44c93.svg#calendar"></use>
+                  </svg>
+                  <span>01.01.2026</span>
+                </time>
+                <div class="news__item-title">Грузинские традиции
+                  во всей красе</div>
+                <div class="news__item-text">Грузины известны своим гостеприимством, щедростью, шумными застольями, а также</div>
+                <div class="news__item-link">
+                  <span>Читать подробнее</span>
+                  <svg class="arrow-icon" aria-hidden="true">
+                    <use xlink:href="assets/img/sprite-037ac44c93.svg#arrow"></use>
+                  </svg>
+                </div>
+              </div>
+            </a>
+            <a href="single-news.html" class="news__item">
+              <picture>
+                <source srcset="assets/img/news/3.avif" type="image/avif">
+                <img src="assets/img/news/3.webp" class="news__item-img" alt="img" decoding="async">
+              </picture>
+              <div class="news__item-content">
+                <time datetime="2026-01-01" class="news__item-date">
+                  <svg class="calendar-icon" aria-hidden="true">
+                    <use xlink:href="assets/img/sprite-037ac44c93.svg#calendar"></use>
+                  </svg>
+                  <span>01.01.2026</span>
+                </time>
+                <div class="news__item-title">Грузинские традиции
+                  во всей красе</div>
+                <div class="news__item-text">Грузины известны своим гостеприимством, щедростью, шумными застольями, а также</div>
+                <div class="news__item-link">
+                  <span>Читать подробнее</span>
+                  <svg class="arrow-icon" aria-hidden="true">
+                    <use xlink:href="assets/img/sprite-037ac44c93.svg#arrow"></use>
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer__top-wrapper">
+        <div class="container">
+          <div class="footer__top">
+            <a href="/zarjaveli_new/" class="logo footer__logo">
+              <img src="assets/img/logo-footer.svg" width="312" height="61" alt="" loading="lazy" decoding="async">
+            </a>
+            <div class="footer__middle">
+              <ul class="menu footer__menu">
+                <li><a href="about.html">О ресторане</a></li>
+                <li><a href="news.html">Статьи</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+              </ul>
+              <ul class="menu footer__menu">
+                <li><a href="category.html">Меню</a></li>
+                <li><a href="action.html">Акции</a></li>
+                <li><a href="poster.html">Афиша</a></li>
+                <li><a href="payment.html">Доставка и оплата</a></li>
+              </ul>
+            </div>
+            <div class="footer__contacts">
+              <div class="call footer__call">
+                <svg class="phone-icon" aria-hidden="true">
+                  <use xlink:href="assets/img/sprite-037ac44c93.svg#phone"></use>
+                </svg>
+                <a href="tel:+74951779757" class="hover-active">+7 (495) 177-97-57</a>
+                <div class="social footer__social">
+                  <a href="https://wa.me/+70000000000" class="social__item" target="_blank" style="--color: 14, 189, 34">
+                    <svg class="whatsapp-icon" aria-hidden="true">
+                      <use xlink:href="assets/img/sprite-037ac44c93.svg#whatsapp"></use>
+                    </svg>
+                  </a>
+                  <a href="https://t.me/+70000000000" class="social__item" target="_blank" style="--color: 14, 84, 189">
+                    <svg class="telegram-icon" aria-hidden="true">
+                      <use xlink:href="assets/img/sprite-037ac44c93.svg#telegram"></use>
+                    </svg>
+                  </a>
+                  <a href="#" class="social__item" target="_blank" style="--color: 144, 0, 255">
+                    <svg class="max-icon" aria-hidden="true">
+                      <use xlink:href="assets/img/sprite-037ac44c93.svg#max"></use>
+                    </svg>
+                  </a>
+
+                </div>
+              </div>
+              <div class="address footer__item">
+                <div class="address__icon">
+                  <svg class="location-icon" aria-hidden="true">
+                    <use xlink:href="assets/img/sprite-037ac44c93.svg#location"></use>
+                  </svg>
+                </div>
+                <span class="address__text">г. Москва, Каширский пр. 25, корп. 4</span>
+              </div>
+              <div class="time footer__item">
+                <div class="time__icon">
+                  <svg class="time-icon" aria-hidden="true">
+                    <use xlink:href="assets/img/sprite-037ac44c93.svg#time"></use>
+                  </svg>
+                </div>
+                <span class="time__text">
+                  <small>Вс-Чт</small> 11:00 - 23:00
+                  &nbsp;
+                  <small>Пт-Сб</small> 11:00 - 24:00
+                </span>
+              </div>
+            </div>
+            <div class="footer__text">
+              <p><span>ООО ПТК “Делайт”</span></p>
+              <p>ОГРН: <span>1145047009315</span></p>
+              <p>ИНН: <span>5047158987</span></p>
+              <p>КПП: <span>504701001</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom-wrapper">
+        <div class="container">
+          <div class="footer__bottom">
+            <span>Copyright ©2022 – 2026 Zarjaveli</span>
+            <a href="text.html" class="hover-active" target="_blank">Пользовательское соглашение</a>
+            <a href="text.html" class="hover-active" target="_blank">Политика конфиденциальности</a>
+            <a href="https://wsp-studio.ru" class="hover-active" target="_blank" rel="nofollow">Разработано WSP Studio</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Модалки -->
+  <div class="modals">
+    <!-- Авторизация -->
+    <div class="modal modal-auth" id="modal-auth">
+      <div class="modal__dialog">
+        <div class="modal__content">
+          <button class="modal__close" type="button" data-modal-close>
+            <svg class="close">
+              <use xlink:href="assets/img/sprite-037ac44c93.svg#close"></use>
+            </svg>
+          </button>
+          <picture>
+            <source srcset="assets/img/modal/1-575.avif" type="image/avif" media="(max-width: 575px)">
+            <source srcset="assets/img/modal/1-575.webp" type="image/webp" media="(max-width: 575px)">
+            <source srcset="assets/img/modal/1-991.avif" type="image/avif" media="(max-width: 991px)">
+            <source srcset="assets/img/modal/1-991.webp" type="image/webp" media="(max-width: 991px)">
+            <source srcset="assets/img/modal/1.avif" type="image/avif">
+            <img src="assets/img/modal/1.webp" class="modal__bg" alt="" loading="lazy" decoding="async">
+          </picture>
+          <div class="modal__wrapper">
+            <div class="modal__left">
+              <img src="assets/img/modal/logo.svg" class="modal__logo" width="176" height="176" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="modal__right">
+              <div class="title-3 title-uppercase modal__title">Вход в аккаунт</div>
+              <hr>
+              <div class="form modal__form">
+                <form>
+                  <input type="hidden" name="info" class="modal-info">
+                  <div class="form__fields">
+                    <label class="input-item">
+                      <span>Номер телефона</span>
+                      <input type="tel" name="phone" class="input" placeholder="Введите ваш телефон" required>
+                    </label>
+                    <label class="input-item">
+                      <span>Ваш пароль</span>
+                      <input type="password" name="password" minlength="6" class="input" placeholder="Введите ваш пароль" required>
+                    </label>
+                    <button class="button submit">Вход в аккаунт</button>
+                    <hr>
+                    <div class="form__links">
+                      <button type="button" data-modal="modal-reg">У меня нет аккаунта</button>
+                      <button class="active-text" type="button" data-modal="modal-forgot" data-modal-stack>Забыли пароль?</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Регистрация -->
+    <div class="modal modal-reg" id="modal-reg">
+      <div class="modal__dialog">
+        <div class="modal__content">
+          <button class="modal__close" type="button" data-modal-close>
+            <svg class="close">
+              <use xlink:href="assets/img/sprite-037ac44c93.svg#close"></use>
+            </svg>
+          </button>
+          <picture>
+            <source srcset="assets/img/modal/1-575.avif" type="image/avif" media="(max-width: 575px)">
+            <source srcset="assets/img/modal/1-575.webp" type="image/webp" media="(max-width: 575px)">
+            <source srcset="assets/img/modal/1-991.avif" type="image/avif" media="(max-width: 991px)">
+            <source srcset="assets/img/modal/1-991.webp" type="image/webp" media="(max-width: 991px)">
+            <source srcset="assets/img/modal/1.avif" type="image/avif">
+            <img src="assets/img/modal/1.webp" class="modal__bg" alt="" loading="lazy" decoding="async">
+          </picture>
+          <div class="modal__wrapper">
+            <div class="modal__left">
+              <img src="assets/img/modal/logo.svg" class="modal__logo" width="176" height="176" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="modal__right">
+              <div class="title-3 title-uppercase modal__title">Регистрация</div>
+              <hr>
+              <div class="form modal__form">
+                <form>
+                  <input type="hidden" name="info" class="modal-info">
+                  <div class="form__fields">
+                    <label class="input-item">
+                      <span>Номер телефона</span>
+                      <input type="tel" name="phone" class="input" placeholder="Введите ваш телефон" required>
+                    </label>
+                    <label class="input-item">
+                      <span>Придумайте пароль</span>
+                      <input type="password" name="password" minlength="6" class="input" placeholder="Введите ваш пароль" required>
+                    </label>
+                    <label class="input-item">
+                      <span>Повторите ваш пароль</span>
+                      <input type="password" name="password_repeat" class="input" placeholder="Введите ваш пароль еще раз" required>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox" required>
+                      <span class="checkbox__text">
+                        Нажимая на кнопку “Регистрация аккаунта”, Вы соглашаетесь с
+                        <a href="text.html">Пользовательским соглашением</a> <br>
+                        и
+                        <a href="text.html">Политикой конфиденциальности</a>
+                      </span>
+                    </label>
+                    <button class="button submit">Зарегистрироваться</button>
+                    <hr>
+                    <div class="form__links">
+                      <button type="button" data-modal="modal-auth">У меня есть аккаунт</button>
+                      <button class="active-text" type="button" data-modal="modal-forgot" data-modal-stack>Забыли пароль?</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Восстановление пароля -->
+    <div class="modal modal-forgot" id="modal-forgot">
+      <div class="modal__dialog">
+        <div class="modal__content">
+          <button class="modal__close" type="button" data-modal-close>
+            <svg class="close">
+              <use xlink:href="assets/img/sprite-037ac44c93.svg#close"></use>
+            </svg>
+          </button>
+          <picture>
+            <source srcset="assets/img/modal/1-991.avif" type="image/avif" media="(max-width: 991px)">
+            <source srcset="assets/img/modal/1-991.webp" type="image/webp" media="(max-width: 991px)">
+            <source srcset="assets/img/modal/1.avif" type="image/avif">
+            <img src="assets/img/modal/1.webp" class="modal__bg" alt="" loading="lazy" decoding="async">
+          </picture>
+          <div class="modal__wrapper">
+            <div class="modal__left">
+              <img src="assets/img/modal/logo.svg" class="modal__logo" width="176" height="176" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="modal__right">
+              <div class="title-3 title-uppercase modal__title">Восстановление</div>
+              <hr>
+              <div class="form modal__form">
+                <form>
+                  <input type="hidden" name="info" class="modal-info">
+                  <div class="form__fields">
+                    <label class="input-item">
+                      <span>Номер телефона</span>
+                      <input type="tel" name="phone_forgot" class="input" placeholder="Введите ваш телефон" required>
+                    </label>
+                    <button class="button submit">Отправить код</button>
+                    <hr>
+                    <div class="form__links">
+                      <button class="active-text" type="button" onclick="window.history.back()">Вернуться назад</button>
+                    </div>
+                  </div>
+                </form>
+
+                <script>
+                  const forgotPhones = document.querySelectorAll('[name="phone_forgot"]');
+                  if (forgotPhones) {
+                    forgotPhones.forEach(phoneInput => {
+                      const form = phoneInput.closest('form');
+                      if (!form) return
+                      const submitButton = form.querySelector('.submit')
+                      const inputItem = phoneInput?.closest('.input-item')
+                      if (!phoneInput || !submitButton || !inputItem) return
+                      const title = inputItem.querySelector('span')
+                      let timer
+                      form.addEventListener('submit', async (event) => {
+                        event.preventDefault()
+                        if (phoneInput.name === 'sms_code') {
+                          await confirmCode()
+                          return
+                        }
+                        const success = await sendPhone()
+                        if (success) {
+                          showSmsStep()
+                        }
+                      })
+                      async function sendPhone() {
+                        // 
+                        // 
+                        // 
+                        // 
+                        // 
+                        // Аякс запрос отправки телефона
+                        // 
+                        // 
+                        // 
+                        // 
+                        return true
+                      }
+                      async function confirmCode() {
+                        const code = phoneInput.value
+                        if (code.length !== 6) {
+                          phoneInput.setCustomValidity('Введите код из 6 цифр')
+                          phoneInput.reportValidity()
+                          return
+                        }
+                        phoneInput.setCustomValidity('')
+                        openModal('#modal-new-password', false, null, false, false)
+                        // 
+                        // 
+                        // 
+                        // 
+                        // 
+                        // Аякс запрос проверки кода
+                        // 
+                        // 
+                        // 
+                        // 
+                        // 
+                      }
+
+                      function showSmsStep() {
+                        title.textContent = 'Код из СМС'
+                        phoneInput.type = 'text'
+                        phoneInput.name = 'sms_code'
+                        phoneInput.value = ''
+                        phoneInput.placeholder = '_ _ _ _ _ _'
+                        phoneInput.inputMode = 'numeric'
+                        phoneInput.autocomplete = 'one-time-code'
+                        phoneInput.maxLength = 6
+                        phoneInput.removeEventListener('input', handleCodeInput)
+                        phoneInput.addEventListener('input', handleCodeInput)
+                        submitButton.textContent = 'Подтвердить'
+                        const resend = document.createElement('div')
+                        resend.className = 'form__resend'
+                        resend.innerHTML = `
+												<span class="form__resend-text">Повторная отправка смс</span>
+												<span class="active-text form__timer">1:00</span>
+											`
+                        submitButton.before(resend)
+                        startTimer(resend)
+                      }
+
+                      function handleCodeInput() {
+                        this.value = this.value.replace(/\D/g, '').slice(0, 6)
+                        this.setCustomValidity('')
+                      }
+
+                      function startTimer(resend) {
+                        clearInterval(timer)
+                        let seconds = 60
+                        const timerElement = resend.querySelector('.form__timer')
+                        const updateTimer = () => {
+                          const minutes = Math.floor(seconds / 60)
+                          const remainingSeconds = seconds % 60
+                          timerElement.textContent = `${minutes}:${String(remainingSeconds).padStart(2, '0')}`
+                        }
+                        updateTimer()
+                        timer = setInterval(() => {
+                          seconds--
+                          updateTimer()
+                          if (seconds <= 0) {
+                            clearInterval(timer)
+                            enableResend(resend)
+                          }
+                        }, 1000)
+                      }
+
+                      function enableResend(resend) {
+                        const text = resend.querySelector('.form__resend-text')
+                        const timerElement = resend.querySelector('.form__timer')
+                        timerElement.remove()
+                        text.innerHTML = `
+												<span>Повторная отправка смс</span>
+												<button type="button" class="active-text form__resend-button">
+													Отправить еще раз
+												</button>
+											`
+                        const resendButton = text.querySelector('.form__resend-button')
+                        resendButton.addEventListener('click', async () => {
+                          resendButton.disabled = true
+                          const success = await sendPhone()
+                          if (success) {
+                            resendButton.remove()
+                            text.textContent = 'Повторная отправка смс'
+                            const newTimer = document.createElement('span')
+                            newTimer.className = 'form__timer'
+                            newTimer.textContent = '1:00'
+                            text.after(newTimer)
+                            phoneInput.value = ''
+                            startTimer(resend)
+                          } else {
+                            resendButton.disabled = false
+                          }
+                        })
+                      }
+                    });
+                  }
+                  document.querySelectorAll('form').forEach((form) => {})
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Новый пароль -->
+    <div class="modal modal-new-password" id="modal-new-password">
+      <div class="modal__dialog">
+        <div class="modal__content">
+          <button class="modal__close" type="button" data-modal-close>
+            <svg class="close">
+              <use xlink:href="assets/img/sprite-037ac44c93.svg#close"></use>
+            </svg>
+          </button>
+          <picture>
+            <source srcset="assets/img/modal/1-575.avif" type="image/avif" media="(max-width: 575px)">
+            <source srcset="assets/img/modal/1-575.webp" type="image/webp" media="(max-width: 575px)">
+            <source srcset="assets/img/modal/1-991.avif" type="image/avif" media="(max-width: 991px)">
+            <source srcset="assets/img/modal/1-991.webp" type="image/webp" media="(max-width: 991px)">
+            <source srcset="assets/img/modal/1.avif" type="image/avif">
+            <img src="assets/img/modal/1.webp" class="modal__bg" alt="" loading="lazy" decoding="async">
+          </picture>
+          <div class="modal__wrapper">
+            <div class="modal__left">
+              <img src="assets/img/modal/logo.svg" class="modal__logo" width="176" height="176" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="modal__right">
+              <div class="title-3 title-uppercase modal__title">Восстановление</div>
+              <hr>
+              <div class="form modal__form">
+                <form>
+                  <input type="hidden" name="info" class="modal-info">
+                  <div class="form__fields">
+                    <label class="input-item">
+                      <span>Придумайте пароль</span>
+                      <input type="password" name="password" minlength="6" class="input" placeholder="Введите ваш пароль" required>
+                    </label>
+                    <label class="input-item">
+                      <span>Повторите ваш пароль</span>
+                      <input type="password" name="password_repeat" class="input" placeholder="Введите ваш пароль еще раз" required>
+                    </label>
+                    <button class="button submit">Изменить пароль</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Библиотеки -->
+  <script src="assets/js/vendor.js" defer></script>
+
+  <!-- Общие скрипты -->
+  <script src="assets/js/script.js" defer></script>
+
+  <!-- Карта доставки -->
+  <script>
+    function initMaps(id, address) {
+      const container = document.querySelector(`#${id}`);
+      if (!container) {
+        return;
+      }
+      const coords = address[0][0].split(',').map(Number);
+      const center = [coords[0], coords[1]];
+      const myMap = new ymaps.Map(container, {
+        center: center,
+        zoom: 14,
+        controls: ['largeMapDefaultSet'],
+      }, {
+        searchControlProvider: 'yandex#search'
+      });
+      address.forEach(item => {
+        const placemarkCoords = item[0].split(',').map(Number);
+        const placemark = new ymaps.Placemark(placemarkCoords, {
+          balloonContent: item[1],
+        }, {
+          iconLayout: 'default#imageWithContent',
+          iconImageHref: 'assets/img/icons/location.svg',
+          iconImageSize: [39, 50],
+          iconImageOffset: [-15, -44],
+        });
+        myMap.geoObjects.add(placemark);
+      });
+      if (id == 'payment-map') {
+        const deliveryRadiusMeters = 4000;
+        const circle = new ymaps.Circle([center, deliveryRadiusMeters], {
+          hintContent: 'Зона доставки',
+          balloonContent: `Зона доставки: ${deliveryRadiusMeters / 1000} км`,
+        }, {
+          fillColor: '#FF9900',
+          fillOpacity: 0.24,
+          strokeColor: '#FF9900',
+          strokeWidth: 3,
+        });
+        myMap.geoObjects.add(circle);
+        myMap.setBounds(myMap.geoObjects.getBounds(), {
+          checkZoomRange: true,
+          zoomMargin: 30,
+        });
+      }
+      myMap.behaviors.disable('scrollZoom');
+      const layer = myMap.layers.get(0).get(0);
+      waitForTilesLoad(layer).then(() => {
+        document.querySelectorAll('.is-active').forEach(el => {
+          if (el.parentElement?.querySelector(`#${id}`)) {
+            el.classList.remove('is-active');
+          }
+        });
+      });
+    }
+
+    function init() {
+      initMaps('payment-map', [
+        [
+          '55.654797, 37.624462',
+          'г. Москва, Каширский пр. 25, корп. 4',
+        ],
+      ])
+      initMaps('contact-map', [
+        [
+          '55.654797, 37.624462',
+          'г. Москва, Каширский пр. 25, корп. 4',
+        ],
+      ])
+    }
+  </script>
+
+  <script>
+    (function() {
+      const burger = document.getElementById('burgerBtn');
+      const menu = document.getElementById('sideMenu');
+      const overlay = document.getElementById('overlay');
+      // ----- Переключение меню -----
+      function toggleMenu(open) {
+        const isOpen = open !== undefined ? open : !menu.classList.contains('active');
+        menu.classList.toggle('active', isOpen);
+        overlay.classList.toggle('active', isOpen);
+        burger.classList.toggle('active', isOpen);
+        burger.setAttribute('aria-expanded', isOpen);
+        burger.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+      burger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+      });
+      overlay.addEventListener('click', () => {
+        toggleMenu(false);
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menu.classList.contains('active')) {
+          toggleMenu(false);
+          burger.focus();
+        }
+      });
+      // Закрытие при клике по ссылке
+      menu.querySelectorAll('.menu__link').forEach(link => {
+        link.addEventListener('click', () => {
+          toggleMenu(false);
+        });
+      });
+      // ----- Подсветка активного пункта по поддомену -----
+      function setActiveLink() {
+        const currentHost = window.location.hostname; // например, "rest.zarjaveli.ru"
+        const links = document.querySelectorAll('.menu__link');
+        links.forEach(link => {
+          link.classList.remove('menu__link--active');
+          // Получаем hostname из href ссылки
+          try {
+            const linkUrl = new URL(link.href);
+            if (linkUrl.hostname === currentHost) {
+              link.classList.add('menu__link--active');
+            }
+          } catch (e) {
+            // Если ссылка некорректна — пропускаем
+          }
+        });
+      }
+      // Вызываем при загрузке страницы
+      setActiveLink();
+    })();
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,245 @@
+@@include('assets/html/head.html', {
+"class" : ''
+})
+@@include("assets/html/crumbs.html", {
+"list": [
+{
+"title":"Личный кабинет",
+"link":"'#'"
+},
+]
+})
+
+<!-- Личный кабинет -->
+<div class="section account">
+	<div class="container">
+		<div class="section__top">
+			<h1 class="title">Личный кабинет</h1>
+		</div>
+		<div class="account__wrapper" data-tabs>
+			<div class="account__left">
+				<div class="account__header" data-tabs-header>
+					<button class="account__header-button active" type="button">
+						<svg class="auth-icon">
+							<use xlink:href="assets/img/sprite.svg#auth"></use>
+						</svg>
+						<span>Профиль</span>
+					</button>
+					<button class="account__header-button" type="button">
+						<svg class="history-icon">
+							<use xlink:href="assets/img/sprite.svg#history"></use>
+						</svg>
+						<span>История заказов</span>
+					</button>
+				</div>
+			</div>
+			<div class="account__right" data-tabs-body>
+				<div class="account__item">
+					<div class="title-4 title-uppercase account__right-title">Личные данные</div>
+					<hr>
+					<div class="form account__form">
+						<form>
+							<div class="form__fields">
+								<label class="input-item">
+									<span>Имя</span>
+									<input type="text" name="name" class="input" placeholder="Введите имя" value="Юрий">
+								</label>
+								<label class="input-item">
+									<span>Фамилия</span>
+									<input type="text" name="lastname" class="input" placeholder="Введите фамилию" value="Троцкий">
+								</label>
+								<div class="input-item input-item-row">
+									<span>Пол</span>
+									<label class="checkbox">
+										<input class="checkbox__input" type="radio" name="gender" value="Мужской">
+										<span class="checkbox__text">Мужской</span>
+									</label>
+									<label class="checkbox">
+										<input class="checkbox__input" type="radio" name="gender" value="Женский">
+										<span class="checkbox__text">Женский</span>
+									</label>
+								</div>
+								<label class="input-item">
+									<span>Телефон</span>
+									<input type="tel" name="phone" class="input" placeholder="+7 (909) 999-99-99" value="+7 (700) 000 00 00">
+								</label>
+								<label class="input-item">
+									<span>E-mail</span>
+									<input type="email" name="email" class="input" placeholder="Введитпе email" value="username@gmail.com">
+								</label>
+								<label class="input-item">
+									<span>Дата рождения</span>
+									<div class="input-date">
+										<span class="input-date__placeholder">Введите дату</span>
+										<input type="text" name="date" class="input input-date__value" placeholder="ДД.ММ.ГГГГ" inputmode="numeric" autocomplete="bday" maxlength="10" value="08.09.1997">
+										<input type="date" class="input-date__picker" max="9999-12-31" tabindex="-1" aria-hidden="true">
+									</div>
+								</label>
+								<hr>
+								<div class="title-4 title-uppercase account__right-title">Адрес доставки</div>
+								<div class="account__row">
+									<span class="account__address">
+										<span class="account__address-text">
+											г. Москва, Каширский пр., 25, корп. 4, Москва</span>
+										<button class="account__address-edit" type="button">
+											<svg class="edit-icon">
+												<use xlink:href="assets/img/sprite.svg#edit"></use>
+											</svg>
+										</button>
+										<button class="account__address-remove" type="button">
+											<svg class="basket-icon">
+												<use xlink:href="assets/img/sprite.svg#basket"></use>
+											</svg>
+										</button>
+									</span>
+									<button class="button account__submit" type="submit">Сохранить изменения</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="account__item">
+					<!-- not format --> 
+					<div class="title-4 title-uppercase account__right-title">История заказов</div>
+					<div class="account-history">
+						<div class="account-history__item">
+							<div class="account-history__item-top">
+								<div class="account-history__item-title">№ 30099400</div>
+								<div class="account-history__item-summa">Сумма заказа: 1 500 ₽</div>
+								<div class="account-history__item-date">Дата заказа: 21.12.2026</div>
+							</div>
+							<div class="account-history__products">
+								@@for(var i = 0; i < 4; i++){ 
+									<div class="account-history__product">
+										<a href="single-product.html" class="account-history__product-img">
+											<img src="assets/img/product/1.webp" alt="img">
+										</a>
+										<a href="single-product.html" class="account-history__product-title">Хинкали с сыром - 100 г</a>
+										<div class="account-history__product-count">Кол-во: <span>99</span></div>
+										<div class="price account-history__product-price">
+											<del class="price-old"><span data-price="2000">2 000</span> ₽</del>
+											<div class="price-new"><span data-price="1500">1 500</span> ₽</div>
+										</div>
+									</div>
+								}
+							</div>
+
+							<div class="account-history__row">
+								<button class="button button_border button_white account-history__button">
+									<svg class="refresh-icon" aria-hidden="true">
+										<use xlink:href="assets/img/sprite.svg#refresh"></use>
+									</svg>
+									<span>Повторить заказ</span>
+								</button>
+								<button class="account-history__more">
+									<span data-text="Свернуть подробности">Подробнее о заказе</span>
+								</button>
+							</div>
+						</div>
+						<div class="account-history__item">
+							<div class="account-history__item-top">
+								<div class="account-history__item-title">№ 30099400</div>
+								<div class="account-history__item-summa">Сумма заказа: 1 500 ₽</div>
+								<div class="account-history__item-date">Дата заказа: 21.12.2026</div>
+							</div>
+							<div class="account-history__products">
+								@@for(var i = 0; i < 4; i++){ 
+									<div class="account-history__product">
+										<a href="single-product.html" class="account-history__product-img">
+											<img src="assets/img/product/1.webp" alt="img">
+										</a>
+										<a href="single-product.html" class="account-history__product-title">Хинкали с сыром - 100 г</a>
+										<div class="account-history__product-count">Кол-во: <span>99</span></div>
+										<div class="price account-history__product-price">
+											<del class="price-old"><span data-price="2000">2 000</span> ₽</del>
+											<div class="price-new"><span data-price="1500">1 500</span> ₽</div>
+										</div>
+									</div>
+								}
+							</div>
+
+							<div class="account-history__row">
+								<button class="button button_border button_white account-history__button">
+									<svg class="refresh-icon" aria-hidden="true">
+										<use xlink:href="assets/img/sprite.svg#refresh"></use>
+									</svg>
+									<span>Повторить заказ</span>
+								</button>
+								<button class="account-history__more">
+									<span data-text="Свернуть подробности">Подробнее о заказе</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@@include('assets/html/foot.html')
+
+<script>
+	// Установить курсор на последний символ
+	function setCaret(item, isText = false) {
+		let data = item.value;
+		item.focus()
+		item.value = ''
+		item.value = data
+	}
+
+	function setCaretAtStartEnd(node, atEnd) {
+		const sel = document.getSelection();
+		node = node.firstChild;
+
+		if (sel.rangeCount) {
+			['Start', 'End'].forEach(pos =>
+				sel.getRangeAt(0)["set" + pos](node, atEnd ? node.length : 0)
+			)
+		}
+	}
+
+	// Изменить адрес
+	let accountAddressEdit = document.querySelector('.account__address-edit');
+	let accountAddressText = document.querySelector('.account__address-text');
+
+	if (accountAddressEdit && accountAddressText) {
+		accountAddressEdit.addEventListener('click', function () {
+			accountAddressText.setAttribute('contenteditable', true)
+			accountAddressText.focus()
+			setCaretAtStartEnd(accountAddressText, 1)
+		});
+
+		accountAddressText.addEventListener('input', function () {
+			// 
+			// 
+			// 
+			// 
+			// Аякс
+			// 
+			// 
+			// 
+			// 
+			// 
+		});
+	}
+
+	// Кнопка подробнее
+	let accountHistoryMoreButton = document.querySelectorAll('.account-history__more');
+
+	if (accountHistoryMoreButton) {
+		accountHistoryMoreButton.forEach(button => {
+			button.addEventListener('click', () => {
+				const item = button.closest('.account-history__item')
+				const span = button.querySelector('span')
+
+				button.classList.toggle('active')
+				item.classList.toggle('active')
+
+				const text = span.textContent
+				span.textContent = span.dataset.text
+				span.dataset.text = text
+			})
+		})
+	}
+</script>

@@ -1,0 +1,31 @@
+@@include('assets/html/head.html', {
+"class" : ''
+})
+@@include("assets/html/crumbs.html", {
+"list": [
+{
+"title":"Статьи",
+"link":"'#'"
+},
+]
+})
+
+<!-- Cтатьи -->
+<div class="section news">
+	<div class="container">
+		<div class="section__top">
+			<h1 class="title">Статьи</h1>
+		</div>
+		<div class="news__wrapper">
+			<!-- not format -->
+			@@for(var i = 0; i < 4; i++){
+				@@include("assets/html/news-items.html")
+			}
+		</div>
+		<div class="section-top flex justify-center">
+			<button class="button button_border button_white button_big" type="button">Загрузить еще</button>
+		</div>
+	</div>
+</div>
+
+@@include('assets/html/foot.html')

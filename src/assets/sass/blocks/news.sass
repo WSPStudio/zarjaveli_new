@@ -1,0 +1,375 @@
+.news
+	&__wrapper
+		display: grid
+		grid-template-columns: repeat(auto-fill, minmax(340px, 1fr))
+		+adap('row-gap', 40, 16)
+		column-gap: 16px
+
+		@media (max-width: 767px)
+			grid-template-columns: repeat(2, 1fr)
+
+		@media (max-width: 575px)
+			grid-template-columns: 100%
+
+	&__item 
+		position: relative
+		z-index: 1
+		+adap('min-height', 426, 320)
+		
+		border: 1px solid rgba(255, 255, 255, 0.12)
+		border-radius: 16px
+		+t
+		overflow: hidden
+
+		+hov
+			&:after
+				box-shadow: 0 4px 12px 0px rgba(255, 153, 0, 0.4)
+
+			.news__item-text 
+				@supports (height: calc-size(fit-content, size))
+					height: calc-size(fit-content, size)
+
+				@supports not (height: calc-size(fit-content, size))
+					height: 2lh
+
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+
+			box-shadow: 0 12px 32px 4px rgba(255, 153, 0, 0.08)
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 72.6%)
+
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			bottom: 0
+
+			width: 100%
+			height: 1px
+
+			background: linear-gradient(90deg, transparent 0%, $active 50%, transparent 100%)
+			+t
+
+		&-img 
+			position: absolute
+			left: 0
+			top: 0
+			z-index: -1	
+
+			width: 100%
+			height: 100%
+
+			object-fit: cover
+			+t
+	
+		&-content 
+			position: relative
+			z-index: 2
+
+			display: grid
+			align-content: end
+			gap: 12px
+			height: 100%  
+			+adap('padding-block', 20, 15)
+			+adap('padding-inline', 31.5, 15)
+
+		&-date 
+			display: flex
+			align-items: center
+			+adap('gap', 16, 12)
+
+			color: $active
+
+			svg 
+				width: 1.2em
+				height: 1.2em
+
+				fill: currentColor
+				transition: none
+
+		&-title 
+			line-height: 1.4
+			+adap('font-size', 20, 16)
+			font-weight: 700
+
+		&-text 
+			font-weight: 400
+			+line(2)
+			+t 
+
+			@media (any-hover: hover)
+				height: 0
+				transition: height 0.3s
+
+		&-link 
+			display: flex
+			align-items: center
+			+adap('gap', 16, 12)
+			margin-top: 8px
+
+			+medium
+			line-height: 1.14286
+			letter-spacing: 0.02em
+			color: $active
+
+			svg 
+				width: 1em
+				height: 1em
+
+				fill: currentColor
+				transition: none
+
+
+	
+
+
+
+.single-news
+	&__wrapper
+		display: grid
+		grid-template-columns: 1fr minmax(340px, percent(532, $containerWidth))
+		+adap('gap', 50, 15)
+
+
+	&__left 
+		display: grid
+		+adap('gap', 30, 20)
+		align-content: start
+		grid-template-columns: 100%
+
+	&__title 
+		line-height: 1.18
+		+adap('font-size', 55, 23)	
+
+	&__date
+		display: flex
+		align-items: center
+		+adap('gap', 16, 12)
+
+		+adap('font-size', 20, 16)
+		
+		svg 
+			width: 1.3em
+			height: 1.3em
+
+			fill: $active
+
+	&__pagination 
+		display: flex
+		align-items: center
+		justify-content: space-between
+		+adap('gap', 24, 12)
+		margin-top: 20px
+		flex-wrap: wrap
+
+		&-button 
+			&:nth-child(2)
+				text-align: right
+
+			@media (max-width: 575px)
+				width: 100%
+
+				svg 
+					display: none
+
+	@media (max-width: 991px)
+		&__wrapper
+			grid-template-columns: 100%
+			gap: 40px
+
+
+
+.other 
+	width: 100%
+
+	&__title
+		+adap('margin-bottom', 24, 16)
+
+	&__items
+		display: grid
+		+adap('gap', 24, 16)
+
+	&__item
+		display: grid
+		grid-template-columns: auto 1fr 
+		+adap('column-gap', 24, 16)
+		row-gap: 20px 
+
+		+hov
+			.other__item-title 
+				color: $active
+
+		&-right 
+			display: grid
+			align-content: center
+			gap: 12px
+
+		&-img 
+			+adap('width', 200, 120)
+			height: 100%
+			object-fit: cover
+
+			img 
+				height: 100%
+				+adap('border-radius', 20, 12)
+				object-fit: cover
+
+		&-title 
+			+adap('font-size', 20, 16)
+			font-weight: 700
+			+t
+
+		&-text
+			+line(3)
+
+		&-date
+			color: $active
+
+	@media (max-width: 991px)
+		order: 3
+
+		&__items 
+			display: grid
+			grid-template-columns: 1fr 1fr 
+			gap: 20px
+
+	@media (max-width: 767px)
+		&__item
+			grid-template-columns: 100%
+
+			&-img 
+				width: 100%
+
+				img 
+					width: 100%
+
+	@media (max-width: 430px)
+		&__items 
+			display: flex
+			+scrollbar-x(100%, $scrollBarHeight: 8, $padding: 40) 
+			cursor: grabbing
+			gap: 20px
+
+			@media (pointer: coarse)
+				scroll-snap-type: x mandatory
+
+		&__item 
+			flex-basis: calc(100vw - 24px)
+			flex-grow: 0
+			flex-shrink: 0
+			
+			@media (pointer: coarse)
+				scroll-snap-align: start
+
+		&__title 
+			text-align: center
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

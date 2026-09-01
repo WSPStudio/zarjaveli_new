@@ -1,0 +1,179 @@
+.features
+	&__wrapper
+		display: grid
+		grid-template-columns: repeat(4, 1fr)
+
+		+adap('padding', 40, 16)
+
+		border: 1px solid rgba(255, 255, 255, 0.2)
+		+adap('border-radius', 20, 16)
+
+	&__item 
+		display: grid
+		grid-template-columns: percent(68, 372) 1fr 
+		align-items: center
+		align-content: center
+
+		@media (min-width: #{$firstBreakpoint + 1 + px})
+			row-gap: 4px
+			+adap('column-gap', 24, 16 , $widthTo: 1200 , $min: true)
+
+			&:not(:nth-child(4n + 1))
+				+adap('padding-left', 40, 16 , $widthTo: 1200 , $min: true)
+
+			&:not(:nth-child(4n + 4))
+				+adap('padding-right', 40, 16 , $widthTo: 1200 , $min: true)
+
+				border-right: 1px solid rgba(#fff, .2)
+
+		&-icon 
+			place-self: center
+			grid-row: span 2
+		
+		&-title
+			font-weight: 600
+			font-size: 14px
+			line-height: 1.2
+			text-transform: uppercase
+			color: $active
+
+			sub
+				+adap('font-size', 20, 16)
+
+			span 
+				font-weight: 600
+				+adap('font-size', 32, 24)
+				line-height: 1.25
+
+			strong 
+				+adap('font-size', 32, 20)
+
+
+	@media (max-width: #{$firstBreakpoint + px})
+		&__wrapper
+			gap: 20px
+
+		&__item 
+			gap: 4px 12px
+
+			@media (min-width: 992px)
+				grid-template-columns: 100%
+			
+			&-icon 
+				@media (min-width: 992px)
+					place-self: start
+				+adap('max-width', 60, 40, $firstBreakpoint , $min: true)
+				+adap('max-height', 60, 40, $firstBreakpoint , $min: true)
+
+	@media (max-width: 991px)
+		&__wrapper
+			grid-template-columns: repeat(2, 1fr)
+
+	@media (max-width: 767px)
+		&__wrapper
+			grid-template-columns: 100%
+
+		&__item 
+			grid-template-columns: 48px 1fr 
+
+			&-text 
+				br
+					display: none
+
+
+
+.advantages 
+	&__wrapper
+		display: grid
+		grid-template-columns: repeat(5, 1fr)
+		+adap('gap', 20, 12)
+
+	&__item 
+		position: relative
+		z-index: 1
+
+		display: grid 
+		grid-template-columns: 100%
+		justify-items: center
+		align-content: start
+		+adap('padding-block', 40, 16)
+		+adap('padding-inline', 28, 16)
+		
+		border: 2px solid transparent
+		background: linear-gradient(#000, #000) padding-box, linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)),  radial-gradient(33.11% 33.11% at -12.8% -14.76%,#FFFFFF 0%, rgba(255, 255, 255, 0) 100%) border-box
+		+adap('border-radius', 16, 12)
+
+		text-align: center
+
+		+hov
+			.advantages__item-icon 
+				scale: 1.05
+
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			bottom: -1.5px
+
+			width: 100%
+			height: 1px
+
+			background: linear-gradient(90deg, transparent 0%, $active 50%, transparent 100%)
+
+		&-icon-wrapper
+			display: flex
+			align-items: center
+			justify-content: center
+			+adap('width', 100, 60)
+			+adap('height', 100, 60)
+			+adap('margin-bottom', 20, 16)
+
+		&-icon 
+			width: 80px
+			height: 80px
+			+t
+
+		&-title 
+			margin-bottom: 12px
+
+			font-weight: 600
+			+adap('font-size', 18, 16)
+			line-height: 1.33333
+			text-transform: uppercase
+
+			span 
+				color: $active
+
+		&-text 
+			font-weight: 400
+
+	@media (max-width: 1650px)
+		@media (min-width: 992px)
+			&__wrapper
+				grid-template-columns: repeat(6, 1fr)
+
+			&__item 
+				grid-column: span 2 
+
+				&:nth-last-child(2)
+					&:nth-child(4)
+						grid-column: span 3
+
+				&:nth-last-child(1)
+					&:nth-child(5)
+						grid-column: span 3
+						
+
+	@media (max-width: 991px)
+		&__wrapper
+			grid-template-columns: repeat(auto-fill, minmax(max(40%, 250px), 1fr))
+
+		&__item 
+			&:last-child
+				&:nth-child(odd)
+					grid-column: 1/-1
+
+
+
+
+

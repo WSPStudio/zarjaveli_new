@@ -1,0 +1,79 @@
+$star-size: 24px
+$star-gap: 8px 
+$star-count: 5
+
+$star-icon-default: 'PHN2ZyB3aWR0aD0iMjAuNSIgaGVpZ2h0PSIyMC41IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIHZlcnNpb249IjEuMSI+CgogPGc+CiAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogIDxnIGlkPSJpbmZvIi8+CiAgPGcgaWQ9Imljb25zIj4KICAgPHBhdGggaWQ9ImZhdm9yaXRlIiBkPSJtMTEuMTMzODYsMC44OTk2M2wyLjMsNWMwLjEsMC4zIDAuNCwwLjUgMC43LDAuNmw1LjIwMDAxLDAuOGMwLjksMCAxLjIsMSAwLjYsMS42bC0zLjgsMy45Yy0wLjIsMC4yIC0wLjMsMC42IC0wLjMsMC45bDAuOSw1LjRjMC4xLDAuOCAtMC43LDEuNSAtMS40LDEuMWwtNC43LC0yLjZjLTAuMywtMC4yIC0wLjYsLTAuMiAtMC45LDBsLTQuNywyLjZjLTAuNywwLjQgLTEuNiwtMC4yIC0xLjQsLTEuMWwwLjksLTUuNGMwLjEsLTAuMyAtMC4xLC0wLjcgLTAuMywtMC45bC0zLjgsLTMuOWMtMC41LC0wLjYgLTAuMiwtMS42IDAuNiwtMS43bDUuMiwtMC44YzAuMywwIDAuNiwtMC4zIDAuNywtMC42bDIuMywtNWMwLjUsLTAuNyAxLjUsLTAuNyAxLjksMC4xeiIvPgogIDwvZz4KIDwvZz4KPC9zdmc+Cg=='
+
+$star-icon-active: 'PHN2ZyB3aWR0aD0iMjAuNSIgaGVpZ2h0PSIyMC41IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIHZlcnNpb249IjEuMSIgZmlsbD0iI0YwQjcxMSI+CgogPGc+CiAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogIDxnIGlkPSJpbmZvIi8+CiAgPGcgaWQ9Imljb25zIj4KICAgPHBhdGggaWQ9ImZhdm9yaXRlIiBkPSJtMTEuMTMzODYsMC44OTk2M2wyLjMsNWMwLjEsMC4zIDAuNCwwLjUgMC43LDAuNmw1LjIwMDAxLDAuOGMwLjksMCAxLjIsMSAwLjYsMS42bC0zLjgsMy45Yy0wLjIsMC4yIC0wLjMsMC42IC0wLjMsMC45bDAuOSw1LjRjMC4xLDAuOCAtMC43LDEuNSAtMS40LDEuMWwtNC43LC0yLjZjLTAuMywtMC4yIC0wLjYsLTAuMiAtMC45LDBsLTQuNywyLjZjLTAuNywwLjQgLTEuNiwtMC4yIC0xLjQsLTEuMWwwLjksLTUuNGMwLjEsLTAuMyAtMC4xLC0wLjcgLTAuMywtMC45bC0zLjgsLTMuOWMtMC41LC0wLjYgLTAuMiwtMS42IDAuNiwtMS43bDUuMiwtMC44YzAuMywwIDAuNiwtMC4zIDAuNywtMC42bDIuMywtNWMwLjUsLTAuNyAxLjUsLTAuNyAxLjksMC4xeiIvPgogIDwvZz4KIDwvZz4KPC9zdmc+'
+
+
+=background-star($width, $height, $margin-right, $image)
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="#{$width + $margin-right}" height="#{$height}"><image width="#{$width}" height="#{$height}" xlink:href="data:image/svg+xml;base64,#{$image}" /></svg>')
+
+
+.rating
+	display: flex 
+	align-items: center
+	gap: 12px
+
+	&__label
+		font-size: 14px
+
+	&__body
+		position: relative
+		width: calc(($star-size * $star-count) + ($star-gap * ($star-count - 1)))
+
+		&:before
+			content: ''
+			display: block
+			width: 100%
+			height: $star-size
+			+background-star($star-size, $star-size, $star-gap, $star-icon-default)
+
+	&__active
+		position: absolute
+		left: 0
+		top: 0
+		width: 0%
+		height: 100%
+		overflow: hidden
+		+t(.3)
+
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: $star-size
+			+background-star($star-size, $star-size, $star-gap, $star-icon-active) 
+
+	&__items
+		display: flex
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+
+		input
+			flex: 0 0 math.div(100%, $star-count)
+			height: 100%
+			margin: 0
+			padding: 0
+			opacity: 0
+			border: none
+			cursor: pointer
+
+	&__stars
+		display: flex
+		align-items: center
+		gap: 4px
+
+		.star
+			width: $star-size 
+			height: $star-size
+			+background-star($star-size, $star-size, $star-gap, $star-icon-default) 
+
+			&.active
+				+background-star($star-size, $star-size, $star-gap, $star-icon-active) 

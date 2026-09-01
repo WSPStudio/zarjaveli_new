@@ -1,0 +1,91 @@
+.payment
+	&__wrapper
+		display: grid
+		grid-template-columns: 1fr minmax(380px, percent(640, $containerWidth))
+		+adap('gap', 40, 20)
+		+adap('padding', 40, 16)
+
+		background: radial-gradient(87.12% 86.62% at 39.64% 50%, rgba(16, 16, 16, 0.8) 0%, #040303 100%)
+		border: 1px solid rgba(255, 255, 255, 0.12)
+		+adap('border-radius', 20, 16)
+
+	&__title 
+		display: grid
+		grid-template-columns: auto 1fr
+		+adap('gap', 20, 12)
+		+adap('margin-bottom', 20, 16)
+
+		+adap('font-size', 32, 20)
+
+		&:before
+			content: ''
+
+			flex-shrink: 0
+			width: 2px
+			height: 100%	
+
+			border-radius: 2px
+			background: $active
+
+	&__text
+		+adap('margin-bottom', 40, 16)
+
+	&__items
+		display: grid
+		+adap('gap', 20, 12)
+
+	&__item 
+		display: grid
+		grid-template-columns: auto 1fr 
+		+adap('gap', 20, 12)
+		align-items: center
+
+		&-icon 
+			display: flex
+			align-items: center
+			justify-content: center
+			+adap('width', 80, 32)
+			+adap('height', 80, 32)
+
+			img 
+				+adap('max-width', 52, 32)
+				+adap('max-height', 52, 32)
+
+		&-text 
+			+adap('font-size', 18, 16)
+			line-height: 1.33333
+
+			strong
+				font-weight: 600
+
+			span 
+				color: $active
+
+	@media (max-width: 991px)
+		&__wrapper
+			grid-template-columns: 100%
+		
+		&__map 
+			order: 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

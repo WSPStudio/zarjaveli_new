@@ -1,0 +1,577 @@
+.main	
+	+adap('padding-bottom', math.div($section_gap, 2), 24)
+
+.menu2
+	opacity: 0
+
+html 
+	&.loaded 
+		.menu2
+			opacity: 1
+
+body 
+	&:not(.home)
+		padding-top: var(--headerFixedHeight)
+
+	background: $bg url(../img/page-bg.webp) center top / contain no-repeat
+
+	font-weight: 500
+	line-height: 1.5
+
+	&.home 
+		background: #040303 url(../img/page-bg.webp) center top 9%/contain no-repeat
+	
+	
+.section
+	+adap('padding-block', math.div($section_gap, 2), 24)
+
+	&-top
+		+adap('padding-top', math.div($section_gap, 2), 24)
+
+	&-bottom
+		+adap('padding-bottom', math.div($section_gap, 2), 24)
+
+	&-small
+		+adap('padding-block', math.div($section_gap, 3), 16)
+
+		&-top 
+			+adap('padding-top', math.div($section_gap, 3), 16)   
+
+		&-bottom 
+			+adap('padding-bottom', math.div($section_gap, 3), 16)
+
+	&-big
+		+adap('padding-block', $section_gap, 40)
+
+	&-offset
+		+adap('margin-block', math.div($section_gap, 2), 24)
+			
+		&+.section-offset
+			+adap('margin-top', math.div($section_gap*-1, 2), -24)
+
+		&-top 
+			+adap('margin-top', math.div($section_gap, 2), 24)
+
+		&-bottom 
+			+adap('margin-bottom', math.div($section_gap, 2), 24)
+
+
+	&__top 
+		+adap('margin-bottom', 32, 20)
+
+		&-big 
+			+adap('margin-bottom', 60, 20)
+
+
+.title 
+	+title
+
+	&-uppercase 
+		text-transform: uppercase
+
+	&-2
+		+title-2
+
+	&-3
+		+title-3
+
+	&-4
+		+title-4
+
+	&-center 
+		text-align: center
+	
+	&-decor 
+		display: grid
+		justify-items: center
+		grid-template-columns: 100%
+
+		&:after
+			content: ''
+
+			+adap('width', 146, minusPercent(30, 146))
+			+adap('height', 18, minusPercent(30, 18))
+
+			background: url(../img/icons/decor.svg) center / contain no-repeat
+
+.active-text 
+	color: $active
+
+	
+.button 
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	gap: 12px
+	+adap('min-height', 48, 40)
+	padding: em(8) em(24)
+	
+	border-radius: 12px
+	background: $active
+
+	color: $bg
+	white-space: nowrap
+	+t
+
+	svg  
+		width: 1em
+		height: 1em
+
+		fill: currentColor
+		transition: none
+ 
+	+hov
+		background: dark($active, 16%)
+
+	&_border
+		background: transparent
+		border: 1px solid $active
+		color: $active
+
+		+hov
+			background: $active
+			color: $bg
+
+		&.button_white 
+			border-color: #fff
+			color: #fff
+
+			+hov
+				background: #fff
+				color: $bg
+
+	&_big 
+		+adap('min-width', 240, 180)
+		
+.call 
+	display: grid
+	grid-template-columns: 24px 1fr auto
+	align-items: center
+	+adap('gap', 12, 8)
+
+	white-space: nowrap
+
+	&>svg 
+		max-width: 20px
+		max-height: 20px
+
+		fill: $active
+
+	a 
+		white-space: nowrap
+
+.social 
+	display: flex
+	align-items: center
+	gap: 12px
+
+	&__item 
+		display: flex
+		align-items: center
+		justify-content: center
+		+adap('width', 38, 28)
+		+adap('height', 38, 28)
+		+adap('padding', 8, 4)
+
+		background: rgba(var(--color), 0.2)
+		+adap('border-radius', 12, 8)
+		+t 
+
+
+		+hov
+			background: rgba(var(--color), 0.4)
+
+		svg 
+			fill: rgb(var(--color))
+
+
+.time, .address
+	display: flex
+	align-items: center
+	+adap('gap', 12, 8)
+	
+	text-wrap: balance
+	
+	&__icon 
+		flex-shrink: 0 
+		display: flex
+		align-items: center
+		justify-content: center
+		+adap('width', 24, 20)
+		+adap('height', 24, 20)
+	
+		svg 
+			max-width: 20px
+			max-height: 20px
+	
+			fill: $active
+	
+	small 
+		font-size: inherit
+		color: rgba(255, 255, 255, 0.6)
+
+
+
+.count 
+	position: relative
+
+	display: flex
+	align-items: center
+	justify-content: space-between
+	min-height: 32px
+	width: 100%
+	min-width: 122px
+
+	&__button
+		display: flex
+		align-items: center
+		justify-content: center
+		+adap('width', 40, 32)
+		+adap('height', 40, 32)	
+		max-height: 90%
+
+
+		border: 1px solid $active
+		background: $active
+		+adap('border-radius', 12, 8)
+
+		svg 
+			+adap('width', 16, 12)
+			+adap('height', 16, 12)
+
+			fill: $bg
+
+	&__minus 
+		position: relative
+		z-index: 3
+
+		background: transparent
+		+t 
+
+		+hov
+			background: $active
+
+			svg 
+				fill: $bg
+
+		svg 
+			fill: #fff
+
+		.count__minus-icon
+			display: none
+
+		&.is-minus
+			.count__minus-icon
+				display: block
+
+			.count__basket-icon
+				display: none
+
+	&__plus
+		// &:after
+		// 	content: 'шт' 
+
+		// 	position: absolute
+		// 	left: calc(50% + 10px)
+		// 	top: 49%
+		// 	translate: -50% -50%
+
+		// 	font-size: 0.8em
+		// 	text-transform: uppercase
+		// 	pointer-events: none
+		+t 
+
+		+hov
+			background: dark($active, 8%)
+				
+
+	&__value
+		position: absolute
+		top: 50%
+		right: 50%
+		z-index: 2
+
+		translate: 50% -50%
+		width: 32px
+		// right: calc(50% + 5px)
+		// translate: 0 -50%
+
+		text-align: center
+		font: inherit
+
+		font-weight: 600
+		font-size: 20px
+
+
+
+.price 
+	display: grid
+
+	font-weight: 600
+	+adap('font-size', 24, 20)
+	line-height: 1
+	white-space: nowrap
+
+	&-old 
+		font-weight: 500
+		+adap('font-size', 12, 10)
+		line-height: 1.33333
+		color: rgba($text, .4)
+
+
+
+.labels
+	display: flex
+	flex-wrap: wrap
+	+adap('gap', 12, 8)
+
+.label 
+	padding: em(4) em(12)
+
+	background: $active
+	+adap('border-radius', 20, 16)
+
+	font-weight: 600
+	font-size: 12px
+	line-height: 1.33333
+	text-align: center
+	color: $bg
+
+	&-hit
+		background: #fff 
+		color: $bg
+
+	&-new 
+		color: #fff
+
+
+hr
+	display: block
+	grid-column: 1/-1
+	height: 1px
+	margin: 0
+
+	border: 0
+	border-top: 1px solid rgba(#fff, .2)
+	border-radius: 1px
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+

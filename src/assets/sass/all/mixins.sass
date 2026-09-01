@@ -1,0 +1,582 @@
+@use 'sass:math'
+@use 'sass:color'
+
+=pt 
+	font-weight: 700
+	font-family: 'PTSerif-Bold'
+	line-height: 1.125
+
+=title 
+	font-weight: 600
+	+adap('font-size', 56, 28)
+	line-height: 1.14286
+
+=title-2 
+	font-weight: 600
+	+adap('font-size', 52, 26)
+	line-height: 1.23077
+
+	span 
+		color: $active
+
+=title-3 
+	font-weight: 700
+	+adap('font-size', 32, 24)
+	line-height: 1.375
+
+	span, strong 
+		font: inherit
+		color: $active
+
+=title-4 
+	+adap('font-size', 24, 20)
+	font-weight: 600
+
+	span, strong 
+		font: inherit
+		color: $active
+
+
+=h
+	font-weight: 100
+
+=el
+	font-family: 200
+
+=light
+	font-family: 300
+
+=regular
+	font-weight: 400
+
+=medium
+	font-weight: 500
+
+=sb
+	font-weight: 600
+
+=bold
+	font-weight: 700
+
+=eb
+	font-weight: 800
+
+=black
+	font-weight: 900
+
+
+=abs
+	position: absolute
+	left: 0
+	top: 0
+	z-index: -1
+
+	width: 100%
+	height: 100%
+
+=hov()
+	@media (any-hover: hover)
+		&:hover
+			@content
+
+	&:focus-visible
+		@content
+
+=hidden
+	position: absolute
+	width: 1px
+	height: 1px
+	margin: -1px
+	clip: rect(0 0 0 0)
+	overflow: hidden
+
+=line($line: 4)
+	overflow: hidden
+	display: -webkit-box
+	-webkit-box-orient: vertical
+	-webkit-line-clamp: $line
+
+@function arrow($size: contain)
+	@return url("data:image/svg+xml,%3Csvg width='17' height='9' viewBox='0 0 17 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.5291 2.16965C15.4574 2.35094 15.191 2.57258 15.0445 2.69452C15.0418 2.69678 15.0392 2.69904 15.0365 2.7013C15.0017 2.73025 14.9709 2.75962 14.9347 2.7941C14.8486 2.87632 14.7322 2.98739 14.4599 3.18987C14.3921 3.26023 14.3237 3.33 14.2547 3.39907C13.5088 4.14496 12.7174 4.84533 11.9169 5.5367C11.9078 5.5464 11.8985 5.55628 11.8891 5.56625C11.7077 5.75898 11.4827 5.99795 11.317 6.12373C11.1063 6.28364 10.9568 6.38594 10.8331 6.46897C10.1968 7.01755 9.56514 7.5708 8.95649 8.14705C8.83203 8.26488 8.70854 8.38371 8.58616 8.50364L8.2832 8.86536L7.85134 8.50364C7.78745 8.43846 7.72325 8.37358 7.65872 8.30905C7.48774 8.13807 7.31497 7.96878 7.14071 7.80106C7.02922 7.7134 6.92039 7.63288 6.81948 7.5582C6.67769 7.45327 6.55149 7.35981 6.45543 7.27443C6.22399 7.06872 5.99636 6.80047 5.82732 6.60126C5.7997 6.56871 5.77362 6.53796 5.74937 6.50967C5.59566 6.37091 5.4414 6.23265 5.28699 6.0946C5.28178 6.08028 5.27669 6.0657 5.27155 6.05084C5.20744 5.86535 5.05324 5.71271 4.81062 5.47234C4.70496 5.36767 4.58254 5.24631 4.44344 5.09843C4.3538 5.00314 4.33037 4.93158 4.31119 4.87313C4.30555 4.85594 4.30024 4.83984 4.29377 4.82464C4.27157 4.77254 4.21626 4.74954 4.15093 4.72236C4.06617 4.6871 3.96444 4.64484 3.89619 4.52287C3.67872 4.13425 3.48712 4.05877 3.3422 4.00168C3.29968 3.98493 3.26118 3.96971 3.22722 3.94868C3.1171 3.88048 3.01084 3.73269 2.94334 3.60817C2.88982 3.50944 2.71511 3.37955 2.57109 3.29255C2.51664 3.25966 2.45731 3.20086 2.38749 3.13156C2.31523 3.05984 2.2317 2.97679 2.1305 2.89978C1.87476 2.70516 1.74028 2.60031 1.63223 2.51596C1.60142 2.49192 1.5728 2.46945 1.54407 2.44714C1.45328 2.37664 1.34485 2.28492 1.2351 2.19203C1.10375 2.08086 0.970445 1.96805 0.863134 1.88809C0.634907 1.63092 0.410093 1.3703 0.185283 1.10976C0.0699042 0.975835 0.00253139 0.804004 0.00048995 0.629759C-0.00146626 0.455461 0.0613941 0.293602 0.177831 0.177149C0.294278 0.0607028 0.456144 -0.00213982 0.630441 -0.000192344C0.804686 0.00184914 0.976604 0.0691355 1.11053 0.184514C1.38013 0.417145 1.64979 0.649817 1.91565 0.886228C2.23951 1.17421 2.55782 1.4678 2.86374 1.77372C3.07774 1.98772 3.28898 2.20451 3.498 2.42351C3.51952 2.44606 3.54098 2.46866 3.56246 2.49125C3.77092 2.64237 3.97644 2.79573 4.11216 2.91286C4.22422 3.00958 4.28502 3.10098 4.33711 3.17925C4.37296 3.2331 4.40467 3.28076 4.4461 3.31965C4.46834 3.34053 4.49957 3.36822 4.53722 3.40162C4.69095 3.538 4.95203 3.76963 5.14879 4.02235C5.2361 4.13449 5.32748 4.27481 5.41472 4.40877C5.53945 4.60032 5.65578 4.77893 5.7398 4.84382C5.88734 4.95775 6.02305 5.12191 6.14293 5.26698C6.25729 5.40536 6.35731 5.52637 6.43957 5.56983C6.53786 5.62175 6.59246 5.69525 6.67368 5.80447C6.73002 5.88022 6.79923 5.97312 6.90462 6.08806C7.02629 6.22074 7.10003 6.32697 7.1627 6.41726C7.25089 6.54434 7.31727 6.63994 7.46486 6.73375C7.62881 6.83796 7.78796 6.95908 7.88889 7.07889C7.93486 7.13345 7.99341 7.18991 8.05433 7.24865C8.13499 7.3264 8.2198 7.40821 8.28515 7.495C8.339 7.56652 8.36821 7.64094 8.39404 7.70679C8.40211 7.72733 8.40987 7.74701 8.41793 7.76554C8.44668 7.79396 8.47547 7.82234 8.50433 7.85065H7.93317C7.9543 7.8291 7.97541 7.80752 7.99646 7.78589C8.00091 7.77417 8.00537 7.76164 8.01009 7.74861C8.03373 7.68324 8.06287 7.60291 8.11787 7.52241C8.20492 7.39499 8.31166 7.31353 8.42433 7.22768C8.51206 7.16084 8.60337 7.09133 8.69165 6.99524C8.75184 6.92971 8.81417 6.84889 8.87597 6.76879C8.96775 6.64982 9.05843 6.53238 9.13924 6.46858C9.16951 6.44468 9.207 6.43558 9.24417 6.42666C9.24436 6.42665 9.24454 6.42663 9.24473 6.42662C9.24726 6.42601 9.24976 6.42537 9.25228 6.42476C9.41754 6.23786 9.58171 6.04984 9.74523 5.8612C9.75684 5.84229 9.76867 5.82327 9.7804 5.80445C9.83776 5.71247 9.89349 5.62311 9.91692 5.55193C9.9423 5.47478 10.0561 5.33084 10.1761 5.17915C10.2547 5.07981 10.3359 4.97712 10.3966 4.88769C10.4321 4.83542 10.4884 4.8084 10.5463 4.78066C10.6003 4.75476 10.6558 4.72817 10.6971 4.67975C10.7178 4.65549 10.736 4.62516 10.7554 4.59279C10.7725 4.56428 10.7905 4.53413 10.8121 4.50519C10.8321 4.47831 10.8923 4.43406 10.9694 4.37723C11.017 4.34211 11.0711 4.30216 11.1263 4.25863C11.2476 4.11907 11.3694 3.97986 11.4917 3.84129C11.5061 3.80126 11.513 3.761 11.5104 3.72093C11.5084 3.69219 11.5015 3.66244 11.4945 3.63198C11.485 3.59052 11.4752 3.54766 11.4769 3.50389C11.4783 3.46968 11.4927 3.44216 11.5136 3.43489C11.5234 3.43151 11.5344 3.43246 11.5444 3.4333C11.5558 3.43427 11.566 3.43511 11.5716 3.42925C11.5756 3.425 11.5755 3.41632 11.5754 3.40573C11.5753 3.38882 11.5753 3.36691 11.5916 3.34987C11.6521 3.28645 11.726 3.21952 11.7985 3.15398C11.8791 3.0811 11.9578 3.00983 12.0143 2.94681C12.0776 2.8762 12.1893 2.79713 12.3011 2.71785C12.3791 2.66254 12.4572 2.60708 12.5191 2.55445C12.5797 2.50287 12.6291 2.43541 12.6769 2.37002C12.7343 2.29152 12.7894 2.21597 12.8592 2.17476C12.8733 2.16644 12.905 2.17019 12.9446 2.17483C12.9727 2.17811 13.0049 2.18178 13.0377 2.18207C13.1083 2.1114 13.1797 2.04143 13.2518 1.9721C13.2519 1.96721 13.252 1.9622 13.2521 1.95714C13.252 1.95704 13.252 1.95694 13.252 1.95684C13.2538 1.8425 13.2562 1.68607 13.4137 1.6204C13.4538 1.60371 13.4932 1.60742 13.5287 1.61074C13.5636 1.614 13.5948 1.61694 13.619 1.59985C13.6466 1.58043 13.6626 1.54101 13.6801 1.49806C13.7046 1.43775 13.7321 1.37039 13.7982 1.34142C13.8027 1.33944 13.8076 1.33734 13.8126 1.3351C13.8603 1.31385 13.9309 1.28238 14.0211 1.27097C14.1823 1.13081 14.3453 0.992432 14.5094 0.855198C14.7829 0.626445 15.0597 0.400779 15.3363 0.175176C15.471 0.0655626 15.6418 0.00200559 15.8141 0.00143799C15.9864 0.000986412 16.1454 0.0628977 16.2597 0.177149C16.3739 0.291399 16.4357 0.450336 16.4353 0.622671C16.4347 0.7949 16.3712 0.965678 16.2616 1.10042C16.0826 1.3199 15.9036 1.53947 15.723 1.75742C15.7149 1.77023 15.7067 1.78301 15.6984 1.79561C15.6368 1.88929 15.5969 1.99351 15.5569 2.09783C15.5478 2.12179 15.5386 2.1458 15.5291 2.16965Z' fill='white' /%3E%3C/svg%3E") center / $size no-repeat
+
+
+=triangle($direction, $sizeX, $sizeY, $color)
+	content: ''
+	display: block
+	width: 0
+	height: 0
+	border-style: solid
+	-moz-transform: scale(.9999)
+		       
+	@if $direction == top 
+		border-width: 0 math.div($sizeX, 2) $sizeY 
+		border-color: transparent transparent $color transparent
+			
+	@if $direction == bottom
+		border-width: $sizeY math.div($sizeX, 2) 0
+		border-color: $color transparent transparent transparent
+			
+	@if $direction == left
+		border-width: math.div($sizeY, 2) $sizeX math.div($sizeY, 2) 0
+		border-color: transparent $color transparent transparent
+			
+	@if $direction == right
+		border-width: math.div($sizeY, 2) 0 math.div($sizeY, 2) $sizeX
+		border-color: transparent transparent transparent $color
+			
+	@if $direction == topright
+		border-width: 0 $sizeX $sizeY 0
+		border-color: transparent $color transparent transparent
+			
+	@if $direction == topleft
+		border-width: $sizeY $sizeX 0 0
+		border-color: $color transparent transparent transparent
+			
+	@if $direction == bottomright
+		border-width: 0 0 $sizeY $sizeX
+		border-color: transparent transparent $color transparent
+			
+	@if $direction == bottomleft
+		border-width: $sizeY 0 0 $sizeX
+		border-color: transparent transparent transparent $color
+
+=box-shadow-border($color: #000, $dir: 'all')
+	@if ($dir == 'bottom')
+		box-shadow: 0 1px 0 0 $color
+
+	@else if ($dir == 'top')
+		box-shadow: 0 -1px 0 0 $color
+
+	@else if ($dir == 'left')
+		box-shadow: -1px 0 0 0 $color
+
+	@else if ($dir == 'right')
+		box-shadow: 1px 0 0 0 $color
+
+	@else if ($dir == 'all')
+		box-shadow: 0 0 0 1px $color
+
+=gradientborder($gradient: linear-gradient(to right, black, red), $borderWidth: 1px)
+	position: relative
+
+	&:before
+		content: ''
+		position: absolute
+		inset: 0
+		padding: $borderWidth
+		background-image: $gradient
+		border-radius: inherit
+
+		mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0)
+		pointer-events: none
+
+=mask($mask, $color)
+	mask: $mask
+	-webkit-mask: $mask
+	background: $color
+
+
+=underline
+	text-decoration: underline
+	text-decoration-skip-ink: none
+	text-underline-offset: .1lh
+	transition: color .3s, text-decoration-color .3s
+
+=hover-underline
+	+underline
+	text-decoration-color: transparent
+
+	+hov
+		text-decoration-color: currentColor
+
+=swiper-controls
+	&.swiper
+		&-pagination,
+		&-navigation
+			display: none
+
+=hide-swiper
+	display: none
+	+swiper-controls
+
+
+@function percent($px, $from, $digits: 2)
+	$n: 1
+	@for $i from 1 through $digits
+		$n: $n * 10
+	$result: math.div($px, $from) * 100
+	@return math.div(round($result * $n), $n) * 1%
+
+@function minusPercent($px, $from, $add: false) 
+	$result: $from - ($from * math.div($px, 100))
+
+	@if $add == false
+		@return $result
+	 
+	@else 
+		@return #{$result+$add}
+
+@function plusPercent($px, $from) 
+	$result: $from + ($from * math.div($px, 100))
+	@return $result
+
+@function calculate($num1, $num2, $sign: '+')
+	@if ($sign == '+')
+		@return $num1+$num2
+ 
+	@else if ($sign == '-')
+		@return $num1 - $num2 
+
+@function rem($px)
+	$result: math.div($px, 16) + rem
+	@return $result 
+
+@function em($px, $current: 16)
+	$result: math.div($px, $current) + em
+	@return $result
+
+@function dark($color, $percent)
+	@return color-mix(in srgb, black $percent, $color)
+
+@function light($color, $percent)
+	@return color-mix(in srgb, white $percent, $color) 
+
+// transparent 
+@function tran($color: var(--active), $percent: 40)
+	@return color-mix(in srgb, #{$color} #{100 - $percent+'%'}, transparent #{$percent+'%'})
+
+// Динамический адаптив
+
+// на $maxWidth = 500px, на $minWidth = 200px. Между $maxWidth и $minWidth равномерно уменьшается. На >$maxWidth размерах постепенно увеличивается
+// +adap('width', 500, 200, 1)  
+
+// на размерах >=$maxWidth 500px, на $minWidth = 200px. Между $maxWidth и $minWidth равномерно уменьшается. 
+// +adap('width', 500, 200, 1, $min: true)  
+
+// на размере >991 не будет никакого значения, на размере <=991 будет постепенно уменьшаться до 200px
+// @media (max-width: 991px)
+// 	+adap('width', 500, 200, 1)  
+
+// для случаев выше $min: true нужно писать, чтобы на размерах >$maxWidth значение было таким же, как и во втором аргументе (500px)
+
+
+// на размерах >$firstBreakpoint 500px, на $minWidth = 200px. Равномерно уменьшается начиная с $firstBreakpoint размера. На $firstBreakpoint значение будет равно согласно дельте (*)
+// +adap('width', 500, 200)  
+
+// на размере >991 не будет никакого значения, на размере <=991 будет постепенно уменьшаться до 200px. 
+// если писать внутри медиазапроса, то нужно добавить $min: true, иначе в css будет двойной медиазапрос @media (max-width:991px) and (max-width:1400px)
+// @media (max-width: 991px)
+// 	+adap('width', 500, 200, $min: true)  
+
+// на размере <=991 не будет никакого значения, на размере >991 будет постепенно уменьшаться от 500px на $maxWidth и до минимального согласно дельте (*)
+// @media (min-width: 992px)
+// 	+adap('width', 500, 200, $min: true)  
+
+// на размере 991px = 500px и равномерно уменьшается до 200px на $minWdith. На размерах >991 ничего не задано  
+// @media (max-width: 991px) 
+// 	+adap('width', 500, 200, 991)   
+
+// на размере 991px = 500px и равномерно уменьшается до 200px на 768px. На размерах >991 и <768 ничего не задано  
+// @media (max-width: 991px) 
+// 	+adap('width', 500, 200, 991, 768, $min: true)  
+
+
+// * дельта (шаг) вычисляется согласно второму и третьему аргументу между ($maxWidth и $minWidth)
+
+=adap($property, $startSize, $minSize, $widthFrom: $maxWidth, $widthTo: $minWidth, $min: false, $save: true) 
+	$widthFromMedia: #{$widthFrom + px}
+	$widthToMedia: #{$widthTo + px}
+	$slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo))
+	$yIntersection: -$widthTo * $slope + $minSize
+	$flyValue: #{$yIntersection + px}" + " #{$slope * 100}vw
+
+	@if $minSize == 0
+		$minSize: 0.01
+
+	// Получение значения свойства 
+	$propertyValue: #{"round(clamp(#{$minSize + px}, " $flyValue ", #{$startSize + px}), 1px)"}
+
+	@if $widthFrom == 1
+		@if $min
+			// +adap('width', 500, 200, 1, $min: true)  
+
+			@media (max-width: #{$maxWidth+px})
+				#{$property}: calc(#{$minSize + px} + #{$startSize - $minSize} * ((100vw - #{$minWidth+px}) / #{$maxWidth - $minWidth}))
+
+			@media (min-width: #{$maxWidth+1+px})
+				#{$property}: #{$startSize+px}
+				
+		@else
+			// +adap('width', 500, 200, 1)  
+			#{$property}: calc(#{$minSize + px} + #{$startSize - $minSize} * ((100vw - #{$minWidth+px}) / #{$maxWidth - $minWidth}))
+
+	@else if $widthFrom > 1 and $widthFrom != $maxWidth and $widthTo == $minWidth
+		// +adap('width', 500, 200, 991)
+		#{$property}: $propertyValue
+
+	@else if $widthFrom > 1 and $widthFrom != $maxWidth and $widthTo != $minWidth
+		@if $min
+			// +adap('width', 500, 200, 991, 768, $min: true)
+			@media (min-width: $widthToMedia)
+				#{$property}: $propertyValue
+				 
+		@else
+			// +adap('width', 500, 200, 991, 768)
+			@media (min-width: $widthToMedia) and (max-width: $widthFromMedia) 
+				#{$property}: $propertyValue
+
+
+	@else	if $widthFrom == $maxWidth and $widthTo == $minWidth
+		@if $min
+			// +adap('width', 500, 200, $min: true)
+			#{$property}: $propertyValue
+
+		@else
+			// +adap('width', 500, 200)
+			@media (max-width: #{$firstBreakpoint + px})
+				#{$property}: $propertyValue
+
+			@media (min-width: #{$firstBreakpoint + 1 + px})
+				#{$property}: #{$startSize+px}
+
+	@else if $widthFrom == $maxWidth and $widthTo != $minWidth
+		@if $min
+			#{$property}: $propertyValue
+			
+		@else
+			@media (min-width: #{$widthTo + px})
+				#{$property}: $propertyValue
+
+			@if $save
+				@media (max-width: #{$widthTo - 1}px)
+					#{$property}: #{$minSize + px}
+
+
+=net($gap, $m1199: 0, $m991: 0, $m767: 0, $m575: 0) 
+	display: grid
+	gap: #{$gap + px}
+
+	@if $m1199 != 0
+		@media (max-width: #{$firstBreakpoint + px})
+			gap: #{$m1199 + px}
+
+	@if $m991 != 0
+		@media (max-width: 991px)
+			gap: #{$m991 + px}
+
+	@if $m767 != 0
+		@media (max-width: 767px)
+			gap: #{$m767 + px}
+
+	@if $m575 != 0
+		@media (max-width: 575px)
+			gap: #{$m575 + px}
+
+=item($items: 4, $m1199: 0, $m991: 0, $m767: 0, $m575: 0)
+	grid-template-columns: repeat($items, 1fr)
+
+	@if $m1199 != 0
+		@media (max-width: #{$firstBreakpoint + px})
+			grid-template-columns: repeat($m1199, 1fr)
+
+	@if $m991 != 0
+		@media (max-width: 991px)
+			grid-template-columns: repeat($m991, 1fr)
+
+	@if $m767 != 0
+			@media (max-width: 767px)
+				grid-template-columns: repeat($m767, 1fr)
+
+	@if $m575 != 0
+		@media (max-width: 575px)
+			grid-template-columns: repeat($m575, 1fr)
+
+
+=f-gap($gap, $m1199: 0, $m991: 0, $m767: 0, $m575: 0) 
+	display: flex
+	flex-wrap: wrap
+	--gap: #{$gap + px}
+	gap: var(--gap)
+
+	@if $m1199 != 0
+		@media (max-width: 1199px)
+			--gap: #{$m1199 + px}
+
+	@if $m991 != 0
+		@media (max-width: 991px)
+			--gap: #{$m991 + px}
+
+	@if $m767 != 0
+		@media (max-width: 767px)
+			--gap: #{$m767 + px}
+
+	@if $m575 != 0
+		@media (max-width: 575px)
+			--gap: #{$m575 + px}
+
+=f-item($items: 4, $m1199: 0, $m991: 0, $m767: 0, $m575: 0)
+	width: calc((100% / #{$items})  - var(--gap) / #{$items} * #{$items - 1})  
+
+	@if $m1199 != 0
+		@media (max-width: 1199px)
+			width: calc((100% / #{$m1199})  - var(--gap) / #{$m1199} * #{$m1199 - 1})  
+
+	@if $m991 != 0 
+		@media (max-width: 991px)
+			width: calc((100% / #{$m991})  - var(--gap) / #{$m991} * #{$m991 - 1})  
+
+	@if $m767 != 0
+		@media (max-width: 767px)
+			width: calc((100% / #{$m767})  - var(--gap) / #{$m767} * #{$m767 - 1})  
+
+	@if $m575 != 0 
+		@media (max-width: 575px)
+			width: calc((100% / #{$m575})  - var(--gap) / #{$m575} * #{$m575 - 1})    
+	
+=t($trans: 0.4)
+	transition: all #{$trans + s} 
+
+=scrollbar($maxHeight, $scrollBarWidth: 4, $padding: 5) 
+	max-height: $maxHeight 
+
+	@if $scrollBarWidth != 0 and $padding != 0
+		@if $padding != 'auto'
+			padding-right: #{$scrollBarWidth + $padding + px} 
+
+	overflow-y: auto
+	overflow-x: hidden
+
+	@supports (-moz-appearance: none)
+		&
+			scrollbar-color: color.adjust($active, $lightness: 10%) rgba(255, 255, 255, 0.08)
+			scrollbar-width: thin
+
+	&::-webkit-scrollbar 
+		width: #{$scrollBarWidth + px}
+
+	&::-webkit-scrollbar-track-piece 
+		background-color: rgba(255, 255, 255, 0.08)
+		border-radius: 4px
+
+	&::-webkit-scrollbar-thumb 
+		background-color: color.adjust($active, $lightness: 10%)  
+		border-radius: 4px 
+
+=scrollbar-x($maxWidth, $scrollBarHeight: 4, $padding: 5, $hideInMobile: false)
+	max-width: $maxWidth 
+
+	@if $scrollBarHeight != 0
+		@if $padding != 'auto' and $hideInMobile != true
+			padding-bottom: #{$scrollBarHeight + $padding + px} 
+			
+	overflow-x: auto
+	overflow-y: hidden
+
+	@supports (-moz-appearance: none)
+		&
+			scrollbar-color: color.adjust($active, $lightness: 8%) rgba(255, 255, 255, 0.08)
+			scrollbar-width: thin
+
+	@if ($scrollBarHeight == 0) or ($hideInMobile)
+		&::-webkit-scrollbar
+			display: none
+
+	@else
+		&::-webkit-scrollbar
+			height: #{$scrollBarHeight + px}
+					
+	&::-webkit-scrollbar-track-piece
+		background: rgba(255, 255, 255, 0.08)
+		border-radius: 4px
+					
+	&::-webkit-scrollbar-thumb
+		background: color.adjust($active, $lightness: 8%)  
+		border-radius: 4px
+
+
+
+=grid-border-system($border, $desktop-columns, $medias: ())
+	border-right: $border
+	border-bottom: $border
+
+	$keys: map-keys($medias)
+
+	@if length($keys) > 0
+		$first-max: nth($keys, 1)
+		$first-columns: map-get($medias, $first-max)
+
+		@media (max-width: #{$first-max}px)
+			&:nth-child(-n + #{$first-columns})
+				border-top: $border
+
+			&:nth-child(#{$first-columns}n + 1)
+				border-left: $border
+
+		@if length($keys) > 1
+			@for $i from 2 through length($keys)
+				$prev-max: nth($keys, $i - 1)
+				$max: nth($keys, $i)
+
+				$columns: map-get($medias, $max)
+
+				@media (min-width: #{$prev-max + 1}px) and (max-width: #{$max}px)
+					&:nth-child(-n + #{$columns})
+						border-top: $border
+
+					&:nth-child(#{$columns}n + 1)
+						border-left: $border
+
+		$last-max: nth($keys, length($keys))
+
+		@media (min-width: #{$last-max + 1}px)
+			&:nth-child(-n + #{$desktop-columns})
+				border-top: $border
+
+			&:nth-child(#{$desktop-columns}n + 1)
+				border-left: $border
+
+	@else
+		&:nth-child(-n + #{$desktop-columns})
+			border-top: $border
+
+		&:nth-child(#{$desktop-columns}n + 1)
+			border-left: $border
+	
+
+
+
+@keyframes fadeInTop 
+	0%
+		translate: 0 -100%
+
+	100%
+		translate: 0 0
+
+@keyframes fadeOutTop 
+	0%
+		translate: 0 0
+
+	100%
+		translate: 0 -200%
+
+@keyframes showIn 
+	0%
+		opacity: 0
+
+	100%
+		opacity: 1
+
+@keyframes showOut
+	0%
+		opacity: 1
+
+	100%
+		opacity: 0
+
+@keyframes pulse
+	0%
+		opacity: 0
+			
+	80%,
+	100%
+		opacity: 1

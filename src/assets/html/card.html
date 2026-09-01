@@ -1,0 +1,60 @@
+<div class="card" data-card>
+	<div class="card__top">
+		<a href="single-product.html" class="card__img">
+			<img src="assets/img/category/1.webp" alt="img">
+		</a>
+		@@if (label1 != '') {
+		<div class="labels card__labels">
+			@@if (label1 == "action1") {
+			<div class="label label-action">Акция</div>
+			}
+			@@if (label1 == "hit1") {
+			<div class="label label-hit">Хит продаж</div>
+			}
+			@@if (label1 == "new1") {
+			<div class="label label-new">Новинка</div>
+			}
+		</div>
+		}
+
+		<a href="single-product.html" class="card__title">Паста с креветками <br>
+			в сливочном соусе</a>
+	</div>
+	<div class="card__content">
+		<div class="price card__price">
+			<del class="price-old">
+				<span data-price="2000">2 000</span>
+				₽
+			</del>
+			<span class="price-new">
+				<span data-price="1500">1 500</span>
+				₽
+			</span>
+		</div>
+		<div class="checkbox card__button">
+			<input class="checkbox__input" type="radio">
+			<span class="checkbox__text">
+				<svg class="cart-icon" aria-hidden="true">
+					<use xlink:href="assets/img/sprite.svg#cart"></use>
+				</svg>
+				<span>В корзину</span>
+			</span>
+			<span class="count card__count">
+				<button class="count__button count__minus" type="button">
+					<svg class="count__basket-icon" aria-hidden="true">
+						<use xlink:href="assets/img/sprite.svg#basket"></use>
+					</svg>
+					<svg class="count__minus-icon" aria-hidden="true">
+						<use xlink:href="assets/img/sprite.svg#minus"></use>
+					</svg>
+				</button>
+				<input type="number" class="count__value" value="1" disabled>
+				<button class="count__button count__plus">
+					<svg class="plus-icon" aria-hidden="true">
+						<use xlink:href="assets/img/sprite.svg#plus"></use>
+					</svg>
+				</button>
+			</span>
+		</div>
+	</div>
+</div>

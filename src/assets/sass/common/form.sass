@@ -1,0 +1,443 @@
+
+.form
+	&__fields 
+		+adap('gap', 20, 12)
+
+	&__row 
+		display: flex
+		align-items: center
+		+adap('gap', 20, 12)
+
+		@media (max-width: 767px)
+			display: grid
+			grid-template-columns: 100%
+
+		.button 
+			flex-grow: 1
+
+	.checkbox 
+		font-weight: 500
+		font-size: 12px
+		line-height: 1.66667
+		color: rgba(255, 255, 255, 0.4)
+
+		@media (max-width: 575px)
+			br
+				display: none
+
+		a 
+			color: $active
+			text-decoration: underline
+			text-decoration-skip-ink: none
+			+t
+
+			+hov
+				text-decoration-color: transparent
+
+	&__links 
+		display: flex
+		align-items: center
+		justify-content: space-between
+		gap: 8px 16px
+		flex-wrap: wrap
+
+		>*
+			+hover-underline
+
+			&:first-child
+				&:last-child
+					width: 100%
+
+	&__resend 
+		display: flex
+		justify-content: center
+		align-items: center
+		gap: 12px
+		width: 100%
+
+		text-align: center
+
+		&-text 
+			display: flex
+			align-items: center
+			justify-content: space-between
+			width: 100%
+
+			color: rgba(255, 255, 255, 0.4)
+
+			&:has(+.form__timer)
+				width: auto
+				
+
+		&-button 
+			margin-left: auto
+
+.input, .textarea
+	width: 100%
+	padding-inline: 12px
+	
+
+	background: rgba(255, 255, 255, 0.12)
+	+adap('border-radius', 12, 8)
+
+	font: inherit
+	color: $text
+
+	$error-color: #f03
+
+	&:user-invalid
+		color: $error-color
+		border-color: $error-color
+
+		&::placeholder
+			color: $error-color
+
+	&::placeholder
+		color: rgba($text, .24)
+
+.input
+	height: 48px
+
+.textarea
+	+adap('height', 144, 100) 
+	padding-block: 12px
+ 
+
+.input-item
+	display: grid
+	grid-template-columns: 100%
+	justify-items: start
+	+adap('row-gap', 12, 8)
+	column-gap: 20px
+
+	cursor: pointer
+
+	&>span 
+		width: 100%
+		color: rgba($text, .4)
+		white-space: nowrap
+		+t
+
+	&:focus-within
+		&>span 
+			color: $text
+		
+	&_full 
+		grid-column: 1/-1
+
+	&-row 
+		display: flex
+		flex-wrap: wrap
+
+// form.form-dragover
+// 	position: relative
+
+// 	$file-error-color: #f03
+
+// 	&:before
+// 		content: ''
+// 		position: absolute
+// 		left: 50%
+// 		top: 50%
+// 		translate: -50% -50%
+// 		z-index: 4
+
+// 		width: calc(100% + 12px)
+// 		height: calc(100% + 12px)
+				
+// 		border: 2px dashed $active
+// 		border-radius: 8px
+// 		background-color: rgba($active, 0.2)
+// 		transition: background-color 0.2s, border-color 0.2s
+
+// 	&:after 
+// 		content: "Отпустите мышь, чтобы загрузить файлы"
+// 		position: absolute
+// 		top: 50%
+// 		left: 50%
+//		z-index: 5
+// 		transform: translate(-50%, -50%)
+// 		padding: 8px 16px
+
+// 		background: $active
+// 		border-radius: 8px
+		
+// 		color: #fff
+// 		font-size: 14px
+// 		white-space: nowrap
+// 		pointer-events: none
+// 		opacity: 0.9
+				
+// 	&-error 
+// 		&:before
+// 			border-color: $file-error-color
+// 			background-color: rgba($file-error-color, 0.2)
+
+// 		&:after
+// 			content: 'Недопустимый тип файла'
+// 		background: $file-error-color
+
+// .input-file
+// 	$input-file-icon-color: currentColor
+
+// 	$input-file-icon-size: 24
+// 	$input-file-icon-size-mobile: 24
+
+// 	$input-file-gap: 20
+// 	$input-file-gap-mobile: 20
+
+// 	position: relative
+// 	width: 100%
+	
+// 	+t
+
+// 	&:focus-within
+// 		+underline
+
+// 	+hov
+// 		color: $active
+
+// 	input 
+// 		position: absolute
+// 		inset: 0
+// 		opacity: 0
+
+// 	&-text
+// 		display: flex
+// 		align-items: flex-start
+
+// 		@if $input-file-gap != $input-file-gap-mobile
+// 			+adap('gap', $input-file-gap, $input-file-gap-mobile)
+
+// 		@else
+// 			gap: #{$input-file-gap+px}
+
+// 		&:after 
+// 			content: ''
+// 			+abs 
+// 			z-index: 1
+// 			cursor: pointer
+
+// 		&:before
+// 			content: ''
+// 			position: relative
+// 			z-index: 2
+// 			align-self: center
+// 			flex-shrink: 0
+
+// 			@if $input-file-icon-size != $input-file-icon-size-mobile
+// 				+adap('flex-basis', $input-file-icon-size, $input-file-icon-size-mobile)
+
+// 			@else
+// 				flex-basis: #{$input-file-icon-size+px}
+
+// 			aspect-ratio: 1
+// 			+mask(url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTYgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTYgMTYiPjxwYXRoIGQ9Im03LjY0NiAxMy42NDYuNzA3LjcwNyA2LTZhNC4wNCA0LjA0IDAgMCAwIDAtNS43MDcgNC4wMzkgNC4wMzkgMCAwIDAtNS43MDcgMGwtNi41IDYuNWEzLjMzMiAzLjMzMiAwIDAgMCAwIDQuNzA3Yy42NDguNjQ4IDEuNTAxLjk3NCAyLjM1NC45NzRzMS43MDUtLjMyNSAyLjM1NC0uOTc0bDYtNmMuNDk1LS40OTUuNzY3LTEuMTUzLjc2Ny0xLjg1M3MtLjI3Mi0xLjM1OC0uNzY4LTEuODU0Yy0uOTktLjk5LTIuNzE3LS45OS0zLjcwNyAwbC01LjUgNS41LjcwNy43MDcgNS41LTUuNWMuNjExLS42MTEgMS42ODItLjYxMSAyLjI5MyAwIC4zMDYuMzA2LjQ3NS43MTMuNDc1IDEuMTQ3cy0uMTY5Ljg0MS0uNDc1IDEuMTQ2bC02IDZjLS45MDguOTA4LTIuMzg1LjkwOC0zLjI5MyAwcy0uOTA4LTIuMzg1IDAtMy4yOTNsNi41LTYuNWMxLjE4NC0xLjE4NCAzLjEwOS0xLjE4NCA0LjI5MyAwczEuMTg0IDMuMTA5IDAgNC4yOTNsLTYgNnoiIGZpbGw9IiM5NTk1OTciIGNsYXNzPSJmaWxsLTAwMDAwMCI+PC9wYXRoPjwvc3ZnPg==") left center / contain no-repeat, $input-file-icon-color)
+
+.input-date
+	position: relative
+	width: 100%
+
+	cursor: pointer
+
+	&:before
+		content: ''
+
+		position: absolute
+		left: 16px
+		top: 50%
+		translate: 0 -50%
+
+		width: 20px
+		height: 20px
+
+		background: url("../img/icons/calendar.svg") center / contain no-repeat
+
+	&__placeholder
+		position: absolute
+		left: 16px
+		top: 50%
+		z-index: 1
+
+		translate: 0 -50%
+
+		color: rgba($text, .5)
+		pointer-events: none
+
+	&__value
+		position: relative
+		z-index: 2
+		padding-left: 48px
+
+		width: 100%
+
+		&::placeholder
+			color: transparent
+
+	&__picker
+		position: absolute
+		right: 0
+		top: 0
+		z-index: 3
+
+		width: 65%
+		height: 100%
+
+		opacity: 0
+		cursor: pointer
+
+	&.has-value
+		.input-date__placeholder
+			opacity: 0
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

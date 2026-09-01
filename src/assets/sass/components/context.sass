@@ -1,0 +1,125 @@
+
+[data-context]
+	position: relative
+
+[data-context-menu]
+	position: absolute
+	z-index: 10
+
+	opacity: 0
+	pointer-events: none
+	+t(.2)
+	translate: 0 -8px
+
+	font-size: 14px
+
+	&.active
+		translate: 0 0
+		opacity: 1
+		pointer-events: auto
+
+.context-menu  
+	width: max-content
+
+	&__button
+		display: flex
+		align-items: center 
+		justify-content: center
+		+adap('width', 28, 20)
+		+adap('height', 28, 20)
+
+		svg 
+			width: min(20px, 80%)
+			height: min(20px, 80%)
+
+			fill: var(--gray_dark)
+
+	&__list 
+		width: max-content
+		+adap('border-radius', 12, 8)
+		background: #fff
+		+bx
+		overflow: hidden
+
+	&__item 
+		display: flex
+		padding: em(8) em(16)
+		width: 100%
+
+		transition: background .3s
+
+		&[disabled]
+			opacity: .5
+
+		&:not(:last-child)
+			border-bottom: 1px solid var(--gray)
+
+		+hov
+			background: var(--gray)
+
+		&:focus-visible 
+			outline-offset: -3px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

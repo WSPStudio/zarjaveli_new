@@ -1,0 +1,254 @@
+.product
+	&__left 
+		position: relative
+
+	&__labels 
+		position: absolute
+		+adap('left', 20, 12)
+		+adap('top', 20, 12)
+
+		.label 
+			padding: em(4, 14) 1em
+			+adap('font-size', 14, 12)
+	
+	&__wrapper
+		display: grid
+		grid-template-columns: minmax(auto,  percent(700, 1380)) minmax(430px, 1fr) 
+		+adap('gap', 40, 20)
+		align-items: start
+		max-width: 1380px
+	
+	&__left 
+		position: relative
+
+		overflow: hidden
+
+	&__img 
+		display: flex
+
+		border-radius: 16px
+		overflow: hidden	
+	
+	&__right 
+		display: grid
+		+adap('gap', 20, 12)
+	
+	&__info 
+		display: flex
+		+adap('gap', 20, 12)
+		+adap('padding', 20, 16)
+
+		border: 1px solid rgba(255, 153, 0, 0.4)
+		border-radius: 16px
+
+		&-left,
+		&-right 
+			display: grid
+			gap: 8px
+			align-content: start
+
+		&-left 
+			+adap('padding-right', 20, 12)
+			flex-shrink: 0
+			
+			border-right: 1px solid rgba($active, .4)
+
+		&-item 
+			display: grid
+			grid-template-columns: 20px 1fr 
+			align-items: center
+			+adap('gap', 12, 8)
+
+			&-title
+				font-weight: 600
+				
+				span
+					color: $active
+
+			svg 
+				width: 1.25em
+				height: 1.25em
+
+				fill: $active
+	
+	&__bottom 
+		display: flex
+		align-items: center
+		justify-content: space-between
+		gap: 12px
+		+adap('padding', 20, 16)
+		+adap('border-radius', 16, 12)
+		background: $bg2
+
+		.checkbox__text 
+			color: #fff
+	
+	&__price 
+		display: flex
+		align-items: center
+		+adap('gap', 20, 8 , $widthTo: 992)
+	
+
+	@media (max-width: 1199px)
+		&__info 
+			display: grid
+
+			&-left 
+				padding-right: 0
+				padding-bottom: 16px
+				
+				border-right: 0
+				border-bottom: 1px solid rgba($active, .4)
+	
+		&__bottom
+			margin-top: 20px
+			padding: 0
+			border-radius: 0
+	
+	@media (max-width: 991px)
+		&__wrapper
+			grid-template-columns: 100%
+	
+		&__right 
+			order: -1
+
+		&__text 
+			order: 1
+
+		&__bottom 
+			order: 2
+		
+	@media (max-width: 575px)
+		&__bottom
+			display: grid
+			grid-template-columns: 100%
+			gap: 24px
+
+		&__button
+			width: 100%
+
+			.checkbox__text 
+				width: 100%
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

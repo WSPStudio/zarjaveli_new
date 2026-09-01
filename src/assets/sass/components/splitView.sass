@@ -1,0 +1,92 @@
+[data-splitview]
+	position: relative
+	width: 100%
+	overflow: hidden
+	 
+	&:before,
+	&:after 
+		position: absolute
+		+adap('top', 24, 16)
+		z-index: 3
+		padding: 4px 16px
+		
+		border-radius: 40px
+		backdrop-filter: blur(10px)
+		box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.25)
+		background: linear-gradient(180deg, rgba(245, 245, 245, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%)
+
+	&:before  
+		content: 'До'
+		+adap('left', 24, 12)	
+	
+	&:after 
+		content: 'После'
+		+adap('right', 24, 12)	
+	
+
+[data-splitview-before],
+[data-splitview-after] 
+	width: 100%
+
+	picture 
+		display: contents
+
+	img 
+		max-width: none
+		width: 100%
+		display: block
+		user-select: none
+
+[data-splitview-before] 
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 2
+	
+	width: 50%
+	height: 100%
+	
+	overflow: hidden
+	
+[data-splitview-after] 
+	display: block
+	
+[data-splitview-arrow]
+	position: absolute
+	left: 50%
+	top: 0
+	z-index: 6 
+
+	+adap('width', 4, 2)
+	height: 100%
+	translate: 50% 0
+	background-color: #fff
+	cursor: ew-resize	
+
+	&:focus-within
+		&:after
+			background: $active
+
+	input
+		position: absolute
+		inset: 0
+		z-index: 5
+		width: 100%
+		height: 100%
+		opacity: 0
+		cursor: ew-resize
+		appearance: none
+		pointer-events: none
+
+	&:after
+		content: ''
+		position: absolute
+		left: 50%
+		top: 50%
+		translate: -50% -50%
+		width: 48px
+		height: 32px
+		+mask(url("data:image/svg+xml,%3Csvg width='44' height='28' viewBox='0 0 44 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.92434 15.5554C0.933992 14.7549 0.933992 13.2451 1.92434 12.4446L11.7428 4.50844C13.0506 3.45129 15 4.38217 15 6.06387L15 21.9361C15 23.6178 13.0506 24.5487 11.7428 23.4916L1.92434 15.5554Z' fill='white' /%3E%3Cpath d='M42.0757 15.5554C43.066 14.7549 43.066 13.2451 42.0757 12.4446L32.2572 4.50844C30.9494 3.45129 29 4.38217 29 6.06387V21.9361C29 23.6178 30.9494 24.5487 32.2572 23.4916L42.0757 15.5554Z' fill='white' /%3E%3C/svg%3E") center / contain no-repeat, #fff)
+
+		
+

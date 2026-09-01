@@ -1,0 +1,72 @@
+@@include('assets/html/head.html', {
+"class" : ''
+})
+@@include("assets/html/crumbs.html", {
+"list": [
+{
+"title":"Акции",
+"link":"'#'"
+},
+]
+})
+
+<section class="section action">
+	<div class="container">
+		<div class="section__top">
+			<h1 class="title">Акции заржавели</h1>
+		</div>
+		<div class="slider action__slider">
+			<div class="swiper action-container">
+				<div class="swiper-wrapper">
+					<!-- not format -->
+					@@for(var i = 1; i <= 16; i++){
+						<div class="swiper-slide">
+							<div class="action__item">
+								<div class="action__item-title">наименование акции <br> для заржавели</div>
+								<div class="action__item-subtitle">Только по понедельникам
+									с 10:00 до 14:00</div>
+								<img src="assets/img/action/banner-`+i+`.webp" class="action__item-img" alt="" decoding="async" pic="991,575">
+							</div>
+						</div>
+					}
+				</div>
+			</div>
+		</div>
+		<div class="slider action-thumbs">
+			<div class="swiper action-thumbs-container">
+				<div class="swiper-wrapper">
+						@@for(var i = 0; i < 3; i++){
+							<div class="swiper-slide">
+								<div class="action-thumbs__item">
+									<img src="assets/img/action/2.webp" alt="" decoding="async">
+								</div>
+							</div> 
+							<div class="swiper-slide">
+								<div class="action-thumbs__item">
+									<img src="assets/img/action/3.webp" alt="" decoding="async">
+								</div>
+							</div>  
+							<div class="swiper-slide">
+								<div class="action-thumbs__item">
+									<img src="assets/img/action/4.webp" alt="" decoding="async">
+								</div>
+							</div> 
+							<div class="swiper-slide">
+								<div class="action-thumbs__item">
+									<img src="assets/img/action/5.webp" alt="" decoding="async">
+								</div>
+							</div> 
+							<div class="swiper-slide">
+								<div class="action-thumbs__item">
+									<img src="assets/img/action/6.webp" alt="" decoding="async">
+								</div>
+							</div> 
+						}
+				</div>
+				<div class="swiper-scrollbar slider__scrollbar action-thumbs__scrollbar"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+@@include('assets/html/foot.html')

@@ -1,0 +1,179 @@
+.action
+	&-container 
+		overflow: visible
+
+	&__slider 
+		@media (min-width: 576px)
+			.swiper-slide-active 
+				.action__item:before 
+					opacity: 0
+
+
+	&__item 
+		position: relative
+		z-index: 1
+		display: grid 
+		align-content: center
+		gap: 4px
+		
+		+adap('padding-inline', 60, 16)
+		+adap('min-height', 440, 280)
+
+		border: 1px solid rgba(255, 255, 255, 0.12)
+		border-radius: 16px
+		overflow: hidden  
+
+		@media (min-width: 576px)
+			&:before
+				content: ''
+
+				position: absolute
+				left: 0
+				top: 0
+				z-index: 0
+
+				width: 100%
+				height: 100%
+
+				background: linear-gradient(90deg, #040303 0%, rgba(4, 3, 3, 0) 100%)
+				+t
+				pointer-events: none
+
+		&-title 
+			position: relative
+			z-index: 1
+			font-weight: 700
+			+adap('font-size', 44, 28 , $widthTo: 768)
+			line-height: 1.09091
+			text-transform: uppercase
+			color: #fff
+			text-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.98), 2px 3px 4px 0 rgba(0, 0, 0, 0.85)
+
+		&-subtitle 
+			position: relative
+			z-index: 1
+			color: $active
+			text-wrap: balance
+			
+
+		&-img 
+			position: absolute
+			left: 0
+			top: 0
+			z-index: -1
+
+			width: 100%
+			height: 100%
+
+			object-fit: cover
+
+
+	&-thumbs
+		margin-inline: auto
+		+adap('margin-top', 20, 16)
+
+		&__item
+			position: relative
+
+			aspect-ratio: 263/148
+			border-radius: 12px
+
+			overflow: hidden
+			cursor: pointer
+
+			&:after
+				content: ''
+
+				position: absolute
+				left: 50%
+				top: 50%
+				translate: -50% -50%
+
+				+adap('width', 40, 28)
+				+adap('height', 40, 28)
+
+				background: url(../img/icons/zoom.svg) center / contain no-repeat
+				+t 
+				opacity: 0
+				pointer-events: none
+
+			img 
+				width: 100%
+				height: 100%
+
+				object-fit: cover
+				+t 
+			
+			+hov
+				img 
+					scale: 1.02
+
+			&:before
+				content: ''
+
+				position: absolute
+				left: 0
+				top: 0
+
+				width: 100%
+				height: 100%
+
+				border: 2px solid #f90
+				border-radius: 12px
+				background:  rgba(255, 153, 0, 0.2)
+
+				opacity: 0
+				+t
+
+		.swiper-slide-thumb-active 
+			+hov
+				.action-thumbs__item img 
+					scale: none
+				
+			.action-thumbs__item 
+				&:after,
+				&:before
+					opacity: 1
+
+
+	@media (max-width: 575px)
+		&__item 
+			&:before
+				content: ''
+			
+				position: absolute
+				left: 0
+				top: 0
+				z-index: 0
+			
+				width: 100%
+				height: 100%
+			
+				background: linear-gradient(90deg, #040303 0%, rgba(4, 3, 3, 0) 100%)
+				+t
+				pointer-events: none
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

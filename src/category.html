@@ -1,0 +1,105 @@
+@@include('assets/html/head.html', {
+"class" : ''
+})
+@@include("assets/html/crumbs.html", {
+"list": [
+{
+"title":"Меню",
+"link":"'category.html'"
+},
+]
+})
+
+<!-- Категория -->
+<div class="section catalog">
+	<div class="container">
+		<div class="catalog__wrapper">
+			<div class="catalog__left" data-spollers="991">
+				<div class="catalog__item" data-spoller>
+					<button class="catalog__item-title" type="button" data-spoller-title>Категории блюд</button>
+					<div class="catalog__item-content" data-spoller-content>
+						<div class="catalog-menu" data-spollers>
+							<div class="catalog-menu__item">
+								<a href="category.html" class="catalog-menu__item-title active ">Хинкали</a>
+							</div>
+							<div class="catalog-menu__item">
+								<a href="category.html" class="catalog-menu__item-title">Закуски в стол</a>
+							</div>
+							<div class="catalog-menu__item">
+								<a href="category.html" class="catalog-menu__item-title">Супы</a>
+							</div>
+							<div class="catalog-menu__item">
+								<a href="category.html" class="catalog-menu__item-title">Салаты</a>
+							</div>
+							<div class="catalog-menu__item">
+								<a href="category.html" class="catalog-menu__item-title">Горячие закуски</a>
+							</div>
+							<div class="catalog-menu__item">
+								<a href="category.html" class="catalog-menu__item-title">Холодные закуски</a>
+							</div>
+							<div class="catalog-menu__item">
+								<a href="category.html" class="catalog-menu__item-title">Горячие блюда</a>
+							</div>
+							<div class="catalog-menu__item">
+								<a href="category.html" class="catalog-menu__item-title">Выпечка</a>
+							</div>
+							<div class="catalog-menu__item">
+								<a href="category.html" class="catalog-menu__item-title">Соусы</a>
+							</div>
+							<div class="catalog-menu__item">
+								<a href="certificate.html" class="catalog-menu__item-title">Мангал</a>
+							</div>
+							<div class="catalog-menu__item">
+								<a href="certificate.html" class="catalog-menu__item-title">Гарнир</a>
+							</div>
+							<div class="catalog-menu__item">
+								<a href="certificate.html" class="catalog-menu__item-title">Десерты</a>
+							</div>
+							<div class="catalog-menu__item">
+								<a href="certificate.html" class="catalog-menu__item-title">Мороженое</a>
+							</div>
+							<div class="catalog-menu__item">
+								<a href="certificate.html" class="catalog-menu__item-title">Напитки</a>
+							</div>
+							<div class="catalog-menu__item" data-spoller>
+								<button class="catalog-menu__item-title" type="button" data-spoller-title>Морепродукты</button>
+								<div class="catalog-menu__item-content" data-spoller-content>
+									<div class="catalog-menu">
+										<div class="catalog-menu__item">
+											<a href="category.html" class="catalog-menu__item-title">Горячие блюда</a>
+										</div>
+										<div class="catalog-menu__item">
+											<a href="category.html" class="catalog-menu__item-title">Raw бар</a>
+										</div>
+										<div class="catalog-menu__item">
+											<a href="category.html" class="catalog-menu__item-title">Салаты</a>
+										</div>
+										<div class="catalog-menu__item">
+											<a href="category.html" class="catalog-menu__item-title">Супы</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="catalog__right">
+				<h1 class="title title-page title_left">Хинкали</h1>
+				<div class="card-wrapper">
+					@@for(var i = 0; i < 16; i++){ @@include("assets/html/card.html", { "label1" : "action1" }) } </div>
+						<div class="flex justify-center">
+							<button class="button button_border button_white button_big" type="button">Загрузить еще</button>
+						</div>
+						<div class="catalog__text">
+							<div class="text-block">
+								<h3>Текстовый блок</h3>
+								<p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах</p>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	@@include('assets/html/foot.html')

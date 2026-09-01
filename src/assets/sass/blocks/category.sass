@@ -1,0 +1,306 @@
+html
+	&:not(.loaded)
+		.catalog__item-content
+			display: none
+	
+.category
+	&__wrapper
+		display: grid
+		grid-template-columns: repeat(auto-fill, minmax(max(20%, 360px), 1fr))
+		+adap('gap', 20, 16)
+  
+		@media (max-width: 767px)
+			grid-template-columns: 1fr 1fr
+
+	&__item 
+		position: relative
+		z-index: 1
+
+		display: grid
+		align-items: end
+		+adap('padding', 20, 16)
+		aspect-ratio: 425/336	
+
+		+adap('border-radius', 16, 12)
+		overflow: hidden
+
+		border: 1px solid transparent
+		
+		background: linear-gradient(#000, #000) padding-box, linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)),  radial-gradient(33.11% 33.11% at -12.8% -14.76%,#FFFFFF 0%, rgba(255, 255, 255, 0) 100%) border-box
+		+t
+
+		+hov
+			&:after
+				box-shadow: 20px 12px 32px 4px rgba(255, 153, 0, 0.6)
+
+			.category__item-text
+				margin-top: 12px
+				opacity: 1
+
+				@supports (height: calc-size(fit-content, size))
+					height: calc-size(fit-content, size)
+				
+				@supports not (height: calc-size(fit-content, size))
+					height: auto
+
+
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			bottom: 0
+
+			width: 100%
+			height: 1px
+
+			background: linear-gradient(90deg, transparent 0%, $active 50%, transparent 100%)
+
+		&-content 
+			position: relative
+			z-index: 1
+
+		&-img 
+			position: absolute
+			left: 0
+			top: 0
+			z-index: -1
+
+			width: 100%
+			height: 100%
+
+			object-fit: cover
+			pointer-events: none
+
+		&-title 
+			+adap('font-size', 24, 16)
+
+		&-text 
+			height: 0
+			opacity: 0
+			+t
+
+
+
+
+
+.catalog 
+	&__wrapper
+		display: grid
+		grid-template-columns: minmax(250px, percent(270, $containerWidth))  1fr 
+		+adap('gap', 40, 20)
+		align-items: start
+
+	&__left 
+		display: grid
+		grid-template-columns: 100%
+		+adap('padding', 20, 12)
+		+scrollbar(calc(100dvh - var(--headerFixedHeight)), $scrollBarWidth: 4, $padding: 5) 
+
+		+adap('border-radius', 16, 12)
+		background: $bg2
+
+		@media (min-width: 992px)
+			position: sticky
+			left: 0
+			top: var(--headerFixedHeight)
+
+ 
+		@media (max-width: 991px)
+			padding: 0
+			max-height: 60dvh
+
+		&-title 
+			color: $active
+			+adap('font-size', 26, 20)
+			+sb
+
+			&+*
+				margin-top: 20px
+
+	&__item 
+		display: grid
+		+adap('gap', 20, 12)
+
+		&-title 
+			font-weight: 600
+			font-size: 18px
+			line-height: 1.33333
+			text-transform: uppercase
+			text-align: left
+
+			&:after
+				@media (min-width: 992px)
+					display: none
+
+	&-menu 
+		display: grid
+		+adap('gap', 12, 8)
+
+		&__item 
+			&-title
+				color: rgba($text, .6)
+				+adap('font-size', 16, 14)
+				+t
+
+				&:not(.active)
+					+hov
+						margin-left: 12px
+
+						color: #fff 
+
+				&.active  
+					color: $active
+
+		.catalog-menu 
+			padding: 20px 0 0 10px
+			+adap('gap', 12, 10)
+			
+			+medium
+			+adap('font-size', 16, 14)
+
+	&__right 
+		display: grid
+		+adap('gap', 40, 20)
+
+		@media (min-width: 1200px)
+			padding-top: 20px
+
+	&__text 
+		position: relative
+
+		+adap('padding', 40, 16)
+
+		border-radius: 16px
+		border: 2px solid transparent
+		background: linear-gradient(#000, #000) padding-box, linear-gradient(0deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .12)), radial-gradient(33.11% 33.11% at -12.8% -14.76%, #fff 0, rgba(255, 255, 255, 0) 100%) border-box
+
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 100%
+			height: 1px
+			background: linear-gradient(90deg, transparent 0%, $active 50%, transparent 100%)
+
+	@media (max-width: 991px)
+		&__wrapper
+			grid-template-columns: 100%
+
+
+.catalog-menu-wrapper 
+	position: fixed
+	left: 0
+	width: 100%
+	z-index: 5
+	padding-block: 20px
+	translate: 0 100%
+
+	background: #fff
+	font-size: 16px
+
+	pointer-events: none
+	opacity: 0 
+	+t 
+
+	.container 
+		display: grid
+		gap: 20px 
+
+	&.active
+		translate: 0 0
+		pointer-events: auto
+		opacity: 1
+
+	@media (min-width: 992px)
+		display: none
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
