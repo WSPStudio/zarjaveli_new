@@ -2051,7 +2051,7 @@ a {
 
 .about__title {
   font-weight: 700;
-  font-family: "PTSerif-Bold";
+  font-family: "PTSerif";
   line-height: 1.125
 }
 
@@ -3111,7 +3111,7 @@ html:not(.loaded) .catalog__item-content {
   text-transform: uppercase;
   word-break: break-word;
   font-weight: 700;
-  font-family: "PTSerif-Bold";
+  font-family: "PTSerif";
   line-height: 1.125
 }
 
@@ -3900,8 +3900,8 @@ html:not(.loaded) .catalog__item-content {
 
   .about__item:nth-child(2n) .about__item-img-wrapper {
     border-radius: 0;
-    border-top-left-radius: round(clamp(80px, 56px + 7.5vw, 200px), 1px);
-    border-bottom-left-radius: round(clamp(80px, 56px + 7.5vw, 200px), 1px)
+    border-top-left-radius: round(clamp(80px, 16px + 20vw, 400px), 1px);
+    border-bottom-left-radius: round(clamp(80px, 16px + 20vw, 400px), 1px)
   }
 
   .account__left {
@@ -6062,7 +6062,6 @@ html:not(.loaded) .catalog__item-content {
 
   .product__bottom {
     margin-top: 20px;
-    padding: 0;
     border-radius: 0
   }
 
