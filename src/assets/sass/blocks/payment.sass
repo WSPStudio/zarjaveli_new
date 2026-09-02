@@ -40,12 +40,17 @@
 		+adap('gap', 20, 12)
 		align-items: center
 
+		+hov
+			.payment__item-icon 
+				scale: 1.05
+
 		&-icon 
 			display: flex
 			align-items: center
 			justify-content: center
 			+adap('width', 80, 32)
 			+adap('height', 80, 32)
+			+t
 
 			img 
 				+adap('max-width', 52, 32)

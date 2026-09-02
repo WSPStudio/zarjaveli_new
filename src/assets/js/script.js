@@ -12,6 +12,7 @@ import "./components.js";
 // Слайдеры
 
 // Акции
+
 if (document.querySelector(".action-container")) {
   let actionThumbs = null;
 
@@ -68,6 +69,10 @@ if (document.querySelector(".action-container")) {
         clickable: true,
       },
     }),
+    navigation: {
+      nextEl: ".action__next",
+      prevEl: ".action__prev",
+    },
     keyboard: {
       enabled: true,
       onlyInViewport: false,

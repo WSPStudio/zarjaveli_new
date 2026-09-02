@@ -69,18 +69,18 @@
 		+adap('font-size', 16, 14  , $widthTo: 992)
 
 	@media (max-width: 991px)
-		@media (min-width: 768px)
-			&__top 
-				display: grid
-				grid-template-columns: repeat(2, 1fr)
-				gap: 40px 20px
+		// @media (min-width: 768px)
+		// 	&__top 
+		// 		display: grid
+		// 		grid-template-columns: repeat(2, 1fr)
+		// 		gap: 40px 20px
 
-			&__middle 
-				display: grid
-				grid-template-columns: repeat(2, 1fr)
+		// 	&__middle 
+		// 		display: grid
+		// 		grid-template-columns: repeat(2, 1fr)
 
-			&__menu 
-				display: contents
+		// 	&__menu 
+		// 		display: contents
 
 		&__bottom
 			display: grid
@@ -93,12 +93,18 @@
 					@media (min-width: 576px)
 						text-align: right
 
+		&__middle
+			display: none
+
 	@media (max-width: 767px)
 		&__top 
 			display: grid
 			grid-template-columns: 100%
 			gap: 20px
 			justify-items: start
+
+		&__text 
+			display: none
 
 	@media (max-width: 575px)
 		&__bottom

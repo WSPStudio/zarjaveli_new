@@ -7,6 +7,21 @@
 			padding-block: 12px
 			margin-block: -12px
 	
+	&__arrow 
+		display: flex
+		align-items: center
+		justify-content: center
+		+adap('width', 40, 28)
+		+adap('height', 40, 28)
+
+		border-radius: 50%
+		border: 1px solid $text
+
+		svg 
+			max-width: 40%
+			max-height: 40%
+
+			fill: $text
 	
 .swiper
 	+t

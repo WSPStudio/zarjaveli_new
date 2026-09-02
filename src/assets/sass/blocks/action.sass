@@ -8,6 +8,31 @@
 				.action__item:before 
 					opacity: 0
 
+	&__arrow 
+		position: absolute
+		top: 50%
+		z-index: 3
+
+		translate: 0 -50%
+		+t 
+
+		+hov
+			background: $active
+			border-color: $active
+
+	
+	&__prev 
+		left: 17.5%
+
+		@media (max-width: 1199px)
+			left: 13%
+
+	&__next 
+		right: 17.5%
+
+		@media (max-width: 1199px)
+			right: 13%
+
 	&__item 
 		position: relative
 		z-index: 1
