@@ -1686,18 +1686,6 @@ html {
   min-height: 100%
 }
 
-html:not(.loaded) ._dynamic_adapt_,
-html:not(.loaded) .sub-menu-wrapper,
-html:not(.loaded) [data-da*=menu2] {
-  position: absolute;
-  opacity: 0
-}
-
-html:not(.loaded) .header,
-html:not(.loaded) [data-lines] {
-  opacity: 0
-}
-
 html.safari {
   -webkit-text-size-adjust: 100%
 }
@@ -6115,6 +6103,18 @@ html:not(.loaded) .catalog__item-content {
 
   .footer__text {
     flex-basis: 120px
+  }
+
+  html:not(.loaded) ._dynamic_adapt_,
+  html:not(.loaded) .sub-menu-wrapper,
+  html:not(.loaded) [data-da*=menu2] {
+    position: absolute;
+    opacity: 0
+  }
+
+  html:not(.loaded) .header,
+  html:not(.loaded) [data-lines] {
+    opacity: 0
   }
 
   .about-home .about__decor,

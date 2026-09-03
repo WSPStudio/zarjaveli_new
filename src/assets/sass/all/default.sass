@@ -102,15 +102,16 @@ html
 	min-height: 100%
 
 	&:not(.loaded)
-		[data-da*="menu2"], ._dynamic_adapt_, .sub-menu-wrapper
-			position: absolute
-			opacity: 0
+		@media (max-width: #{$burgerMedia+px})
+			[data-da*="menu2"], ._dynamic_adapt_, .sub-menu-wrapper
+				position: absolute
+				opacity: 0
 
-		.header 
-			opacity: 0
-
-		[data-lines]
-			opacity: 0
+			.header  
+				opacity: 0 
+	 
+			[data-lines]
+				opacity: 0
 
 	&.safari
 		-webkit-text-size-adjust: 100%
