@@ -1899,6 +1899,45 @@
     });
   }
 
+  // Слайдер залов
+  const hallsItems = document.querySelectorAll(".halls__item");
+
+  if (hallsItems) {
+    hallsItems.forEach((item) => {
+      const hallsSlider = item.querySelector(".halls-container");
+
+      if (hallsSlider) {
+        new Swiper(hallsSlider, {
+          // autoplay: {
+          //   delay: 4000,
+          //   pauseOnMouseEnter: true,
+          // },
+          loop: true,
+          resistanceRatio: 0,
+          spaceBetween: 24,
+          pagination: {
+            el: hallsSlider.parentElement.querySelector(".halls__pagination"),
+            dynamicBullets: true,
+            dynamicMainBullets: 2,
+            clickable: true,
+          },
+          speed: 500,
+          breakpoints: {
+            1: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            992: {
+              slidesPerView: 1,
+            },
+          },
+        });
+      }
+    });
+  }
+
   // В корзину + -
   document.addEventListener("click", (e) => {
     const button = e.target.closest(".count__button");
