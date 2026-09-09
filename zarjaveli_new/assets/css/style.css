@@ -3871,10 +3871,14 @@ html:not(.loaded) .catalog__item-content {
   overflow: hidden
 }
 
+.halls__item:nth-child(2n) {
+  background: url(../img/halls/bg.webp) center/cover no-repeat
+}
+
 .halls__item_not-padding {
   position: relative;
   background: rgba(0, 0, 0, .4);
-  border: 1px solid rgba(255, 255, 255, .12)
+  border: 1px solid rgba(255, 153, 0, .2)
 }
 
 .halls__item_not-padding:after {
@@ -3994,7 +3998,8 @@ html:not(.loaded) .catalog__item-content {
 }
 
 .halls__item-list {
-  display: grid
+  display: grid;
+  justify-self: start
 }
 
 .halls__item .halls-list__item {
@@ -5237,6 +5242,10 @@ html:not(.loaded) .catalog__item-content {
     border-radius: 40px
   }
 
+  .halls__item_not-padding {
+    min-height: 600px
+  }
+
   .halls__item_not-padding .halls__item-title {
     margin-bottom: 20px
   }
@@ -6311,6 +6320,10 @@ html:not(.loaded) .catalog__item-content {
     border-radius: round(clamp(12px, 6.4px + 1.75vw, 40px), 1px)
   }
 
+  .halls__item_not-padding {
+    min-height: round(clamp(400px, 360px + 12.5vw, 600px), 1px)
+  }
+
   .halls__item_not-padding .halls__item-title {
     margin-bottom: round(clamp(16px, 15.2px + .25vw, 20px), 1px)
   }
@@ -7204,6 +7217,18 @@ html:not(.loaded) .catalog__item-content {
 
   .halls__item-right-image {
     grid-template-columns: 1fr 44.51%
+  }
+
+  @media (max-width:1400px) {
+    .halls__item-right-image {
+      padding-right: round(clamp(16px, 11.2px + 1.5vw, 40px), 1px)
+    }
+  }
+
+  @media (min-width:1401px) {
+    .halls__item-right-image {
+      padding-right: 40px
+    }
   }
 
   .halls__item-right-image .halls__item-col {

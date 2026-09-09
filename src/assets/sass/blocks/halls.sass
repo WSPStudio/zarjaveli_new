@@ -15,7 +15,10 @@
 		border: 1px solid rgba(255, 255, 255, 0.2)
 		+adap('border-radius', 40, 12)
 
-		overflow: hidden
+		overflow: hidden 
+
+		&:nth-child(2n)
+			background: url(../img/halls/bg.webp) center / cover no-repeat
  
 		@media (max-width: #{$firstBreakpoint + px}) or (min-width: #{$firstBreakpoint + 1 + px})
 			&-top-left-radius 
@@ -46,7 +49,8 @@
 					+adap('border-bottom-right-radius', 360, 12  , $widthTo: 768, $min: true)
 
 			&-right-image
-				grid-template-columns: 1fr percent(730, 1640) 
+				grid-template-columns: 1fr percent(730, 1640)  
+				+adap('padding-right', 40, 16)
 
 				.halls__item-col
 					order: -1
@@ -58,12 +62,13 @@
 
 		&_not-padding 
 			position: relative
+			+adap('min-height', 600, 400)
  
 			@media (min-width: 992px)
 				+adap('margin-block', 40, 16 , $min: true )
 
 			background: rgba(0, 0, 0, 0.4)
-			border: 1px solid rgba(255, 255, 255, 0.12)
+			border: 1px solid rgba(255, 153, 0, 0.2)
 
 			&:after
 				content: ''
@@ -235,6 +240,7 @@
 		&-list 
 			display: grid
 			+adap('gap', 8, 4)
+			justify-self: start
 			+adap('margin-bottom', 40, 16)
 
 		.halls-list

@@ -266,7 +266,7 @@
                 <nav class="nav header__nav">
                   <ul class="menu header__menu">
                     <li><a href="/zarjaveli_new/#info">О ресторане</a></li>
-                    <li><a href=" #">Банкетные залы</a></li>
+                    <li><a href="halls.html">Банкетные залы</a></li>
                     <li><a href="payment.html">Доставка и оплата</a></li>
                     <li><a href="contact.html">Контакты</a></li>
                   </ul>
@@ -329,10 +329,6 @@
               <button class="button" type="button">Посмотреть залы</button>
             </div>
             <picture>
-              <source srcset="assets/img/halls/1-575.avif" type="image/avif" media="(max-width: 575px)">
-              <source srcset="assets/img/halls/1-575.webp" type="image/webp" media="(max-width: 575px)">
-              <source srcset="assets/img/halls/1-991.avif" type="image/avif" media="(max-width: 991px)">
-              <source srcset="assets/img/halls/1-991.webp" type="image/webp" media="(max-width: 991px)">
               <source srcset="assets/img/halls/1.avif" type="image/avif">
               <img src="assets/img/halls/1.webp" class="about__img" alt="" decoding="async" fetchpriority="high">
             </picture>
@@ -406,11 +402,11 @@
                         <use xlink:href="assets/img/sprite-d8cf599e77.svg#peoples"></use>
                       </svg>
                     </div>
-                    <p><span>Вместимость:</span> &nbsp; до 12 человек &nbsp; комфортного размещения</p>
+                    <p><span>Вместимость:</span> &nbsp; до 12 человек комфортного размещения</p>
                   </div>
                 </div>
                 <div class="halls__item-buttons">
-                  <button class="button button_border button_big halls__item-button" type="button">Получить предложение</button>
+                  <button class="button button_border button_big halls__item-button" type="button" data-modal="modal-offer">Получить предложение</button>
                   <button class="button button_border button_white button_big halls__item-button" data-viewer-open="halls-1">Смотреть фото</button>
                 </div>
               </div>
@@ -478,11 +474,11 @@
                         <use xlink:href="assets/img/sprite-d8cf599e77.svg#peoples"></use>
                       </svg>
                     </div>
-                    <p><span>Вместимость:</span> &nbsp; до 35 человек &nbsp; комфортного размещения</p>
+                    <p><span>Вместимость:</span> &nbsp; до 35 человек комфортного размещения</p>
                   </div>
                 </div>
                 <div class="halls__item-buttons">
-                  <button class="button button_border button_big halls__item-button" type="button">Получить предложение</button>
+                  <button class="button button_border button_big halls__item-button" type="button" data-modal="modal-offer">Получить предложение</button>
                   <button class="button button_border button_white button_big halls__item-button" data-viewer-open="halls-2">Смотреть фото</button>
                 </div>
               </div>
@@ -549,11 +545,11 @@
                         <use xlink:href="assets/img/sprite-d8cf599e77.svg#peoples"></use>
                       </svg>
                     </div>
-                    <p><span>Вместимость:</span> &nbsp; до 70 человек &nbsp; комфортного размещения</p>
+                    <p><span>Вместимость:</span> &nbsp; до 70 человек комфортного размещения</p>
                   </div>
                 </div>
                 <div class="halls__item-buttons">
-                  <button class="button button_border button_big halls__item-button" type="button">Получить предложение</button>
+                  <button class="button button_border button_big halls__item-button" type="button" data-modal="modal-offer">Получить предложение</button>
                   <button class="button button_border button_white button_big halls__item-button" data-viewer-open="halls-3">Смотреть фото</button>
                 </div>
               </div>
@@ -714,6 +710,61 @@
 
   <!-- Модалки -->
   <div class="modals">
+    <!-- Получить предложение -->
+    <div class="modal modal-offer" id="modal-offer">
+      <div class="modal__dialog">
+        <div class="modal__content">
+          <button class="modal__close" type="button" data-modal-close>
+            <svg class="close">
+              <use xlink:href="assets/img/sprite-d8cf599e77.svg#close"></use>
+            </svg>
+          </button>
+          <picture>
+            <source srcset="assets/img/modal/1-575.avif" type="image/avif" media="(max-width: 575px)">
+            <source srcset="assets/img/modal/1-575.webp" type="image/webp" media="(max-width: 575px)">
+            <source srcset="assets/img/modal/1-991.avif" type="image/avif" media="(max-width: 991px)">
+            <source srcset="assets/img/modal/1-991.webp" type="image/webp" media="(max-width: 991px)">
+            <source srcset="assets/img/modal/1.avif" type="image/avif">
+            <img src="assets/img/modal/1.webp" class="modal__bg" alt="" loading="lazy" decoding="async">
+          </picture>
+          <div class="modal__wrapper">
+            <div class="modal__left">
+              <img src="assets/img/modal/logo.svg" class="modal__logo" width="176" height="176" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="modal__right">
+              <div class="title-3 title-uppercase modal__title">Получить предложение</div>
+              <hr>
+              <div class="form modal__form">
+                <form>
+                  <input type="hidden" name="info" class="modal-info">
+                  <div class="form__fields">
+                    <label class="input-item">
+                      <span>Ваше имя</span>
+                      <input type="text" name="name" class="input" placeholder="Введите имя" required>
+                    </label>
+                    <label class="input-item">
+                      <span>Номер телефона</span>
+                      <input type="tel" name="phone" class="input" placeholder="Введите ваш телефон" required>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox" required>
+                      <span class="checkbox__text">
+                        Нажимая на кнопку “Регистрация аккаунта”, Вы соглашаетесь с
+                        <a href="text.html">Пользовательским соглашением</a> <br>
+                        и
+                        <a href="text.html">Политикой конфиденциальности</a>
+                      </span>
+                    </label>
+                    <button class="button submit">Отправить</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Авторизация -->
     <div class="modal modal-auth" id="modal-auth">
       <div class="modal__dialog">
