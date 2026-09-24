@@ -375,3 +375,11 @@ if (iframe) {
 
   observer.observe(iframe);
 }
+
+// Закрытие меню при клике на кнопки внутри
+document.querySelector(".menu2").addEventListener("click", function (e) {
+  if (e.target.closest("a") || e.target.closest("button")) {
+    document.querySelector(".menu2")?.classList.remove("active");
+    document.querySelector(".overlay")?.classList.remove("active");
+  }
+});

@@ -137,12 +137,15 @@ html
 		display: grid
 		+adap('gap', 12, 8)
 
-		&__item 
+		&__item
+			display: grid
+			grid-template-columns: 1fr auto 
+		 	
 			&-title
 				color: rgba($text, .6)
 				+adap('font-size', 16, 14)
 				+t
-
+ 
 				&:not(.active)
 					+hov
 						margin-left: 12px

@@ -904,6 +904,9 @@
 
     hideScrollbar();
 
+    document.querySelector(".menu2")?.classList.remove("active");
+    document.querySelector(".overlay")?.classList.remove("active");
+
     if (addHashFlag && !window.location.hash.includes(modal.id)) {
       window.location.hash = modal.id;
     }
@@ -1546,11 +1549,11 @@
     }
   }
 
-  /* 
+  /*
     ================================================
-  	  
+
     Плавная прокрутка
-  	
+
     ================================================
   */
 
@@ -1561,10 +1564,13 @@
     if (scrollLinks.length) {
       scrollLinks.forEach((link) => {
         link.addEventListener("click", (e) => {
-          const target = link.hash;
+          let target = link.dataset.scroll || link.hash;
 
           if (target && target !== "#") {
-            const scrollBlock = document.querySelector(target);
+            target = target.replace(/^#/, "");
+
+            const scrollBlock = document.getElementById(target);
+
             e.preventDefault();
 
             if (scrollBlock) {
@@ -1576,8 +1582,9 @@
               menu.classList.remove(menuActive);
               burgerButton.classList.remove("active");
               body.classList.remove("no-scroll");
-            } else {
+            } else if (link.href) {
               let [baseUrl, hash] = link.href.split("#");
+
               if (window.location.href !== baseUrl && hash) {
                 link.setAttribute("href", `${baseUrl}?link=${hash}`);
                 window.location = link.getAttribute("href");
@@ -1614,14 +1621,18 @@
           }
         } else {
           const scrollBlock = document.getElementById(link);
+
           if (scrollBlock) {
             const headerScroll = window.getComputedStyle(scrollBlock).paddingTop === "0px" ? -40 : 0;
+
             scrollToSmoothly(offset(scrollBlock).top - parseInt(headerTop.clientHeight - headerScroll), 400);
           }
         }
 
         urlParams.delete("link");
+
         const newUrl = urlParams.toString() ? `${window.location.pathname}?${urlParams}` : window.location.pathname;
+
         window.history.replaceState({}, "", newUrl);
       }
     });
@@ -2091,6 +2102,14 @@
 
     observer.observe(iframe);
   }
+
+  // Закрытие меню при клике на кнопки внутри
+  document.querySelector(".menu2").addEventListener("click", function (e) {
+    if (e.target.closest("a") || e.target.closest("button")) {
+      document.querySelector(".menu2")?.classList.remove("active");
+      document.querySelector(".overlay")?.classList.remove("active");
+    }
+  });
 
 })();
 //# sourceMappingURL=script.js.map

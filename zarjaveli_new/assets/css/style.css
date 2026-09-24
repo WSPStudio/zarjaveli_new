@@ -1486,6 +1486,7 @@ hr {
 
 .footer__menu a:focus-visible,
 .header__auth:focus-visible,
+.header__catalog-list a:focus-visible,
 .menu>li>a:focus-visible {
   color: #f90
 }
@@ -1540,6 +1541,34 @@ hr {
 .header__cart-count {
   min-width: 20px;
   text-align: center
+}
+
+.header__catalog {
+  position: relative
+}
+
+.header__catalog:hover .header__catalog-list {
+  opacity: 1;
+  scale: 1;
+  translate: 0 0;
+  pointer-events: auto
+}
+
+.header__catalog-list {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  padding: 24px;
+  display: grid;
+  gap: 12px;
+  background: #040303;
+  border-radius: 12px;
+  translate: 0 -12px;
+  opacity: 0;
+  scale: .9;
+  pointer-events: none;
+  transition: all .2s
 }
 
 .menu2 .header__auth {
@@ -2869,6 +2898,11 @@ html:not(.loaded) .catalog__item-content {
   display: grid
 }
 
+.catalog-menu__item {
+  display: grid;
+  grid-template-columns: 1fr auto
+}
+
 .catalog-menu__item-title {
   color: rgba(255, 255, 255, .6);
   transition: all .4s
@@ -4004,7 +4038,7 @@ html:not(.loaded) .catalog__item-content {
 
 .halls__item .halls-list__item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   padding: 12px;
   background: rgba(16, 16, 16, .6)
@@ -4014,7 +4048,8 @@ html:not(.loaded) .catalog__item-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0
+  flex-shrink: 0;
+  translate: 0 2px
 }
 
 .halls__item .halls-list__item-icon svg {
@@ -6404,6 +6439,10 @@ html:not(.loaded) .catalog__item-content {
     gap: 16px
   }
 
+  .header__catalog-list {
+    display: none
+  }
+
   .header__menu {
     display: grid;
     grid-template-columns: 100%;
@@ -7316,6 +7355,7 @@ html:not(.loaded) .catalog__item-content {
 
   .footer__menu a:hover,
   .header__auth:hover,
+  .header__catalog-list a:hover,
   .menu>li>a:hover {
     color: #f90
   }

@@ -246,7 +246,7 @@
 		.halls-list
 			&__item 
 				display: flex
-				align-items: center
+				align-items: flex-start
 				gap: 12px
 				padding: 12px	
 
@@ -260,8 +260,9 @@
 					align-items: center
 					justify-content: center
 					+adap('width', 24, 20)
-					+adap('height', 24, 20)
+					+adap('height', 24, 20) 
 					flex-shrink: 0
+					translate: 0 2px
 
 					svg 
 						max-width: 80%

@@ -3,11 +3,11 @@ import { offset } from "../scripts/core/helpers";
 import { scrollToSmoothly } from "../scripts/ui/scroll";
 import { removeHash } from "../scripts/ui/url";
 
-/* 
+/*
   ================================================
-	  
+
   Плавная прокрутка
-	
+
   ================================================
 */
 
@@ -18,10 +18,13 @@ export function scroll() {
   if (scrollLinks.length) {
     scrollLinks.forEach((link) => {
       link.addEventListener("click", (e) => {
-        const target = link.hash;
+        let target = link.dataset.scroll || link.hash;
 
         if (target && target !== "#") {
-          const scrollBlock = document.querySelector(target);
+          target = target.replace(/^#/, "");
+
+          const scrollBlock = document.getElementById(target);
+
           e.preventDefault();
 
           if (scrollBlock) {
@@ -33,8 +36,9 @@ export function scroll() {
             menu.classList.remove(menuActive);
             burgerButton.classList.remove("active");
             body.classList.remove("no-scroll");
-          } else {
+          } else if (link.href) {
             let [baseUrl, hash] = link.href.split("#");
+
             if (window.location.href !== baseUrl && hash) {
               link.setAttribute("href", `${baseUrl}?link=${hash}`);
               window.location = link.getAttribute("href");
@@ -71,14 +75,18 @@ export function scroll() {
         }
       } else {
         const scrollBlock = document.getElementById(link);
+
         if (scrollBlock) {
           const headerScroll = window.getComputedStyle(scrollBlock).paddingTop === "0px" ? -40 : 0;
+
           scrollToSmoothly(offset(scrollBlock).top - parseInt(headerTop.clientHeight - headerScroll), 400);
         }
       }
 
       urlParams.delete("link");
+
       const newUrl = urlParams.toString() ? `${window.location.pathname}?${urlParams}` : window.location.pathname;
+
       window.history.replaceState({}, "", newUrl);
     }
   });

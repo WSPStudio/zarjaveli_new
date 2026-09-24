@@ -33,6 +33,9 @@ export function openModal(modal, addHashFlag = true, dataTab = null, stack = fal
 
   hideScrollbar();
 
+  document.querySelector(".menu2")?.classList.remove("active");
+  document.querySelector(".overlay")?.classList.remove("active");
+
   if (addHashFlag && !window.location.hash.includes(modal.id)) {
     window.location.hash = modal.id;
   }
