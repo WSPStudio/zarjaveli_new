@@ -162,7 +162,7 @@ body
 
 	white-space: nowrap
 
-	&>svg 
+	svg 
 		max-width: 20px
 		max-height: 20px
 
@@ -170,6 +170,16 @@ body
 
 	a 
 		white-space: nowrap
+
+	&.contact__item-text.column
+		flex-direction: column
+		gap: 0
+
+	&.contact__item-text.column div
+		display: flex
+		align-items: center
+		gap: 16px
+		width: 100%
 
 .social 
 	display: flex

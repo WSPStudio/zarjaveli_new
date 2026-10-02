@@ -936,7 +936,7 @@ body.home {
   align-items: center
 }
 
-.call>svg {
+.call svg {
   max-width: 20px;
   max-height: 20px;
   fill: #f90
@@ -945,6 +945,18 @@ body.home {
 .call,
 .call a {
   white-space: nowrap
+}
+
+.call.contact__item-text.column {
+  flex-direction: column;
+  gap: 0
+}
+
+.call.contact__item-text.column div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%
 }
 
 .social,
@@ -1459,7 +1471,6 @@ hr {
 }
 
 .header__logo {
-  grid-row: span 2;
   align-self: center
 }
 
@@ -1507,6 +1518,7 @@ hr {
 .header__bottom {
   justify-content: space-between;
   padding-top: 12px;
+  grid-column: 1/-1;
   border-top: 1px solid rgba(255, 255, 255, .2)
 }
 
@@ -2734,7 +2746,8 @@ a {
   top: 0;
   width: 100%;
   height: 100%;
-  margin: 0
+  margin: 0;
+  pointer-events: none
 }
 
 .card__button .checkbox__input:before {
@@ -3142,7 +3155,7 @@ html:not(.loaded) .catalog__item-content {
 
 .feedback iframe {
   width: 100%;
-  height: 100%
+  height: 100% !important
 }
 
 .feedback__slider {
@@ -4112,6 +4125,9 @@ html:not(.loaded) .catalog__item-content {
 }
 
 @media (min-width:576px) {
+  .search__toggle {
+    display: none
+  }
 
   .container-left,
   .container-right {
@@ -4275,8 +4291,8 @@ html:not(.loaded) .catalog__item-content {
 
 @media (min-width:1200px) {
   .header__logo img {
-    width: round(clamp(100px, 65px + 2.9166666667vw, 121px), 1px);
-    height: round(clamp(100px, 65px + 2.9166666667vw, 121px), 1px)
+    width: round(clamp(146.3px, 41.8px + 8.7083333333vw, 209px), 1px);
+    height: round(clamp(30.8px, 8.8px + 1.8333333333vw, 44px), 1px)
   }
 
   .header__bottom,
@@ -4639,7 +4655,11 @@ html:not(.loaded) .catalog__item-content {
   }
 
   .header__top {
-    gap: round(clamp(12px, -63.5838150289px + 5.3949903661vw, 40px), 1px)
+    gap: round(clamp(8px, -78.3815028902px + 6.1657032755vw, 40px), 1px)
+  }
+
+  .header__social {
+    gap: round(clamp(4px, -17.5953757225px + 1.5414258189vw, 12px), 1px)
   }
 
   .header__auth,
@@ -5699,7 +5719,11 @@ html:not(.loaded) .catalog__item-content {
   }
 
   .header__top {
-    gap: 12px
+    gap: 8px
+  }
+
+  .header__social {
+    gap: 4px
   }
 
   .header__auth,
@@ -6428,10 +6452,8 @@ html:not(.loaded) .catalog__item-content {
 
 @media (max-width:1199px) {
   .header__logo img {
-    width: 100px;
-    height: 100px;
-    width: round(clamp(60px, 54.0740740741px + 1.8518518519vw, 80px), 1px);
-    height: round(clamp(60px, 54.0740740741px + 1.8518518519vw, 80px), 1px)
+    width: 146.3px;
+    height: 30.8px
   }
 
   .header__bottom,
@@ -6466,10 +6488,6 @@ html:not(.loaded) .catalog__item-content {
   .header__top {
     padding: 0;
     gap: 16px
-  }
-
-  .header__logo {
-    grid-row: auto
   }
 
   .header__cart {
@@ -6695,6 +6713,14 @@ html:not(.loaded) .catalog__item-content {
     max-height: 60dvh
   }
 
+  .catalog__item {
+    padding: 10px 15px
+  }
+
+  .catalog-menu .catalog-menu {
+    padding: 10px 0 0 10px
+  }
+
   .catalog__wrapper {
     grid-template-columns: 100%
   }
@@ -6823,6 +6849,44 @@ html:not(.loaded) .catalog__item-content {
 }
 
 @media (max-width:767px) {
+  .search {
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end
+  }
+
+  .search:focus-within .search__input {
+    translate: 0 0;
+    opacity: 1;
+    pointer-events: auto
+  }
+
+  .search__input {
+    position: fixed;
+    left: 12px;
+    top: 100%;
+    width: calc(100% - 24px);
+    translate: 0 -8px;
+    border-radius: 12px;
+    background: #040303;
+    transition: translate .3s, opacity .3s;
+    opacity: 0;
+    pointer-events: none;
+    outline: 1px solid #f90
+  }
+
+  .search__input input:focus-visible {
+    outline: 0;
+    box-shadow: none
+  }
+
+  .search__toggle {
+    position: static;
+    translate: 0 0;
+    display: flex;
+    margin-left: auto
+  }
+
   body.home {
     background-image: none
   }
@@ -6949,6 +7013,11 @@ html:not(.loaded) .catalog__item-content {
     max-width: 100%;
     padding: 0 12px;
     margin-inline: auto
+  }
+
+  .menu2 .header__auth {
+    padding: 0 12px;
+    margin-bottom: 10px
   }
 
   .footer__bottom {

@@ -116,6 +116,10 @@ $search-input-border: 1px solid $bg
 			svg
 				fill: $active
 
+	&__toggle 
+		@media (min-width: 576px)
+			display: none
+
 	&__content     
 		position: absolute
 		left: 0
@@ -171,9 +175,43 @@ $search-input-border: 1px solid $bg
 		font-size: 14px
  
  
- 
- 
- 
+	@media (max-width: 767px)
+		margin-left: auto
+		display: flex
+		justify-content: flex-end
+
+		&:focus-within
+			.search__input
+				translate: 0 0
+				opacity: 1
+				pointer-events: auto
+
+		&__input 
+			position: fixed
+			left: $mobilePadding
+			top: 100% 
+			width: calc(100% - $mobilePadding*2)
+			translate: 0 -8px
+
+			border-radius: 12px
+			background: $bg
+
+			transition: translate .3s, opacity .3s
+			opacity: 0 
+			pointer-events: none
+			outline: 1px solid $active
+
+			input 
+				&:focus-visible
+					outline: none
+					box-shadow: none
+
+		&__toggle 
+			position: static
+			translate: 0 0
+			display: flex
+			margin-left: auto
+	 
  
  
  

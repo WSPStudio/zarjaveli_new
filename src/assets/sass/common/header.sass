@@ -37,21 +37,24 @@
 		+adap('column-gap', 60, 12 , $widthTo: 1401)
 
 	&__logo 
-		grid-row: span 2
+		// grid-row: span 2
 		align-self: center
 
 		img 
-			+adap('width', 121, 100 , $widthTo: 1200)
-			+adap('height', 121, 100 , $widthTo: 1200)
+			+adap('width', 209, minusPercent(30, 209) , $widthTo: 1200)
+			+adap('height', 44, minusPercent(30, 44) , $widthTo: 1200)
 
 	&__top
 		display: flex
 		align-items: center
-		+adap('gap', 40, 12 , $widthTo: 1401)
+		+adap('gap', 40, 8 , $widthTo: 1401)
 		padding-bottom: 12px
 
 	&__address 
 		white-space: nowrap
+
+	&__social 
+		+adap('gap', 12, 4 , $widthTo: 1401)
 
 	&__time 
 		@media (max-width: 1750px)
@@ -86,6 +89,7 @@
 		justify-content: space-between
 		+adap('gap', 40, 16 , $widthTo: 1200)
 		padding-top: 12px
+		grid-column: 1/-1
 
 		border-top: 1px solid rgba(#fff, .2)
 
@@ -191,13 +195,6 @@
 			padding: 0
 			gap: 16px
 
-		&__logo 
-			grid-row: auto
-
-			img 
-				+adap('width', 80, 60, $firstBreakpoint)
-				+adap('height', 80, 60, $firstBreakpoint)
-		
 		&__cart 
 			position: relative
 			padding: 0
@@ -238,6 +235,10 @@
 .menu2 
 	.header__auth
 		order: 0
+
+		@media (max-width: 575px)
+			padding: 0 12px
+			margin-bottom: 10px
 
 	.header__catalog 
 		order: 1
